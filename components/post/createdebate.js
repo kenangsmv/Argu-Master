@@ -4,7 +4,7 @@ import Profile from '../../images/user3.jpg'
 export default function createdebate() {
     return (
             <div className="createDebate center mb1">
-                 Create Debate
+                 Deabte Olustur
             </div>
        
     )
