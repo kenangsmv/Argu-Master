@@ -1,0 +1,26 @@
+.rightContainer{
+    width: 25%;
+    position: relative;
+    right: 0;
+    height: 100%;
+    background-color: #F4F4F5;
+    
+}
+
+.top{
+    background-color: #F4F4F5;
+    width: 100%;
+    
+    padding:10px 20px;
+}
+
+.bottom{
+    
+    width: 100%;
+    
+    position: sticky;
+    top:0;
+    padding:20px
+
+
+}
