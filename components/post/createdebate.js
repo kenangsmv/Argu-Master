@@ -1,11 +1,21 @@
-import React from 'react'
-import {Modal} from "@material-ui/core";
-import Profile from '../../images/user3.jpg'
+import React, { useState } from "react";
+
+import Profile from "../../images/user3.jpg";
+import Modal from "../Modal/Modal";
 export default function createdebate() {
-    return (
-            <div className="createDebate center mb1">
-                 Deabte Olustur
-            </div>
-       
-    )
+  const [open, setOpen] = useState(false);
+
+  const change = () => {
+    setOpen(!open);
+  };
+console.log("şuanki state",open)
+  return (
+    <div className="w100 center">
+      <div onClick={change} className="createDebate center mb1 needHover">
+        Deabte Olustur
+      </div>
+      <Modal open={open} cancel={change}></Modal>
+    
+    </div>
+  );
 }
