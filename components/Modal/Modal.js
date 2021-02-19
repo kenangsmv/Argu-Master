@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
-
+import CreatePost from "../post/createPost"
 import { Button } from "@material-ui/core";
 
 function rand() {
@@ -22,10 +22,11 @@ function getModalStyle() {
 const useStyles = makeStyles((theme) => ({
   paper: {
     position: "absolute",
-    width: "95%",
-    backgroundColor: theme.palette.background.paper,
-    border: "2px solid #000",
-    boxShadow: theme.shadows[5],
+   
+  backgroundColor: theme.palette.background.paper,
+  borderRadius:"30px",
+border:"none",
+ 
     height: "100%",
     padding: theme.spacing(4, 1, 3),
   },
@@ -48,14 +49,16 @@ export default function SimpleModal({ open, cancel }) {
         open={open}
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description"
+    
       >
         <div
           style={modalStyle}
-          className={`${classes.paper} responsive-w-100 relative`}
+          className={`${classes.paper} responsive-w-100 relative modal`}
         >
-          <h2>merhaba</h2>
+       <CreatePost></CreatePost>
 
-          <Button onClick={cancel}> kapat </Button>
+          <Button variant="contained" color="secondary"
+           onClick={cancel}> kapat </Button>
         </div>
        
       </Modal>

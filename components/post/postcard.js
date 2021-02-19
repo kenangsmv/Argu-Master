@@ -5,7 +5,7 @@ import Comments from "../../icons/comments.png";
 import Join from "../../icons/join.png";
 import Voting from '../post/voting'
 
-const Postcard = () => {
+const Postcard = ({data}) => {
   return (
     <div className={"postCard boxColor column p1 mb1"}>
       <div className={"post w100"}>
@@ -13,17 +13,17 @@ const Postcard = () => {
           <div className={"topConent boxColor row center"}>
             <img className={"image"} src={Profile} alt="" />
             <div className="topTextContent w100 column pl05">
-              <h5>Kanan Gasimov</h5>
-              <span>45m</span>
+              <h5>{data.post_holder}</h5>
+              <span>{data.created_at}</span>
             </div>
           </div>
         </div>
         <div className={"postText w100"}>
           <span className={"p1"}>
-            Salam. Hər vaxtınız xeyir! Belə bir sual yaranıb. GoogledaSalam. Hər vaxtınız xeyir! Belə bir sual yaranıb. GoogledaSalam. Hər vaxtınız xeyir! Belə bir sual yaranıb. GoogledaSalam. Hər vaxtınız xeyir! Belə bir sual yaranıb. GoogledaSalam. Hər vaxtınız xeyir! Belə bir sual yaranıb. GoogledaSalam. Hər vaxtınız xeyir! Belə bir sual yaranıb. GoogledaSalam. Hər vaxtınız xeyir! Belə bir sual yaranıb. GoogledaSalam. Hər vaxtınız xeyir! Belə bir sual yaranıb. GoogledaSalam. Hər vaxtınız xeyir! Belə bir sual yaranıb. GoogledaSalam. Hər vaxtınız xeyir! Belə bir sual yaranıb. GoogledaSalam. Hər vaxtınız xeyir! Belə bir sual yaranıb. GoogledaSalam. Hər vaxtınız xeyir! Belə bir sual yaranıb. Googleda  
-          </span>
+            {data.content}
+             </span>
         </div>
-        <Voting></Voting>
+        <Voting  data={{side_left:data.side_left,side_right:data.side_right}} ></Voting>
         <div
           className={
             "postBottom w100 column-flex-start border-top border-bottom"

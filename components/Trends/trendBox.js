@@ -1,6 +1,14 @@
 import React from 'react'
 import Dots from '../../icons/dots.png'
-export default function trendBox() {
+
+
+
+const trendBox=()=> {
+
+
+
+
+    
     return (
         <div className="trendColum flex-start column w100 relative border-bottom p1">
                     <span className={"op06"}>Trendin in Turkey</span>
@@ -11,3 +19,4 @@ export default function trendBox() {
                  </div>
     )
 }
+export default trendBox
