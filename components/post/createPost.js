@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import TextField from "@material-ui/core/TextField";
 import { Button } from "@material-ui/core";
-import ModalInput from '../elements/modalInput'
+
 
  
 export default function createPost() {
@@ -35,6 +35,7 @@ console.log(state)
 
        </div>
        <div className="mt1 argueTopic w100 mb1">
+        
           <TextField
           id="outlined-multiline-static"
           style={{width:"100%"}}  
@@ -44,7 +45,7 @@ console.log(state)
           variant="outlined"
           onChange={(e) => changeValue(e.target.name, e.target.value)}
         />
-
+         <span className="pl05 op03">Ex:Samsung and Iphones new models has released</span>
        </div>
        <div className="teams space-between w100"
        >
