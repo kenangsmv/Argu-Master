@@ -18,6 +18,10 @@ h1,h2,h3,h4,h5,h6{
   margin: 0 !important;
   
 }
+.needHover:hover{
+   cursor: pointer;
+}
+
 
 /*=====Position-css=====*/
 
@@ -165,6 +169,11 @@ h1,h2,h3,h4,h5,h6{
   position: relative;
   top: 0;
 }
+.absolute{
+  position: absolute !important;
+  top: 10px;
+  right: 30px;
+}
 /* background color*/
 
 .boxColor{
@@ -244,6 +253,21 @@ h1,h2,h3,h4,h5,h6{
 
 
 /* margin*/
+.mt05{
+  margin-top: .5rem;
+}
+.mt1{
+  margin-top: 1rem;
+}
+.mt2{
+  margin-top: 2rem;
+}
+.mt3{
+  margin-top: 3rem;
+}
+.mt4{
+  margin-top: 4rem;
+}
 .mb05{
   margin-bottom: .5rem;
 }
@@ -263,7 +287,7 @@ h1,h2,h3,h4,h5,h6{
   margin: .5rem;
 }
 .m1{
-  margin: 1rem;
+  margin: 1rem !important;
 }
 .m2{
   margin: 2rem;
@@ -318,6 +342,7 @@ h1,h2,h3,h4,h5,h6{
   background-color:#FFFFFF; 
   cursor: pointer;
   border-left: 2px solid #393C67;
+  
 }
 
 .LeftFirstBox div span{
@@ -504,3 +529,19 @@ background: linear-gradient(to right, #ffa751, #ffe259); /* W3C, IE 10+/ Edge, F
   color: white;
   
 }
+
+/*=====Modal-css=====*/
+
+.modal{
+  outline: none !important;
+    width: 50%;
+    
+  
+  }
+
+/* tartisma input*/
+.topicInput{
+  
+  
+}
+
