@@ -41,38 +41,41 @@ console.log(state)
           style={{width:"100%"}}  
           rows={4}   
           multiline
-          placeholder="Tartismanin konusu"
+          label="Debate Topic"
+          placeholder="Hangisi telefon daha iyi ?"
           variant="outlined"
           onChange={(e) => changeValue(e.target.name, e.target.value)}
         />
-         <span className="pl05 op03">Ex:Samsung and Iphones new models has released</span>
+         
        </div>
-       <div className="teams space-between w100"
-       >
-         <div className="column">
+       <div className="teams space-between w100">
+        
        <TextField
-      className="w100"
+      className="w50"
       id="outlined-basic"
       size="small"
-      placeholder="Side 1"
+      label="Topic1"
+      placeholder="Samsung is better"
       variant="outlined"
       name="topic1"
       onChange={(e) => changeValue(e.target.name, e.target.value)}
     />
-    <span className="pl05 op03">Ex:Samsung is better</span>
-    </div>
-    <div  className="column">
+    
+   
+   
     <TextField
-      className="w100"
+      
+      className="w50"
       id="outlined-basic"
       size="small"
-      placeholder="Side 2"
+      label="Topic2"
+      placeholder="Iphone is better"
       variant="outlined"
       name="topic2"
       onChange={(e) => changeValue(e.target.name, e.target.value)}
     />
-    <span className="pl05 op03">Ex:Iphone is better</span>
-    </div>
+    
+    
        </div>
     <Button variant="contained" color="primary">
       Debate Oluştur
