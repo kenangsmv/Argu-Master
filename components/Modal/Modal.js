@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
   borderRadius:"30px",
 border:"none",
  
-    height: "100%",
+  
     padding: theme.spacing(4, 1, 3),
   },
 }));
@@ -44,7 +44,7 @@ export default function SimpleModal({ open, cancel }) {
           overflowY: "auto",
           alignSelf: "center",
           top: "10%",
-          height: "80vh",
+         
         }}
         open={open}
         aria-labelledby="simple-modal-title"

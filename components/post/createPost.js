@@ -1,6 +1,9 @@
 import React, { useState } from "react";
-import TextField from "@material-ui/core/TextField";
+
 import { Button } from "@material-ui/core";
+
+import Stage1 from "./stage1";
+import Stage2 from "./stage2";
 
 export default function createPost() {
   const [state, setState] = useState({
@@ -13,50 +16,33 @@ export default function createPost() {
     topic2: "",
     messages: [],
   });
+  const [stage, setStage] = useState(1);
+
+  const next = () => {
+    setStage(stage + 1);
+  };
 
   const changeValue = (name, value) => {
-    
+    console.log("name",name)
+    console.log("value",value)
+    setState({ ...state,[name]: value });
+  };
 
-
-    setState({ ...state, [name]: value });
   
-};
-
-
-console.log(state)
-
 
   return (
-    <div className="w100 p3 center column">
-      <TextField
-        className="wh-100 m1"
-        id="outlined-basic"
-        size="small"
-        label="Tartışmanın Konusu"
-        variant="outlined"
-        name="title"
-        onChange={(e) => changeValue(e.target.name, e.target.value)}
-      />
-      <TextField
-        className="wh-100 m1"
-        id="outlined-basic"
-        size="small"
-        label="Taraf 1 (ex . iphone daha iyi)"
-        variant="outlined"
-        name="topic1"
-        onChange={(e) => changeValue(e.target.name, e.target.value)}
-      />
-      <TextField
-        className="wh-100 m1"
-        id="outlined-basic"
-        size="small"
-        label="Taraf 2 (ex . samsung daha iyi)"
-        variant="outlined"
-        name="topic2"
-        onChange={(e) => changeValue(e.target.name, e.target.value)}
-      />
-      <Button variant="contained" color="primary">
-        Debate Oluştur
+    <div className="w100 p2 center column">
+      <div className="modalTop border-bottom w100 center">
+        {stage == 1 && <Stage1 changeValue={changeValue}></Stage1>}
+        {stage == 2 && <Stage2 topic1_={state.topic1} topic2_={state.topic2}></Stage2>}
+      </div>
+      <Button
+        variant="contained"
+        color="primary"
+        className="mt4"
+        onClick={next}
+      >
+        next
       </Button>
     </div>
   );
