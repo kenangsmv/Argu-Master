@@ -1,22 +1,25 @@
 import React from "react";
 import TextField from "@material-ui/core/TextField";
-export default function stage1({changeValue}) {
+
+
+export default function stage1({changeValue,data}) {
 
   return (
-    <div className="w100">
-      <div>
-        <h2 className="m1">Stage 1</h2>
+    <div className="w100 center column">
+      <div className="center w100 border-bottom">
+        <h2 className="mb1">Stage 1</h2>
       </div>
-      <div className="mt1 argueTopic w100 mb1">
+      <div className="mt2 argueTopic w100 mb2">
         <TextField
           id="outlined-basic"
-          className="w100 mt2"
+          className="w100 "
           rows={4}
           multiline
           placeholder="Hangi telefon daha iyi ?"
           label="Tartismanin konusu "
           variant="outlined"
           name="title"
+          value={data["title"]}
           onChange={(e) => changeValue(e.target.name, e.target.value)}
         />
       </div>
@@ -29,11 +32,12 @@ export default function stage1({changeValue}) {
           label="Topic1"
           variant="outlined"
           name="topic1"
+          value={data["topic1"]}
           onChange={(e) => changeValue(e.target.name, e.target.value)}
         />
 
         <TextField
-          inputProps={{ min: 0, style: { textAlign: "center" } }}
+          inputProps={{ min: 0}}
           className="w45 "
           id="outlined-basic"
           size="small"
@@ -41,9 +45,11 @@ export default function stage1({changeValue}) {
           variant="outlined"
           name="topic2"
           label="Topic2"
+          value={data["topic2"]}
           onChange={(e) => changeValue(e.target.name, e.target.value)}
         />
       </div>
+    
     </div>
   );
 }
