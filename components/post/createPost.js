@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import TextField from "@material-ui/core/TextField";
 import { Button } from "@material-ui/core";
+
+import Stage1 from "./stage1";
+import Stage2 from "./stage2";
 
 
  
@@ -15,71 +17,38 @@ export default function createPost() {
     topic2: "",
     messages: [],
   });
+  const [stage, setStage] = useState(1);
 
+  const next = () => {
+    setStage(stage + 1);
+  };
   const changeValue = (name, value) => {
-
-
-
-    setState({ ...state, [name]: value });
-
-};
-
-
-console.log(state)
+    console.log("name",name)
+    console.log("value",value)
+    setState({ ...state,[name]: value });
+  };
 
 
   return (
-    <div className="w100 p2 center column">
-       <div className="modalTop border-bottom w100 center">
-         <h2 className="m1">Create Debate</h2>
-
-       </div>
-       <div className="mt1 argueTopic w100 mb1">
-        
-          <TextField
-          id="outlined-multiline-static"
-          style={{width:"100%"}}  
-          rows={4}   
-          multiline
-          label="Debate Topic"
-          placeholder="Hangisi telefon daha iyi ?"
-          variant="outlined"
-          onChange={(e) => changeValue(e.target.name, e.target.value)}
-        />
-         
-       </div>
-       <div className="teams space-between w100">
-        
-       <TextField
-      className="w50"
-      id="outlined-basic"
-      size="small"
-      label="Topic1"
-      placeholder="Samsung is better"
-      variant="outlined"
-      name="topic1"
-      onChange={(e) => changeValue(e.target.name, e.target.value)}
-    />
-    
-   
-   
-    <TextField
+    <div className="w100 pl2 pr2 pb2 pt1 center column">
+    <div className="modalTop w100 center">
+      {stage == 1 && <Stage1 changeValue={changeValue} >
       
-      className="w50"
-      id="outlined-basic"
-      size="small"
-      label="Topic2"
-      placeholder="Iphone is better"
-      variant="outlined"
-      name="topic2"
-      onChange={(e) => changeValue(e.target.name, e.target.value)}
-    />
-    
-    
-       </div>
-    <Button variant="contained" color="primary">
-      Debate Oluştur
+    </Stage1>}
+      {stage == 2 && <Stage2 topic1_={state.topic1} topic2_={state.topic2}>
+     
+    </Stage2>}
+    </div>
+    <Button
+      variant="contained"
+      color="primary"
+      className="mt4 w100"
+      onClick={next}
+    >
+       
+      next
     </Button>
-  </div>
+    
+    </div>
   );
 }

@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius:"30px",
     border:"none",
    
-    height: "100%",
+    
     
   },
 }));
@@ -45,7 +45,7 @@ export default function SimpleModal({ open, cancel }) {
           overflowY: "auto",
           alignSelf: "center",
           top: "10%",
-          height: "80vh",
+          
           
         }}
         open={open}
@@ -61,7 +61,7 @@ export default function SimpleModal({ open, cancel }) {
 
           
         
-            <Button className={"absolute"}  style={{borderRadius:"100px"}} 
+            <Button className={"buttonAbsolute op08"}  style={{borderRadius:"100px"}} 
                    onClick={cancel}> <img src={CloseIcon} alt=""/></Button>
                  
                 
