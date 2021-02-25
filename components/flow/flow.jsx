@@ -48,7 +48,7 @@ console.log(posts)
 
           {
 
-              posts.map(post=>   <PostCard key={post.id}   data={post}   ></PostCard>)
+              posts.map(post=>   <PostCard key={post.id}   data={post}   >git remote</PostCard>)
           }
 
 
