@@ -46,7 +46,7 @@ export default function createPost() {
       onClick={next}
     >
        
-      nex
+      Next
     </Button>
     
     </div>
