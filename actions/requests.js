@@ -1,13 +1,13 @@
 import axios from "axios";
 
-
+const production = "https://argue-backend.herokuapp.com/";
 const url = "http://localhost:5000";
 const serverless= "http://localhost:3000/api"
 export const newDebate = async (data, callback) => {
   try {
     const res = await axios({
       method: "post",
-      url: url + "/debate/add-debate",
+      url: production + "/debate/add-debate",
       data: data,
     });
     console.log(res)
