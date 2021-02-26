@@ -3,7 +3,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
 import CreatePost from "../components/post/createPost"
 import { Button } from "@material-ui/core";
-import CloseIcon from '../icons/close.png'
+import CloseIconpng from '../icons/close.png'
+import CloseIcon from '@material-ui/icons/Close';
 
 function rand() {
   return Math.round(Math.random() * 20) - 10;
@@ -61,8 +62,8 @@ export default function SimpleModal({ open, cancel }) {
 
           
         
-            <Button className={"buttonAbsolute op08"}  style={{borderRadius:"100px"}} 
-                   onClick={cancel}> <img src={CloseIcon} alt=""/></Button>
+            <Button className={"closeButtonAbsolute op08"}  style={{borderRadius:"50px"}} 
+                   onClick={cancel}> <CloseIcon></CloseIcon></Button>
                  
                 
         </div>

@@ -8,7 +8,7 @@ export default function BasicTextFields() {
   return (
     
      
-      <TextField className="wh-100" id="outlined-basic" size="small" label="Search" variant="outlined" />
+      <TextField className="wh-100" id="outlined-basic" size="small" label="Search" variant="outlined" color="white" />
     
   );
 }

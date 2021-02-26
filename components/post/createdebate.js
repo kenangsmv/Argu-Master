@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-
+import { Button } from "@material-ui/core";
 import Profile from '../../images/user3.jpg'
 import Modal from '../../Modal/Modal.js'
 
@@ -15,9 +15,10 @@ export default function createdebate() {
  
  return (   
      <div className={"w100 center"}>
-            <div onClick={change} className="createDebate center mb1 needHover">
-                 Deabte Olustur
-            </div>
+          
+            <Button className="createDebate center mb1" variant="contained" color="primary" onClick={change}>
+              Create Debate
+            </Button>
             <Modal open={open} cancel={change}></Modal>
        </div>
     )

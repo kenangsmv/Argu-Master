@@ -1,51 +1,17 @@
 import React from "react";
 import TextField from "@material-ui/core/TextField";
 import { Button } from "@material-ui/core";
-export default function stage2({ topic1_, topic2_ }) {
-  const [topic1, setTopic1] = React.useState([]);
-  const [selected_topic1, set_selected_Topic1] = React.useState([]);
-  const [topic2, setTopic2] = React.useState([]);
-  const [selected_topic2, set_selected_Topic2] = React.useState([]);
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+export default function stage2({ changeValue,data }) {
 
-  const toggle = (item, topicName) => {
-    if (topicName === "topic1") {
-      let isInside = selected_topic1.includes(item);
-      if (isInside) {
-        let newArr = selected_topic1.filter((key) => key !== item);
-        console.log("filterli array", newArr);
-        set_selected_Topic1(newArr);
-      } else {
-        let newArr = [...selected_topic1];
-        newArr.push(item);
-        if (selected_topic1.length < 1) set_selected_Topic1(newArr);
-      }
-    }
-    if (topicName === "topic2") {
-      let isInside = selected_topic2.includes(item);
-      if (isInside) {
-        let newArr = selected_topic2.filter((key) => key !== item);
-        set_selected_Topic2(newArr);
-      } else {
-        let newArr = [...selected_topic2];
-        newArr.push(item);
-        if (selected_topic2.length < 1) set_selected_Topic2(newArr);
-      }
-    }
-  };
 
-  const checkTopic1 = (item) => {
-    return selected_topic1.includes(item);
-  };
-  const checkTopic2 = (item) => {
-    return selected_topic2.includes(item);
-  };
 
-  React.useEffect(() => {
-    setTopic1(topic1_.split(" "));
-    setTopic2(topic2_.split(" "));
-  }, []);
 
-  console.log("selected", selected_topic1);
+
 
   return (
     <div className="w100 column">
@@ -53,39 +19,80 @@ export default function stage2({ topic1_, topic2_ }) {
           <h2 className="mb1">Stage 2</h2>
         </div>
       <div className="mt2 flex-start column mb1">
-      <span className="mb05">Topic 1:</span>
+      <span className="mb05">Select colors</span>
       
-      <div className="argueTopic w100 mb2">
+      <div className="argueTopic w100 mb2 space-between">
         
-        {topic1.map((item) => (
-          <Button
-            key={item}
-            onClick={() => toggle(item, "topic1")}
-            variant="contained"
-            className="ml1"
-            style={{ backgroundColor: checkTopic1(item) ? "green" : "white",marginRight:"5px"}}
-          >
-            {item}
-          </Button>
-
-        ))}
+      <FormControl variant="outlined" className="w40">
+        <InputLabel id="demo-simple-select-outlined-label">Topic 1 color</InputLabel>
+        <Select
+          labelId="demo-simple-select-outlined-label"
+          id="demo-simple-select-outlined"
+          name="topic1_color"
+        onChange={(e)=>changeValue(e.target.name,e.target.value)}
+          label="Topic 1 color"
+          value={data["topic1_color"]}
+        >
+        
+          <MenuItem value={"green"}>green</MenuItem>
+          <MenuItem value={"red"}>red</MenuItem>
+         
+        </Select>
+      </FormControl>
+      <FormControl variant="outlined"  className="w40">
+        <InputLabel id="demo-simple-select-outlined-label">Topic 2 color</InputLabel>
+        <Select
+          labelId="demo-simple-select-outlined-label"
+          id="demo-simple-select-outlined"
+          onChange={(e)=>changeValue(e.target.name,e.target.value)}
+          label="Topic 2 color"
+          value={data["topic2_color"]}
+          name="topic2_color"
+     
+        >
+        
+          <MenuItem value={"blue"}>blue</MenuItem>
+          <MenuItem value={"gray"}>gray</MenuItem>
+      
+        </Select>
+      </FormControl>
       </div>
          </div>
 
        <div className="flex-start column">
-      <span className="mb05">Topic 2:</span>
+     
           <div className="argueTopic w100 mb1">
-          {topic2.map((item) => (
-            <Button
-              key={item}
-              onClick={() => toggle(item, "topic2")}
-              variant="contained"
-              className="ml1"
-              style={{ backgroundColor: checkTopic2(item) ? "green" : "white", marginRight:"5px"}}
-          >
-            {item}
-          </Button>
-        ))}
+          <FormControl variant="outlined" fullWidth>
+        <InputLabel id="demo-simple-select-outlined-label">limit of users</InputLabel>
+        <Select
+          labelId="demo-simple-select-outlined-label"
+          id="demo-simple-select-outlined"
+          onChange={(e)=>changeValue(e.target.name,e.target.value)}
+          label="limit of users"
+          name="limit_users"
+          value={data["limit_users"]}
+        >
+         
+          <MenuItem value={4}>4</MenuItem>
+          <MenuItem value={6}>6</MenuItem>
+          <MenuItem value={10}>10</MenuItem>
+        </Select>
+      </FormControl>
+      <FormControl variant="outlined" className="mt2" fullWidth>
+        <InputLabel id="demo-simple-select-outlined-label">time limit</InputLabel>
+        <Select
+          labelId="demo-simple-select-outlined-label"
+          id="demo-simple-select-outlined"
+          name="limit_time"
+          label="time limit"
+          value={data["limit_time"]}
+        >
+        
+          <MenuItem value={3}>3 hour</MenuItem>
+          <MenuItem value={24}>24 hour</MenuItem>
+          <MenuItem value={false}>limitless</MenuItem>
+        </Select>
+      </FormControl>
       </div>
       </div>
     </div>
