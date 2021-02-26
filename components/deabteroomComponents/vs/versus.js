@@ -1,12 +1,12 @@
 export default function DebateRoom() {
     return (
-        <div >
+        <div className="w100" >
     
            <div className="vs white row w100">
-             <div className=" green w60">
+             <div className="border-radius-left10px green w60">
                <span className="center">Iphone</span>
              </div>
-             <div className="red w40">
+             <div className="border-radius-right10px red w40">
              <span className="center">Samsung</span>
              </div>
            </div>

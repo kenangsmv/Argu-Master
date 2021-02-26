@@ -12,18 +12,18 @@ const Postcard = ({data}) => {
         <div className={"postTop w100"}>
           <div className={"topConent boxColor row center"}>
             <img className={"image"} src={Profile} alt="" />
-            <div className="topTextContent w100 column pl05">
-              <h5>user_ismi</h5>
-              <span>{data.createAt}</span>
+            <div className="topTextContent w100 column pl05 white">
+              <h5>{data.post_holder}</h5>
+              <span>{data.create_at}</span>
             </div>
           </div>
         </div>
-        <div className={"postText w100"}>
+        <div className={"postText w100 white"}>
           <span className={"p1"}>
-          {data.title}
+          {data.content}
           </span>
         </div>
-        <Voting  data={{topic1:data.topic1,topic2:data.topic2}} ></Voting>
+        <Voting  data={{side_left:data.side_left,side_right:data.side_right}} ></Voting>
         <div
           className={
             "postBottom w100 column-flex-start border-top border-bottom"

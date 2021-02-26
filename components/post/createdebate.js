@@ -16,7 +16,7 @@ export default function createdebate() {
  return (   
      <div className={"w100 center"}>
           
-            <Button className="createDebate center mb1" variant="contained" color="primary" onClick={change}>
+            <Button className="createDebate center mb1 border-radius5px" variant="contained" color="primary" onClick={change}>
               Create Debate
             </Button>
             <Modal open={open} cancel={change}></Modal>
