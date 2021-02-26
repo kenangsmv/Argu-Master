@@ -3,25 +3,19 @@ import styles from "./flow.module.css";
 import PostCard from "../post/postcard.js";
 import CreateDebate from "../post/createdebate";
 import {getDebate} from "../../actions/requests"
-export default function flow() {
+import { connect } from "react-redux";
+function flow({debates}) {
   const [posts, setPosts] = useState([]);
 
   const [loading, setLoading] = useState(true);
-  useEffect(async () => {
-    //get data
-const debates=await getDebate()
-    console.log(debates)
-
-    setPosts(debates.data?debates.data.data:[]);
-    setLoading(false);
-  }, []);
+  
 
 
 
-console.log(posts)
+console.log(debates)
   return (
     <div className={styles.flowContainer}>
-      { loading ? (
+      { !debates? (
         <div>yükleniyor</div>
       ) : (
         <div className="w100 center column">
@@ -29,7 +23,7 @@ console.log(posts)
 
           {
 
-              posts.map(post=>   <PostCard key={post.id}   data={post}   >git remote</PostCard>)
+              debates?.reverse().map(post=>   <PostCard key={post.id}   data={post}   >git remote</PostCard>)
           }
 
 
@@ -40,3 +34,9 @@ console.log(posts)
     </div>
   );
 }
+
+const mapStateToProps=(state)=>({
+  debates:state.debates.debates
+})
+
+export default connect(mapStateToProps)(flow)

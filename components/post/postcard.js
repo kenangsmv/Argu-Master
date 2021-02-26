@@ -4,6 +4,7 @@ import Like from "../../icons/like.png";
 import Comments from "../../icons/comments.png";
 import Join from "../../icons/join.png";
 import Voting from '../post/voting'
+import moment from "moment"
 
 const Postcard = ({data}) => {
   return (
@@ -13,8 +14,10 @@ const Postcard = ({data}) => {
           <div className={"topConent boxColor row center"}>
             <img className={"image"} src={Profile} alt="" />
             <div className="topTextContent w100 column pl05">
-              <h5>user_ismi</h5>
-              <span>{data.createAt}</span>
+              <h5>data.createAt</h5>
+
+              <time >{moment(data.createdAt).fromNow()}</time>
+      
             </div>
           </div>
         </div>

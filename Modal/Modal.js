@@ -57,7 +57,7 @@ export default function SimpleModal({ open, cancel }) {
           className={`${classes.paper} responsive-w-100 relative modal`}
         >
          
-          <CreatePost></CreatePost>
+          <CreatePost cancel={cancel} ></CreatePost>
 
           
         

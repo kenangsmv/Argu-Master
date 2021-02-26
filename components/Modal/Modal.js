@@ -1,8 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
-import CreatePost from "../post/createPost"
-import { Button } from "@material-ui/core";
+
 
 function rand() {
   return Math.round(Math.random() * 20) - 10;
@@ -55,10 +54,8 @@ export default function SimpleModal({ open, cancel }) {
           style={modalStyle}
           className={`${classes.paper} responsive-w-100 relative modal`}
         >
-       <CreatePost></CreatePost>
-
-          <Button variant="contained" color="secondary"
-           onClick={cancel}> kapat </Button>
+      
+        
         </div>
        
       </Modal>
