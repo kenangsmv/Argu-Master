@@ -8,7 +8,7 @@ import RightSide from '../components/deabteroomComponents/sides/right'
 export default function DebateRoom() {
     return (
         <div className={styles.container}>
-        <Navbar></Navbar>
+       
   
         <div className={styles.homeContainer}>
               <div className="debateRoom w80">

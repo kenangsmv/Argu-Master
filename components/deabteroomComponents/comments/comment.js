@@ -29,7 +29,7 @@ export default function DebateRoom() {
                 </div>
                     <div className="boxColor p05 border-radius15px">
                     <h5>Enes Bugra Canak</h5>
-                    <span>İzoly Turbox almayınız. N11 GittiGidiyor gibi platformlardan alım yapmayınız. Vatan Mediamark gibi bilindik yerden alışveriş yapınız. Bütçenizi söylerseniz güzel bir sistem tavsiye ederim.</span>
+                    <span className="">İzoly Turbox almayınız. N11 GittiGidiyor gibi platformlardan alım yapmayınız. Vatan Mediamark gibi bilindik yerden alışveriş yapınız. Bütçenizi söylerseniz güzel bir sistem tavsiye ederim.</span>
                     </div>
              </div>
              

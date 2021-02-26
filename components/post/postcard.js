@@ -4,6 +4,7 @@ import Like from "../../icons/like.png";
 import Comments from "../../icons/comments.png";
 import Join from "../../icons/join.png";
 import Voting from '../post/voting'
+import moment from "moment"
 
 const Postcard = ({data}) => {
   return (
@@ -12,18 +13,20 @@ const Postcard = ({data}) => {
         <div className={"postTop w100"}>
           <div className={"topConent boxColor row center"}>
             <img className={"image"} src={Profile} alt="" />
-            <div className="topTextContent w100 column pl05 white">
-              <h5>{data.post_holder}</h5>
-              <span>{data.create_at}</span>
+            <div className="topTextContent w100 column pl05">
+              <h5>data.createAt</h5>
+
+              <time >{moment(data.createdAt).fromNow()}</time>
+      
             </div>
           </div>
         </div>
         <div className={"postText w100 white"}>
           <span className={"p1"}>
-          {data.content}
+          {data.title}
           </span>
         </div>
-        <Voting  data={{side_left:data.side_left,side_right:data.side_right}} ></Voting>
+        <Voting  data={{topic1:data.topic1,topic2:data.topic2}} ></Voting>
         <div
           className={
             "postBottom w100 column-flex-start border-top border-bottom"

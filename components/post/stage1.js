@@ -2,7 +2,7 @@ import React from "react";
 import TextField from "@material-ui/core/TextField";
 
 
-export default function stage1({changeValue}) {
+export default function stage1({changeValue,data}) {
 
   return (
     <div className="w100 center column">
@@ -19,6 +19,7 @@ export default function stage1({changeValue}) {
           label="Tartismanin konusu "
           variant="outlined"
           name="title"
+          value={data["title"]}
           onChange={(e) => changeValue(e.target.name, e.target.value)}
         />
       </div>
@@ -31,6 +32,7 @@ export default function stage1({changeValue}) {
           label="Topic1"
           variant="outlined"
           name="topic1"
+          value={data["topic1"]}
           onChange={(e) => changeValue(e.target.name, e.target.value)}
         />
 
@@ -43,6 +45,7 @@ export default function stage1({changeValue}) {
           variant="outlined"
           name="topic2"
           label="Topic2"
+          value={data["topic2"]}
           onChange={(e) => changeValue(e.target.name, e.target.value)}
         />
       </div>

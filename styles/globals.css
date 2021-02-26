@@ -23,6 +23,19 @@ h1,h2,h3,h4,h5,h6{
 }
 
 
+.needHover:hover{
+  cursor: pointer;
+}
+/*=====Modal-css=====*/
+
+.modal{
+outline: none !important;
+  width: 50%;
+
+}
+
+
+
 /*=====Position-css=====*/
 
 
@@ -76,7 +89,7 @@ h1,h2,h3,h4,h5,h6{
   height: 60px;
   z-index: 200;
   backdrop-filter: saturate(180%) blur(20px);
-  background-color: #15202b;
+  background-color: rgba(255,255,255,0.72);
   position: sticky;
   top:0;
   padding: 10px 20px;

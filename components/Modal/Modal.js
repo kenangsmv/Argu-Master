@@ -1,9 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
-import CreatePost from "../components/post/createPost"
-import { Button } from "@material-ui/core";
-import CloseIconpng from '../icons/close.png'
 
 
 function rand() {
@@ -25,12 +22,12 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     position: "absolute",
    
-    backgroundColor: theme.palette.background.paper,
-    borderRadius:"30px",
-    border:"none",
-   
-    
-    
+  backgroundColor: theme.palette.background.paper,
+  borderRadius:"30px",
+border:"none",
+ 
+  
+    padding: theme.spacing(4, 1, 3),
   },
 }));
 
@@ -46,30 +43,22 @@ export default function SimpleModal({ open, cancel }) {
           overflowY: "auto",
           alignSelf: "center",
           top: "10%",
-          
-          
+         
         }}
         open={open}
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description"
+    
       >
         <div
           style={modalStyle}
           className={`${classes.paper} responsive-w-100 relative modal`}
         >
-         
-          <CreatePost cancel={cancel} ></CreatePost>
-
-          
+      
         
-            <Button className={"closeButtonAbsolute op08"}  style={{borderRadius:"50px"}} 
-                   onClick={cancel}> <img src={CloseIconpng}></img> </Button>
-                 
-                
         </div>
-        
+       
       </Modal>
-  
     </div>
   );
 }
