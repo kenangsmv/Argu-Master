@@ -9,8 +9,9 @@ import User3 from '../../images/user3.jpg'
 export default function rightSide() {
     return (
         <div className={styles.rightContainer}>
+            
             <div className={styles.top}>
-                    <div className={"winners column center"}>
+                    <div className={"winners column center box-shadow"}>
                         
                         <div className={"winners-tag between w100 row"}>
                              <h5 className={"p1"}>Most Winners</h5>
@@ -30,8 +31,11 @@ export default function rightSide() {
 
             </div>
             <div className={styles.bottom}>
+               
                <Trends></Trends>
+               
             </div>
+            
         </div>
     )
 }

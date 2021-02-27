@@ -8,7 +8,7 @@ import moment from "moment"
 
 const Postcard = ({data}) => {
   return (
-    <div className={"postCard boxColor column p1 mb1"}>
+    <div className={"postCard boxColor column p1 mb1 box-shadow"}>
       <div className={"post w100"}>
         <div className={"postTop w100"}>
           <div className={"topConent boxColor row center"}>
@@ -21,7 +21,7 @@ const Postcard = ({data}) => {
             </div>
           </div>
         </div>
-        <div className={"postText w100 white"}>
+        <div className={"postText w100"}>
           <span className={"p1"}>
           {data.title}
           </span>

@@ -4,7 +4,7 @@ import Dots from '../../icons/dots.png'
 import TrendBox from './trendBox'
 
 const Trends =()=>{
-    return <div className={"trendsBox"}>
+    return <div className={"trendsBox box-shadow"}>
         <div className="p1 border-bottom">
         <h2>Trends for you</h2>
         </div>

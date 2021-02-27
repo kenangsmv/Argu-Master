@@ -105,7 +105,7 @@ outline: none !important;
 
 
 .searchBox{
-  background-color:rgb(25, 39, 52);
+  background-color: rgba(255,255,255,0.72);
   width: 40%;
   height: 100%;
   border-radius:20px;
@@ -125,7 +125,7 @@ outline: none !important;
   height: 100%;
   align-items: center;
   justify-content: flex-end;
-  color: white;
+  
 }
 
 .profilePhoto{
@@ -135,7 +135,7 @@ outline: none !important;
 
 /*=====width-height-css=====*/
 .h100{
-  height: 100%;
+  height: 100% !important;
 }
 
 .wh-100{
@@ -210,6 +210,10 @@ outline: none !important;
 .op09{
   opacity: 0.9;
 }
+/*shadow*/
+.box-shadow{
+  box-shadow:0px 0px 2px -1px #000000;
+}
 /* borders */
 .border-top{
   border-top: 1px solid rgba(0,0,0,.2) !important;
@@ -248,6 +252,10 @@ outline: none !important;
   position: relative;
   top: 0;
 }
+.sticky{
+  position: sticky;
+  top: 406px;
+}
 
 /* background color*/
 .red{
@@ -257,7 +265,8 @@ outline: none !important;
   background-color : green;
 }
 .boxColor{
-  background-color: rgb(25, 39, 52);
+  background-color: #FFFFFF;
+  
 }
 .white{
   color: white;
@@ -427,7 +436,7 @@ outline: none !important;
 .LeftSubMenu:hover{
   background-color:#FFFFFF; 
   cursor: pointer;
-  border-left: 2px solid #393C67;
+  border-left: 2px solid blue;
   color: #15202b;
 
 }
@@ -442,7 +451,7 @@ outline: none !important;
 .LeftFirstBox div span{
   font-size: 13px;
   font-weight: 400;
-  color: white;
+
   
   
 }
@@ -450,10 +459,7 @@ outline: none !important;
   width: 30px;
   height: 30px;
   margin-right: 5px;
-  color: white;
-  
-  
-  
+  color: white;  
 }
 .explore{
   position: relative;
@@ -470,14 +476,13 @@ outline: none !important;
 .LeftSecondBox div span{
   font-size: 13px;
   font-weight: 400;
-  color: white;
+  
   
   
 }
 .LeftSecondBox h4{
   margin-bottom: 10px !important;
-  color: white;
-  
+   
 }
 .leftsideSticky{
   position: sticky;
@@ -485,10 +490,11 @@ outline: none !important;
 }
 
 /* rightside */
+
 .winners{
   
   height: 200px;
-  background-color: rgb(25, 39, 52);
+  background-color: #FFFFFF;
   
   /*box-shadow: -3px 1px 13px -8px rgb(0 0 0 / 44%);*/
   border-radius: 5px;
@@ -497,7 +503,7 @@ outline: none !important;
 
   display: flex;
   align-items: center;
-  color: white;
+  
 
 }
 
@@ -518,9 +524,9 @@ outline: none !important;
 .trendsBox{
   width: 100%;
   height: 100%;
-  background-color: rgb(25, 39, 52);
+  background-color: #FFFFFF;
   border-radius: 5px;
-  color:#FFFFFF;
+  
   
 }
 .trendsBar{
@@ -529,14 +535,14 @@ outline: none !important;
 .trendColum:hover{
   cursor: pointer;
   background-color:#F4F4F5;
+  color: black;
 }
 .dots{
   position: absolute;
   right: 15px;
   top: 18px;
   width: 20px;
- 
-  
+
 }
 
 /* postcard*/
@@ -544,7 +550,7 @@ outline: none !important;
   width: 80%;
  
   border-radius: 10px;
-
+ 
 }
 
 .postTop{
@@ -640,17 +646,35 @@ background: linear-gradient(to right, #ffa751, #ffe259); /* W3C, IE 10+/ Edge, F
   top: 16px;
   right: 9px;
 }
-/* debateroom*/
-.middleroom{
- border-left: 1px solid rgba(255, 255, 255, 0.316);
- border-right: 1px solid rgba(255, 255, 255, 0.316);
-}
 
+/* debateroom*/
+.debateRoom{
+  min-height:100vh;
+}
 .make-comment{
-  background-color:rgb(25, 39, 52);
+  background-color: #F0F2F5;
   width: 100%;
   height: 100%;
   border-radius:20px;
   
 }
-
+.vote{
+  width:15px;
+}
+.vote-icons{
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+.vote-dots{
+  position: absolute;
+  right: 17px;
+  top: 7px;
+  width: 20px;
+  opacity: 0.7;
+}
+.voteButtonAbsolute{
+  position: absolute !important;
+  bottom: 10px;
+  right: 50px;
+}

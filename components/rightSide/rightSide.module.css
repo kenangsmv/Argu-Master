@@ -2,13 +2,14 @@
     width: 25%;
     position: relative;
     right: 0;
-    height: 100%;
-    background-color: #15202b;
+    
+    background-color: #F0F2F5;
+   
     
 }
 
 .top{
-    background-color: #15202b;
+    background-color: #F0F2F5;
     width: 100%;
     
     padding:10px 20px;

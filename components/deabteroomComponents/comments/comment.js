@@ -1,35 +1,35 @@
 import User from '../../../images/user3.jpg' 
 import Input from '../../elements/input'
 import TextField from "@material-ui/core/TextField";
+import Like from '../comments/like'
+import Dots from '../../../icons/dots.png'
 export default function DebateRoom() {
+  <script src="popper.js"></script>
     return (
         <div>
               <div className="w100 row pt1">
-              <div className="pr05">
-                <img className="image" src={User} alt=""/>
-                </div>
-                <div className="make-comment MuiInputBase-root1">
-                <TextField
-          
-                            className="w100"
-                            id="outlined-basic"
-                            size="small"
-                            
-                            placeholder="Yorum yap"
-                            variant="outlined"
-                            name="topic2"
-                           
-          
-        />
-                 </div>
+           
               </div>
-             <div className="user white row pt1">
+             <div className="user row pt1">
                  <div className="pr05">
                 <img className="image" src={User} alt=""/>
                 </div>
-                    <div className="boxColor p05 border-radius15px">
+                    <div className="boxColor pl1 pr1 pt05 pb1 border-radius15px box-shadow text-align-justify relative">
+
+                    <div>
                     <h5>Enes Bugra Canak</h5>
-                    <span className="">İzoly Turbox almayınız. N11 GittiGidiyor gibi platformlardan alım yapmayınız. Vatan Mediamark gibi bilindik yerden alışveriş yapınız. Bütçenizi söylerseniz güzel bir sistem tavsiye ederim.</span>
+                    </div>
+
+                    <div>
+                    <span>İzoly Turbox almayınız. N11 GittiGidiyor gibi platformlardan alım yapmayınız. Vatan Mediamark gibi bilindik yerden alışveriş yapınız. Bütçenizi söylerseniz güzel bir sistem tavsiye ederim.</span>      
+                    </div>
+
+                    <div className="voteButtonAbsolute">
+                       <Like></Like>
+                       </div>
+                       
+                       <img className="vote-dots" src={Dots} alt=""/>
+                       
                     </div>
              </div>
              

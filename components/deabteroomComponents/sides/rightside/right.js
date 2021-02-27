@@ -1,16 +1,18 @@
 import { Button } from "@material-ui/core";
+import Team from './rightteamusers'
+import TeamName from './rightteamname'
+
 
 
 export default function DebateRoom() {
     return (
         <div className="pl1 w20">
-            <div className=" w100 white boxColor mb2 mt1 pl1 pr1 pb1 border-radius5px" >
-                <h4 className="center mb1">Samsung</h4>  
-                <div className="table column" >
-                <span>Enes Bugra Canak 200</span> 
-                <span>Bora Kavlak 20</span>
-                <span>Oreo Osmanoglu 113</span> 
-                
+            <div className=" w100 boxColor mb2 mt1 pl1 pr1 pb1 border-radius5px box-shadow" >
+              <div className="center mb1">
+                <TeamName></TeamName>
+                </div>
+                <div className="table" >
+                <Team></Team>   
                 </div>
         </div>
           <div className="center w100">
