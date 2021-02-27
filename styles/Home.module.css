@@ -4,7 +4,7 @@ background-color:#F4F4F5;
 
 display: flex;
 justify-content: center;
-align-items: flex-start;
+
 
     -webkit-box-flex: 1;
     flex-grow: 1;
