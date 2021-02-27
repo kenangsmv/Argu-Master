@@ -4,6 +4,7 @@ import storage from 'redux-persist/lib/storage';
 
 import userReducer from './user.reducer';
 import debateReducer from './debate-reducer';
+import LayoutReducer from "./layout-reducer"
 
 
 const persistConfig = {
@@ -12,9 +13,12 @@ const persistConfig = {
   whitelist: ['user']
 };
 
+
+
 const rootReducer = combineReducers({
   user: userReducer,
-  debates:debateReducer
+  debates:debateReducer,
+  layout:LayoutReducer
   
 });
 
