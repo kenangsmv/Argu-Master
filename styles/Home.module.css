@@ -4,7 +4,10 @@ background-color: #F0F2F5;
 
 display: flex;
 justify-content: center;
-align-items: flex-start;
+
+
+    -webkit-box-flex: 1;
+    flex-grow: 1;
 
 }
 

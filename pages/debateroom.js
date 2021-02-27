@@ -11,8 +11,8 @@ export default function DebateRoom() {
        
   
         <div className={styles.homeContainer}>
-              <div className="debateRoom w80">
-                 
+              <div className="debateRoom w100">
+                 <Navbar></Navbar>
               <div className="debateRoomBody row">
                   <LeftSide></LeftSide>
                   <MiddleSide></MiddleSide>

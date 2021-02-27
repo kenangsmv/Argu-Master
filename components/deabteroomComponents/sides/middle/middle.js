@@ -9,6 +9,11 @@ export default function DebateRoom() {
              <PostContent></PostContent>
              <Vs></Vs>
              <Comments></Comments>
+             <Comments></Comments>
+             <Comments></Comments>
+             <Comments></Comments>
+             <Comments></Comments>
+             <Comments></Comments>
            
       </div>
     );

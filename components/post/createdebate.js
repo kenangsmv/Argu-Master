@@ -1,25 +1,26 @@
-import React, {useState} from 'react'
-import { Button } from "@material-ui/core";
-import Profile from '../../images/user3.jpg'
-import Modal from '../../Modal/Modal.js'
+import React, { useState } from "react";
 
+import Profile from "../../images/user3.jpg";
+import Modal from "../Modal/Modal";
+import CreatePost from "./createPost";
 
 export default function createdebate() {
+  const [open, setOpen] = useState(false);
 
+  const change = () => {
+    setOpen(!open);
+  };
 
-    const [open, setOpen] = useState(false);
-  
- const change =()=>{
-     setOpen(!open);
- };
- 
- return (   
-     <div className={"w100 center"}>
-          
-            <Button className="createDebate center mb1 border-radius5px" variant="contained" color="primary" onClick={change}>
-              Create Debate
-            </Button>
-            <Modal open={open} cancel={change}></Modal>
-       </div>
-    )
+  return (
+    <div className={"w100 center"}>
+      <div onClick={change} className="createDebate center mb1 needHover">
+        Deabte Olustur
+      </div>
+      <Modal
+        open={open}
+        Comp={CreatePost}
+        cancel={change}
+      ></Modal>
+    </div>
+  );
 }

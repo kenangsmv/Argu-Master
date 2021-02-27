@@ -1,15 +1,19 @@
 .rightContainer{
     width: 25%;
-    position: relative;
-    right: 0;
+   display: flex;
     
-    background-color: #F0F2F5;
+   flex-direction: column;
    
+   
+    
+    
+    
+    
     
 }
 
 .top{
-    background-color: #F0F2F5;
+    
     width: 100%;
     
     padding:10px 20px;

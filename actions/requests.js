@@ -18,6 +18,23 @@ export const newDebate = async (data, callback) => {
   }
 };
 
+export const newUser = async (data, callback) => {
+  try {
+    const res = await axios({
+      method: "post",
+      url: production + "/auth/register",
+      data: data,
+    });
+    let user={...res.data.user,token:res.data.token}
+
+   callback(user);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+
+
 export const getDebate = async (data) => {
   return await axios({
     method: "get",
