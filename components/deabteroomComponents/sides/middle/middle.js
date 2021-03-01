@@ -1,9 +1,9 @@
 import Vs from '../../vs/versus'
 import styles from "../../../flow/flow.module.css";
 import Comments from '../../comments/comment'
-import PostContent from '../middle/poscontent'
+import PostContent from './poscontent'
 
-export default function DebateRoom() {
+export default function DebateRoom({messages}) {
     return (
       <div className={styles.flowContainer}>
      
@@ -11,19 +11,8 @@ export default function DebateRoom() {
           
             <PostContent></PostContent>
              <Vs></Vs>
-             <Comments></Comments>
-             <Comments></Comments>
-             <Comments></Comments>
-             <Comments></Comments>
-             <Comments></Comments>
-             <Comments></Comments>
-             <Comments></Comments>
-             <Comments></Comments>
-             <Comments></Comments>
-             <Comments></Comments>
-             <Comments></Comments>
-             <Comments></Comments>
-
+           {messages.map(message=><Comments message={message}></Comments>)}
+            
             
           
             

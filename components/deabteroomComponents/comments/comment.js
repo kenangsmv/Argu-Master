@@ -6,7 +6,7 @@ import Dots from '../../../icons/dots.png'
 import Like from './like'
 
 import {Button} from '@material-ui/core'
-export default function DebateRoom() {
+export default function DebateRoom({message}) {
   
     return (
         <div className="w100">
@@ -17,14 +17,14 @@ export default function DebateRoom() {
                  <div className="pr05">
                 <img className="image" src={User} alt=""/>
                 </div>
-                    <div className="boxColor pl1 pr1 pt05 pb05 border-radius15px box-shadow text-align-justify relative w100">
+                    <div className="boxColor pl1 pr1 pt05 pb05 border-radius15px box-shadow text-align-justify relative">
 
                     <div>
-                    <h5>Enes Bugra Canak</h5>
+                    <h5>{message.message_holder}</h5>
                     </div>
 
                     <div>
-                    <span>İzoly Turbox almayınız. N11 GittiGidiyor gibi platformlardan alım yapmayınız. Vatan Mediamark gibi bilindik yerden alışveriş yapınız. Bütçenizi söylerseniz güzel bir sistem tavsiye ederim.</span>      
+                    <span>{message.message}</span>      
                     </div>
 
                     <div className="voteButtonAbsolute">

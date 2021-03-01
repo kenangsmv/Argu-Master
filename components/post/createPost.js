@@ -5,15 +5,17 @@ import Stage1 from "./stage1";
 import Stage2 from "./stage2";
 import Back from "../../images/back.png";
 import { newDebate } from "../../actions/requests";
-import { useDispatch } from "react-redux";
+import { useDispatch,useSelector } from "react-redux";
 
 export default function createPost({cancel}) {
   
   const dispatch = useDispatch()
+  const user = useSelector(state=>state.user.currentUser)
   const [state, setState] = useState({
     users: [],
-    user: "60283e32103a9003f860a515",
-
+    post_holder: "60283e32103a9003f860a515",
+    post_holder_username:"",
+    post_holder_name:"",
     live: true,
     title: "",
     topic1: "",
@@ -33,10 +35,35 @@ export default function createPost({cancel}) {
     setStage(1);
   };
 
+const idGenerator=()=>{
+  
 
+
+let arrayTitle=state.title.split(" ")
+let stringId=""
+arrayTitle.map((letter,ix)=>{
+if(ix<10)
+  stringId=stringId+letter+"-"
+})
+let topics=state.topic1+" vs "+state.topic2
+let trim_topics=topics.replace(/\s+/g, '-').toLowerCase();
+
+stringId=stringId+trim_topics
+let last_id=stringId.toLowerCase()
+
+return last_id
+
+
+}
 
 
   const submit = async () => {
+
+    state.post_holder=user._id
+    state.post_holder_name=user.name
+    state.post_holder_username=user.username
+    state.token=user.token
+    state.string_id=idGenerator()
     await newDebate(state,(res)=>dispatch({ type: 'ADD_DEBATE' ,payload:res}));
     cancel()
   };
