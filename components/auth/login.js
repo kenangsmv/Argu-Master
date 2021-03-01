@@ -14,7 +14,8 @@ import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-
+import { login } from "../../actions/requests";
+import { useDispatch } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -39,6 +40,30 @@ const useStyles = makeStyles((theme) => ({
 export default function SignIn({cancel,back}) {
   const classes = useStyles();
 
+  const dispatch = useDispatch();
+  const [state, setState] = React.useState({
+   
+    email: "",
+    password: "",
+  });
+  const changeValue = (e) => {
+    setState({ ...state, [e.target.name]: e.target.value });
+  };
+  const cb = (user) => {
+    dispatch({
+      type: "ADD_USER",
+      payload: user,
+    });
+    cancel()
+  };
+
+  const submit = async (e) => {
+    e.preventDefault();
+    await login(state,cb);
+  };
+
+
+
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -60,6 +85,8 @@ export default function SignIn({cancel,back}) {
             name="email"
             autoComplete="email"
             autoFocus
+            value={state.email}
+            onChange={changeValue}
           />
           <TextField
             variant="outlined"
@@ -71,17 +98,20 @@ export default function SignIn({cancel,back}) {
             type="password"
             id="password"
             autoComplete="current-password"
+            onChange={changeValue}
+            value={state.password}
           />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
           />
           <Button
-            type="submit"
+        
             fullWidth
             variant="contained"
             color="primary"
             className={classes.submit}
+            onClick={submit}
           >
             Sign In
           </Button>

@@ -5,37 +5,39 @@ import Navbar from "../components/navbar/navbar";
 import LeftSide from "../components/leftSide/leftSide";
 import Flow from "../components/flow/flow";
 import RightSide from "../components/rightSide/rightSide";
-import {getDebate} from "../actions/requests"
-import { initializeStore } from '../redux/store'
-
-export async function getServerSideProps(){
-  const reduxStore = initializeStore()
-  const { dispatch } = reduxStore
-  console.log("uriiiiiiiiiiiiiiiiiii",process.env.MONGODB_URI)
-  const res = await getDebate()
- 
-  const data = await res.data.data
-  // Fetch data from external API
+import { getDebate } from "../actions/requests";
+import { initializeStore } from "../redux/store";
+import cookieServer from "cookie";
+export async function getServerSideProps({req}) {
+  const reduxStore = initializeStore();
+  const { dispatch } = reduxStore;
+console.log("redux store ", reduxStore)
+const cookies =  cookieServer.parse(req ? req.headers.cookie || "" : document.cookie);
+console.log("cookieee",cookies)
   dispatch({
-    type: 'SET_DEBATES',
-  payload:data
-  })
- 
+    type: "ADD_USER",
+    payload: JSON.parse(cookies.currentUser),
+  });
+
+
+
+  const res = await getDebate();
+
+  const data = await res.data.data;
+  // Fetch data from external APIz
+  dispatch({
+    type: "SET_DEBATES",
+    payload: data,
+  });
 
   // Pass data to the page via props
-  return { props: { initialReduxState: reduxStore.getState() } }
+  return { props: { initialReduxState: reduxStore.getState() } };
 }
 
-
-
 export default function Home(props) {
-  
-
-
-
   return (
     <div className={styles.container}>
-      <Navbar></Navbar>
+     
 
       <div className={styles.homeContainer}>
         <LeftSide></LeftSide>

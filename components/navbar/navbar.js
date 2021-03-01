@@ -3,6 +3,7 @@ import styles from "./navbar.module.css";
 import Logo from "../../icons/logo.svg";
 import Input from "../elements/input";
 import Profil from "../../icons/arsenal.png";
+import Cookie from "js-cookie";
 
 import { Button } from "@material-ui/core";
 import Modal from "../Modal/Modal"
@@ -19,6 +20,7 @@ const Navbar = () => {
     dispatch({ type: "SET_MODAL", payload: false });
   };
   const logout = () => {
+    Cookie.set("currentUser",null)
     dispatch({ type: "REMOVE_USER", payload: null });
   };
 

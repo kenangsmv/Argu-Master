@@ -5,8 +5,10 @@ import Comments from "../../icons/comments.png";
 import Join from "../../icons/join.png";
 import Voting from '../post/voting'
 import moment from "moment"
+import Link from "next/link"
 
 const Postcard = ({data}) => {
+  console.log(data)
   return (
     <div className={"postCard boxColor column p1 mb1 box-shadow"}>
       <div className={"post w100"}>
@@ -14,7 +16,7 @@ const Postcard = ({data}) => {
           <div className={"topConent boxColor row center"}>
             <img className={"image"} src={Profile} alt="" />
             <div className="topTextContent w100 column pl05">
-              <h5>data.createAt</h5>
+              <h5>{data.post_holder_name} </h5>
 
               <time >{moment(data.createdAt).fromNow()}</time>
       
@@ -35,9 +37,11 @@ const Postcard = ({data}) => {
           <div className={"w100 space-evenly"}>
             <img className={"icons"} src={Like} alt="" />
             <img className={"icons"} src={Comments} alt="" />
+            <Link href={data.string_id}>
             <Button variant="contained" color="primary">
               Join
             </Button>
+            </Link>
           </div>
         </div>
       </div>

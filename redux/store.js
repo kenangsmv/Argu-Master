@@ -8,6 +8,7 @@ const middlewares = [logger];
 let store
 
 function initStore(initialState) {
+  console.log("storeeeee",store)
   return createStore(
     reducers,
     initialState,

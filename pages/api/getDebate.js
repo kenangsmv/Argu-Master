@@ -2,13 +2,13 @@ import { connectToDatabase } from "../../utils/mongodb";
 export default async (req, res) => {
   const { db } = await connectToDatabase();
   try {
-    console.log("uriiiiiiiiiiiiiiiiiii",process.env.MONGODB_URI)
-    const debates = await db
+   const id=req.body
+console.log("id",id)
+   const debate = await db
     .collection("debates")
-    .find({})
-  .toArray();
+    .findOne({string_id:id})
     res.json({
-      data:debates,
+      data:debate,
      status: true,
     });
   } catch (error) {

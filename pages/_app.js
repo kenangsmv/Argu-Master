@@ -1,22 +1,54 @@
 import "../styles/globals.css";
 import { Provider } from "react-redux";
 import { useStore } from "../redux/store";
-import { persistStore } from 'redux-persist'
-import { PersistGate } from 'redux-persist/integration/react'
+
+
+import Navbar from "../components/navbar/navbar";
+import Cookie from "js-cookie";
+import { initializeStore } from "../redux/store";
+import cookieServer from "cookie";
+
+
+
+
+MyApp.getInitialProps= async ({ctx})=> {
+  const req=ctx.req
+ const reduxStore = initializeStore();
+ const { dispatch } = reduxStore;
+
+
+ const cookies =  cookieServer.parse(req ? req.headers.cookie || "" : document.cookie);
+
+ dispatch({
+   type: "ADD_USER",
+   payload: JSON.parse(cookies.currentUser),
+ });
+
+
+ console.log("alooooooooooooooooooooooooooooooooo")
+
+ return {
+   pageProps: { initialReduxState: reduxStore.getState() } 
+  } // will be passed to the page component as props
+ 
+}
+
+
+
+
 
 
 function MyApp({ Component, pageProps }) {
+  console.log("page props",pageProps)
   const store = useStore(pageProps.initialReduxState);
-  const persistor = persistStore(store, {}, function () {
-    persistor.persist()
-  })
+  
   return (
     <Provider store={store}>
-      <PersistGate loading={<div>loading</div>} persistor={persistor}>
+      <Navbar {...pageProps} />
       <Component {...pageProps} />
-      </PersistGate>
     </Provider>
   );
 }
 
 export default MyApp;
+

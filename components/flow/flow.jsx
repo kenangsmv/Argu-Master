@@ -5,14 +5,13 @@ import CreateDebate from "../post/createdebate";
 import {getDebate} from "../../actions/requests"
 import { connect } from "react-redux";
 function flow({debates}) {
-  const [posts, setPosts] = useState([]);
-
-  const [loading, setLoading] = useState(true);
   
 
 
 
-console.log(debates)
+
+let reverse=debates?debates.reverse():[]
+console.log(reverse)
   return (
     <div className={styles.flowContainer}>
       { !debates? (
@@ -23,7 +22,7 @@ console.log(debates)
 
           {
 
-              debates?.reverse().map(post=>   <PostCard key={post.id}   data={post}   >git remote</PostCard>)
+              reverse?.map(post=>   <PostCard key={post.id}   data={post}   ></PostCard>)
           }
 
 

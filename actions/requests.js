@@ -1,5 +1,5 @@
 import axios from "axios";
-
+import Cookie from "js-cookie";
 const production = "https://argue-backend.herokuapp.com";
 const url = "http://localhost:5000";
 const serverless= "http://localhost:3000/api"
@@ -7,7 +7,7 @@ export const newDebate = async (data, callback) => {
   try {
     const res = await axios({
       method: "post",
-      url: production + "/debate/add-debate",
+      url: url + "/debate/add-debate",
       data: data,
     });
     console.log(res)
@@ -22,11 +22,26 @@ export const newUser = async (data, callback) => {
   try {
     const res = await axios({
       method: "post",
-      url: production + "/auth/register",
+      url: url + "/auth/register",
       data: data,
     });
     let user={...res.data.user,token:res.data.token}
+    Cookie.set("currentUser", JSON.stringify(user));
+   callback(user);
+  } catch (error) {
+    console.log(error);
+  }
+};
 
+export const login = async (data, callback) => {
+  try {
+    const res = await axios({
+      method: "post",
+      url: url + "/auth/login",
+      data: data,
+    });
+    let user={...res.data.user,token:res.data.token}
+    Cookie.set("currentUser", JSON.stringify(user));
    callback(user);
   } catch (error) {
     console.log(error);
@@ -34,11 +49,19 @@ export const newUser = async (data, callback) => {
 };
 
 
-
 export const getDebate = async (data) => {
   return await axios({
     method: "get",
     url: serverless + "/getDebates",
+    data: data,
+  });
+};
+
+
+export const getOneDebate = async (data) => {
+  return await axios({
+    method: "get",
+    url: serverless + "/getDebate",
     data: data,
   });
 };
