@@ -10,7 +10,7 @@ export default function DebateRoom({messages,sendMessage,debate_info}) {
         
           
             <PostContent debate_info={debate_info}></PostContent>
-            
+             <Vs></Vs>
          <div className="liveMessageBody">
 
          {messages.map(message=><Comments message={message}></Comments>)}

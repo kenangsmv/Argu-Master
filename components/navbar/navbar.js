@@ -39,7 +39,7 @@ const Navbar = () => {
         <img src={Logo} alt="" />
       </div>
       <div className={"searchBox"}>
-       <Vs></Vs>
+        <Input></Input>
       </div>
       {user ? (
         <div className={"menus row center"}>
