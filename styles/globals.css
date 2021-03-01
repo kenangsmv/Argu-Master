@@ -65,7 +65,7 @@ outline: none !important;
 }
 .space-between{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between !important;
   align-items: center;
 }
 .space-around{
@@ -264,7 +264,7 @@ outline: none !important;
 }
 .sticky{
   position: sticky;
-  top: 406px;
+  top: 80px;
 }
 
 /* background color*/
@@ -420,6 +420,24 @@ outline: none !important;
 }
 .mlr2{
   margin: 0 2rem;
+}
+.mr05{
+  margin-right: .5rem !important;
+}
+.mr1{
+  margin-right: 1rem !important;
+}
+.mr2{
+  margin-right: 2rem;
+}
+.mr3{
+  margin-right: 3rem;
+}
+.mr4{
+  margin-right: 4rem;
+}
+.mr5{
+  margin-right: 5rem;
 }
 
 
@@ -637,7 +655,7 @@ background: linear-gradient(to right, #ffa751, #ffe259); /* W3C, IE 10+/ Edge, F
 
 
   .createDebate{
-    width:80%;
+   
     height: 70px;
     border-radius: 10px;
     background-color: #15202B;
@@ -664,8 +682,13 @@ background: linear-gradient(to right, #ffa751, #ffe259); /* W3C, IE 10+/ Edge, F
 
 /* debateroom*/
 .debateRoom{
-  min-height:100vh;
+ 
   
+}
+.debateRoomBody{
+  padding: 10px;
+  display: flex;
+  justify-content: center;
 }
 .make-comment{
   background-color: #F0F2F5;
@@ -678,9 +701,9 @@ background: linear-gradient(to right, #ffa751, #ffe259); /* W3C, IE 10+/ Edge, F
   width:15px;
 }
 .vote-icons{
-  width: 20px;
-  height: 20px;
-  margin-right: 5px;
+  width: 30px;
+  height: 30px;
+  
 }
 .vote-dots{
   position: absolute;
@@ -691,6 +714,56 @@ background: linear-gradient(to right, #ffa751, #ffe259); /* W3C, IE 10+/ Edge, F
 }
 .voteButtonAbsolute{
   position: absolute !important;
-  bottom: 10px;
-  right: 50px;
+  bottom: -8px;
+  
 }
+.wrapped:hover .content{
+  visibility: visible;
+  position: absolute;
+  top: -40px;
+  left: -15px;
+  background-color:white;
+  border: 1px solid rgb(148, 148, 148);
+  border-radius: 50px;
+ 
+}
+.content{
+  visibility: hidden;
+}
+.nobullet{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+}
+.underline:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+.chooseTeam{
+  
+  height: 70px;
+  border-radius: 10px;
+  background-color: #303F9F;
+  color: white;
+  
+}
+.exitRoom{
+  height: 45px;
+  border-radius: 10px;
+  background-color: #15202B;
+  color: white;
+}
+.commentBar{
+ 
+  background-color:grey;
+
+  height: 70px;
+  position: fixed;
+  top:90%;
+}
+.myComment{
+   height:50px;
+   align-self: center;
+}
+

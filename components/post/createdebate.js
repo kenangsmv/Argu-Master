@@ -13,7 +13,7 @@ export default function createdebate() {
 
   return (
     <div className={"w100 center"}>
-      <div onClick={change} className="createDebate center mb1 needHover">
+      <div onClick={change} className="createDebate center mb1 needHover w80">
         Deabte Olustur
       </div>
       <Modal
