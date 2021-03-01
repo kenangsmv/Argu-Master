@@ -24,7 +24,7 @@ export default function DebateRoom({message}) {
                     </div>
 
                     <div>
-                    <span>{message.message}</span>      
+                    <span >{message.message}</span>      
                     </div>
 
                     <div className="voteButtonAbsolute">

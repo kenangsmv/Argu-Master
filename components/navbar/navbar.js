@@ -4,7 +4,7 @@ import Logo from "../../icons/logo.svg";
 import Input from "../elements/input";
 import Profil from "../../icons/arsenal.png";
 import Cookie from "js-cookie";
-
+import Vs from "../deabteroomComponents/vs/versus"
 import { Button } from "@material-ui/core";
 import Modal from "../Modal/Modal"
 import AuthLayout from "../auth/layout"
@@ -39,7 +39,7 @@ const Navbar = () => {
         <img src={Logo} alt="" />
       </div>
       <div className={"searchBox"}>
-        <Input></Input>
+       <Vs></Vs>
       </div>
       {user ? (
         <div className={"menus row center"}>

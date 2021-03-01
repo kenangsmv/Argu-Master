@@ -6,14 +6,14 @@ import { useSelector } from "react-redux";
 
 import styles from "../../styles/Home.module.css";
 
-import LeftSide from '../../components/deabteroomComponents/sides/leftside/left'
-import MiddleSide from '../../components/deabteroomComponents/sides/middle/middle'
-import RightSide from '../../components/deabteroomComponents/sides/rightside/right'
+import LeftSide from "../../components/deabteroomComponents/sides/leftside/left";
+import MiddleSide from "../../components/deabteroomComponents/sides/middle/middle";
+import RightSide from "../../components/deabteroomComponents/sides/rightside/right";
 
-import { Button, TextField } from "@material-ui/core";
 
-const ENDPOINT = "http://localhost:5000";
-const PRODUCTION= "https://argue-backend.herokuapp.com"
+
+//const ENDPOINT = "http://localhost:5000";
+const ENDPOINT = "https://argue-backend.herokuapp.com";
 let socket;
 
 const Chat = ({ room_info, available }) => {
@@ -21,7 +21,7 @@ const Chat = ({ room_info, available }) => {
 
   const [state, setState] = useState(null);
   console.log("available", available);
-  const [message, setMessage] = useState("");
+ 
   const [totalUser, setTotalUser] = useState([]);
   const [messages, setMessages] = useState([]);
 
@@ -70,6 +70,7 @@ const Chat = ({ room_info, available }) => {
     }
   };
 
+  
   React.useEffect(() => {
     console.log("availabe", available);
     if (available) {
@@ -89,8 +90,8 @@ const Chat = ({ room_info, available }) => {
     };
   }, []);
 
-  const sendMessage = (event) => {
-    event.preventDefault();
+  const sendMessage = (message) => {
+
     let m_ = { message: message, message_holder: user.name };
 
     socket.emit(
@@ -102,25 +103,18 @@ const Chat = ({ room_info, available }) => {
         }
       }
     );
-    setMessage("");
+  
   };
 
   return available && state ? (
-    <div >
+    <div>
       <div className="debateRoom w100 center column">
-        <h2>room name {state.room_info.title}</h2>
-        <h2>current user in room {totalUser}</h2>
+       
         <div className={styles.homeContainer}>
-                  <LeftSide></LeftSide>
-                  <MiddleSide messages={messages}></MiddleSide>
-                  <RightSide></RightSide>
+          <LeftSide></LeftSide>
+          <MiddleSide debate_info={state.room_info}  messages={messages} sendMessage={sendMessage}></MiddleSide>
+          <RightSide></RightSide>
         </div>
-        <TextField
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-        ></TextField>
-        <Button onClick={sendMessage}>send</Button>
-      
       </div>
     </div>
   ) : (

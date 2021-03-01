@@ -2,24 +2,27 @@ import Vs from '../../vs/versus'
 import styles from "../../../flow/flow.module.css";
 import Comments from '../../comments/comment'
 import PostContent from './poscontent'
-
-export default function DebateRoom({messages}) {
+import TextComponent from "./TextComponent"
+export default function DebateRoom({messages,sendMessage,debate_info}) {
     return (
-      <div className={styles.flowContainer}>
+      <div className={"liveRoomMiddle relative"}>
      
-        <div className="w100 center column m05">
+        
           
-            <PostContent></PostContent>
-             <Vs></Vs>
-           {messages.map(message=><Comments message={message}></Comments>)}
+            <PostContent debate_info={debate_info}></PostContent>
             
+         <div className="liveMessageBody">
+
+         {messages.map(message=><Comments message={message}></Comments>)}
+
+         </div>
             
+         
           
-            
+            <TextComponent sendMessage={sendMessage}></TextComponent>
             
        
        
-        </div>
      
     </div>
     );
