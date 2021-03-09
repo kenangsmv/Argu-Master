@@ -5,13 +5,14 @@ import PostContent from './poscontent'
 
 export default function DebateRoom({messages}) {
     return (
-      <div className={styles.flowContainer}>
+      <div className={"flowContainer border-left border-right "}>
      
-        <div className="w100 center column m05">
+        <div className="mesageBoxScroll w100 center column m05">
           
             <PostContent></PostContent>
              <Vs></Vs>
-           {messages.map(message=><Comments message={message}></Comments>)}
+           {messages.map(message=><Comments message={message}></Comments>)
+          }
             
             
           

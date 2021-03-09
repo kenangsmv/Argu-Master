@@ -25,13 +25,14 @@ export default function leftSide() {
                         <span>Messages</span>
                         </div>
                         <div className={"LeftSubMenu row"}>
-                        <img className="icons" src={Watch} alt=""/>
-                        <span>Watch</span>
+                        <img className="icons" src={Saved} alt=""/>
+                        <span>Saved</span>
                         </div>
                         <div className={"LeftSubMenu row"}>
-                        <img className="icons" src={MarketPlace} alt=""/>
-                        <span>Marketplace</span>
+                        <img className="icons" src={Events} alt=""/>
+                        <span>Trends</span>
                         </div>
+                       
                 </div>
 
                 <div className={"LeftSecondBox center column"}>
@@ -48,14 +49,8 @@ export default function leftSide() {
                         <img className="icons" src={Groups} alt=""/>
                         <span>Groups</span>
                         </div>
-                        <div className={"LeftSubMenu row"}>
-                        <img className="icons" src={Events} alt=""/>
-                        <span>Events</span>
-                        </div>
-                        <div className={"LeftSubMenu row"}>
-                        <img className="icons" src={Saved} alt=""/>
-                        <span>Saved</span>
-                        </div>
+                      
+                       
                         <h4 className="explore">See more</h4>
                 </div>
          </div>

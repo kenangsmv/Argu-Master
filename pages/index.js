@@ -38,7 +38,7 @@ dispatch({
 export default function Home(props) {
   return (
     <div className={styles.container}>
-     
+        
 
       <div className={styles.homeContainer}>
         <LeftSide></LeftSide>
