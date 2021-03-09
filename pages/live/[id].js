@@ -3,13 +3,13 @@ import { getOneDebate } from "../../actions/requests";
 import io from "socket.io-client";
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
-import {Button} from "@material-ui/core"
+import { Button } from "@material-ui/core";
 import styles from "../../styles/Home.module.css";
-
+import Modal from "../../components/Modal/Modal";
 import LeftSide from "../../components/deabteroomComponents/sides/leftside/left";
 import MiddleSide from "../../components/deabteroomComponents/sides/middle/middle";
 import RightSide from "../../components/deabteroomComponents/sides/rightside/right";
-
+import TopicSelection from "../../components/deabteroomComponents/topicSelection";
 const ENDPOINT = "http://localhost:5000";
 //const ENDPOINT = "https://argue-backend.herokuapp.com";
 let socket;
@@ -19,10 +19,10 @@ const Chat = ({ room_info, available }) => {
 
   const [state, setState] = useState(null);
   console.log("available", available);
-const [totalUser,setTotalUser]=useState(0)
-  
+  const [totalUser, setTotalUser] = useState(0);
+  const [open, setOpen] = useState(true);
   const [messages, setMessages] = useState([]);
-
+const [mySide,setMySide]=useState("")
   const router = useRouter();
   const { id } = router.query;
 
@@ -30,7 +30,6 @@ const [totalUser,setTotalUser]=useState(0)
     console.log("availabe", available);
     if (available) {
       if (!room_info.live) {
-        
         router.push(`${room_info.string_id}`);
       } else {
         connectSocket();
@@ -77,11 +76,8 @@ const [totalUser,setTotalUser]=useState(0)
     }
   };
 
- 
-
- 
   const sendMessage = (message) => {
-    let m_ = { message: message, message_holder: user.name };
+    let m_ = { message: message, message_holder: user.name,side:mySide,direction:mySide===room_info["topic1"]?true:false };
 
     socket.emit(
       "message",
@@ -94,49 +90,61 @@ const [totalUser,setTotalUser]=useState(0)
     );
   };
 
-const filterUser=(topic)=>{
+  const filterUser = (topic) => {
+    return state.users.filter((user) => user.side === topic);
+  };
 
-return state.users.filter(user=>user.side===topic)
+  const joinDebate = (side) => {
+    if (side) {
+      let joiner = { token: user.token, side: side, username: user.username };
 
-}
+      socket.emit(
+        "joinDebate",
+        { data: joiner, room: room_info.string_id },
+        (error) => {
+          if (error) {
+            console.log(error);
+          }else{
+            setMySide(side)
+          }
+        }
+      );
 
-
-const joinDebate=(side)=>{
-
-let joiner={token:user.token,side:side,username:user.username}
-
-  socket.emit(
-    "joinDebate",
-    {data:joiner,room:room_info.string_id },
-    (error) => {
-      if (error) {
-        console.log(error);
-      }
     }
-  );
 
-}
+    closeModal();
+  };
 
-
+  const closeModal = () => {
+    setOpen(false);
+  };
+const {topic1,topic2} = state?state.room_info:{}
   return available && state ? (
     <div>
       <div className="debateRoom w100 center column">
         <div className={styles.homeContainer}>
-          <Button onClick={()=>joinDebate(room_info["topic1"])}>{room_info["topic1"]}</Button>
-          <Button onClick={()=>joinDebate(room_info["topic2"])}>{room_info["topic2"]}</Button>
+          <Modal
+            Comp={TopicSelection}
+            joinDebate={joinDebate}
+            room_info={state.room_info}
+            open={open}
+            cancel={closeModal}
+          />
+
           <LeftSide
-          users={filterUser(room_info["topic1"])}
-          topic={room_info["topic1"]}
-          ></LeftSide>
+            users={filterUser(topic1)}
+            topic={topic1}
+          />
           <MiddleSide
             debate_info={state.room_info}
             messages={messages}
+            mySide={mySide}
             sendMessage={sendMessage}
-          ></MiddleSide>
+          />
           <RightSide
-           topic={room_info["topic2"]}
-          users={filterUser(room_info["topic2"])}
-          ></RightSide>
+            topic={topic2}
+            users={filterUser(topic2)}
+          />
         </div>
       </div>
     </div>

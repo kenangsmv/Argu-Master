@@ -3,7 +3,7 @@ import styles from "../../../flow/flow.module.css";
 import Comments from '../../comments/comment'
 import PostContent from './poscontent'
 import TextComponent from "./TextComponent"
-export default function DebateRoom({messages,sendMessage,debate_info}) {
+export default function DebateRoom({messages,sendMessage,debate_info,mySide}) {
     return (
       <div className={"liveRoomMiddle relative"}>
      
@@ -13,7 +13,7 @@ export default function DebateRoom({messages,sendMessage,debate_info}) {
              <Vs></Vs>
          <div className="liveMessageBody">
 
-         {messages.map(message=><Comments message={message}></Comments>)}
+         {messages.map(message=><Comments message={message} mySide={mySide}></Comments>)}
 
          </div>
             
