@@ -1,10 +1,10 @@
-import Team from './rightteamusers'
-import TeamName from './rightteamname'
+import TeamMember from './rightteamusers'
+
 import styles from "../../../leftSide/leftSide.module.css"
 import { Button } from '@material-ui/core'
 import ChooseTeam from '../../chooseteam/chooseteam'
 
-export default function lefside() {
+export default function rightSide({topic,users}) {
     return (
       <div className="containerLeft relative">
       
@@ -13,11 +13,11 @@ export default function lefside() {
             <div className="w100 boxColor mt1 mb1 pl1 pr1 pb1 border-radius5px box-shadow">
                 
                 <div className="center mb1">
-                <TeamName></TeamName>
+               {topic}
                 </div>      
 
-               <Team></Team>     
-               
+                {users.map(user=><TeamMember username={user.username}></TeamMember>)}  
+                
                </div>
                <ChooseTeam></ChooseTeam>
                   

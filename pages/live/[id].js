@@ -3,17 +3,15 @@ import { getOneDebate } from "../../actions/requests";
 import io from "socket.io-client";
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
-
+import { Button } from "@material-ui/core";
 import styles from "../../styles/Home.module.css";
-
-import LeftSide from '../../components/deabteroomComponents/sides/leftside/left'
-import MiddleSide from '../../components/deabteroomComponents/sides/middle/middle'
-import RightSide from '../../components/deabteroomComponents/sides/rightside/right'
-
-import { Button, TextField } from "@material-ui/core";
-
+import TopicModal from "../../components/Modal/TopicSelectionModal";
+import LeftSide from "../../components/deabteroomComponents/sides/leftside/left";
+import MiddleSide from "../../components/deabteroomComponents/sides/middle/middle";
+import RightSide from "../../components/deabteroomComponents/sides/rightside/right";
+import TopicSelection from "../../components/deabteroomComponents/topicSelection";
 //const ENDPOINT = "http://localhost:5000";
-const ENDPOINT= "https://argue-backend.herokuapp.com"
+const ENDPOINT = "https://argue-backend.herokuapp.com";
 let socket;
 
 const Chat = ({ room_info, available }) => {
@@ -21,20 +19,23 @@ const Chat = ({ room_info, available }) => {
 
   const [state, setState] = useState(null);
   console.log("available", available);
-  const [message, setMessage] = useState("");
-  const [totalUser, setTotalUser] = useState([]);
+  const [totalUser, setTotalUser] = useState(0);
+  const [open, setOpen] = useState(true);
   const [messages, setMessages] = useState([]);
-
+const [mySide,setMySide]=useState("")
   const router = useRouter();
   const { id } = router.query;
 
-  const disconnect = () => {
-    console.log("kapanıyorrrrrrrrrr");
-    socket.emit("myDisconnect", {
-      room: id,
-    });
-    socket.disconnect();
-  };
+  React.useEffect(() => {
+    console.log("availabe", available);
+    if (available) {
+      if (!room_info.live) {
+        router.push(`${room_info.string_id}`);
+      } else {
+        connectSocket();
+      }
+    }
+  }, [room_info]);
 
   const connectSocket = () => {
     if (id) {
@@ -63,6 +64,11 @@ const Chat = ({ room_info, available }) => {
         setState(all_data);
         setMessages(all_data.messages);
       });
+      socket.on("newUpdate", ({ all_data }) => {
+        console.log("newUpdate", all_data);
+        setState(all_data);
+        setMessages(all_data.messages);
+      });
       socket.on("message", ({ all_data }) => {
         console.log("message", all_data);
         setMessages(all_data);
@@ -70,28 +76,8 @@ const Chat = ({ room_info, available }) => {
     }
   };
 
-  React.useEffect(() => {
-    console.log("availabe", available);
-    if (available) {
-      if (!room_info.live) {
-        console.log("is live !");
-        router.push(`${room_info.string_id}`);
-      } else {
-        connectSocket();
-      }
-    }
-  }, [room_info]);
-
-  useEffect(() => {
-    return () => {
-      console.log("cleaned up");
-      disconnect();
-    };
-  }, []);
-
-  const sendMessage = (event) => {
-    event.preventDefault();
-    let m_ = { message: message, message_holder: user.name };
+  const sendMessage = (message) => {
+    let m_ = { message: message, message_holder: user.name,side:mySide,direction:mySide===room_info["topic1"]?true:false };
 
     socket.emit(
       "message",
@@ -102,26 +88,71 @@ const Chat = ({ room_info, available }) => {
         }
       }
     );
-    setMessage("");
   };
 
+  const filterUser = (topic) => {
+    return state.users.filter((user) => user.side === topic);
+  };
+
+  const joinDebate = (side) => {
+    if (side) {
+      let joiner = { token: user.token, side: side, username: user.username };
+
+      socket.emit(
+        "joinDebate",
+        { data: joiner, room: room_info.string_id },
+        (error) => {
+          if (error) {
+            console.log(error);
+          }else{
+            setMySide(side)
+          }
+        }
+      );
+
+    }
+
+    closeModal();
+  };
+
+  const closeModal = () => {
+    setOpen(false);
+  };
+const {topic1,topic2} = state?state.room_info:{}
   return available && state ? (
-    <div >
+    <div>
       <div className="debateRoom w100 center column">
-        <h2>room name {state.room_info.title}</h2>
-        <h2>current user in room {totalUser}</h2>
         <div className={styles.homeContainer}>
-                  <LeftSide></LeftSide>
-                  <MiddleSide messages={messages}></MiddleSide>
-                  <RightSide></RightSide>
+          <TopicModal
+            style={{
+            
+              outline: "none",
+               
+                          }}
+            Comp={TopicSelection}
+            joinDebate={joinDebate}
+            room_info={state.room_info}
+            open={open}
+            cancel={closeModal}
+          />
+          
+          
+
+          <LeftSide
+            users={filterUser(topic1)}
+            topic={topic1}
+          />
+          <MiddleSide
+            debate_info={state.room_info}
+            messages={messages}
+            mySide={mySide}
+            sendMessage={sendMessage}
+          />
+          <RightSide
+            topic={topic2}
+            users={filterUser(topic2)}
+          />
         </div>
-        
-        <TextField
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-        ></TextField>
-        <Button onClick={sendMessage}>send</Button>
-        
       </div>
     </div>
   ) : (

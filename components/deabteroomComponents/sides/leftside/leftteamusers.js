@@ -1,84 +1,14 @@
 import React from 'react'
 
-export default function leftteam() {
+export default function leftteam({username}) {
     return (
-        <div className="teamUsers column">
-        <div className="row space-between">         
-        <span>Memati Bas</span>
-                <div className="points center">
-                <span>43</span>       
-                </div>      
-        </div>
-        <div className="row space-between">         
-                <span>Memati Bas</span>
-                <div className="points center">
-                <span>43</span>       
-                </div>
-        </div>
-        <div className="row space-between">         
-        <span>Memati Bas</span>
-                <div className="points center">
-                <span>43</span>       
-                </div>      
- 
-        </div>
-        <div className="row space-between">         
-        <span>Memati Bas</span>
-                <div className="points center">
-                <span>43</span>       
-                </div>      
-        </div>
-        <div className="row space-between">         
-                <span>Memati Bas</span>
-                <div className="points center">
-                <span>43</span>       
-                </div>
-        </div>
-        <div className="row space-between">         
-        <span>Memati Bas</span>
-                <div className="points center">
-                <span>43</span>       
-                </div>      
- 
-        </div>
-        <div className="row space-between">         
-        <span>Memati Bas</span>
-                <div className="points center">
-                <span>43</span>       
-                </div>      
-        </div>
-        <div className="row space-between">         
-                <span>Memati Bas</span>
-                <div className="points center">
-                <span>43</span>       
-                </div>
-        </div>
-        <div className="row space-between">         
-        <span>Memati Bas</span>
-                <div className="points center">
-                <span>43</span>       
-                </div>      
- 
-        </div>
-        <div className="row space-between">         
-        <span>Memati Bas</span>
-                <div className="points center">
-                <span>43</span>       
-                </div>      
-        </div>
-        <div className="row space-between">         
-                <span>Memati Bas</span>
-                <div className="points center">
-                <span>43</span>       
-                </div>
-        </div>
-        <div className="row space-between">         
-        <span>Memati Bas</span>
-                <div className="points center">
-                <span>43</span>       
-                </div>      
- 
-        </div>
+        <div className="row space-between">
+            <div className="teamUsers">
+                <span>{username}</span>
+            </div>
+            <div className="teamUsersPoint">
+                <span>43</span>
+            </div>
         </div>
     )
 }

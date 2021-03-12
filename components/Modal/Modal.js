@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SimpleModal({ open, cancel,Comp }) {
+export default function SimpleModal({ open, cancel,Comp ,joinDebate,room_info}) {
   const classes = useStyles();
   // getModalStyle is not a pure function, we roll the style only on the first render
   const [modalStyle] = React.useState(getModalStyle);
@@ -51,7 +51,7 @@ export default function SimpleModal({ open, cancel,Comp }) {
           style={modalStyle}
           className={`${classes.paper} responsive-w-100 relative modal`}
         >
-          {<Comp cancel={cancel}></Comp>}
+          {<Comp cancel={cancel} joinDebate={joinDebate} room_info={room_info}></Comp>}
 
           <Button
             className={"buttonAbsolute op08"}

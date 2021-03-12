@@ -26,6 +26,7 @@ dispatch({
 
   const data = await res.data.data;
   // Fetch data from external APIz
+  if(Object.entries(cookies).length !== 0)
   dispatch({
     type: "SET_DEBATES",
     payload: data,

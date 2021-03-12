@@ -1,10 +1,9 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
-import CreatePost from "../components/post/createPost"
-import { Button } from "@material-ui/core";
-import CloseIconpng from '../icons/close.png'
 
+import { Button } from "@material-ui/core";
+import CloseIcon from "../../icons/close.png";
 
 function rand() {
   return Math.round(Math.random() * 20) - 10;
@@ -23,18 +22,17 @@ function getModalStyle() {
 
 const useStyles = makeStyles((theme) => ({
   paper: {
-    position: "absolute",
-   
-    backgroundColor: theme.palette.background.paper,
-    borderRadius:"30px",
-    border:"none",
+    
+    position:"absolute",
+    
    
     
     
+    border: "none",
   },
 }));
 
-export default function SimpleModal({ open, cancel }) {
+export default function SimpleModal({ open, cancel,Comp ,joinDebate,room_info}) {
   const classes = useStyles();
   // getModalStyle is not a pure function, we roll the style only on the first render
   const [modalStyle] = React.useState(getModalStyle);
@@ -45,8 +43,6 @@ export default function SimpleModal({ open, cancel }) {
         style={{
           overflowY: "auto",
           alignSelf: "center",
-          top: "10%",
-          
           
         }}
         open={open}
@@ -55,21 +51,13 @@ export default function SimpleModal({ open, cancel }) {
       >
         <div
           style={modalStyle}
-          className={`${classes.paper} responsive-w-100 relative modal`}
+          className={`${classes.paper} responsive-w-100 relative topicSelectionModal`}
         >
-         
-          <CreatePost cancel={cancel} ></CreatePost>
+          {<Comp cancel={cancel} joinDebate={joinDebate} room_info={room_info}></Comp>}
 
-          
-        
-            <Button className={"closeButtonAbsolute op08"}  style={{borderRadius:"50px"}} 
-                   onClick={cancel}> <img src={CloseIconpng}></img> </Button>
-                 
-                
+       
         </div>
-        
       </Modal>
-  
     </div>
   );
 }

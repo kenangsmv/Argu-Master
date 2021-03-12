@@ -4,7 +4,7 @@ import Logo from "../../icons/logo.svg";
 import Input from "../elements/input";
 import Profil from "../../icons/arsenal.png";
 import Cookie from "js-cookie";
-
+import Vs from "../deabteroomComponents/vs/versus"
 import { Button } from "@material-ui/core";
 import Modal from "../Modal/Modal"
 import AuthLayout from "../auth/layout"

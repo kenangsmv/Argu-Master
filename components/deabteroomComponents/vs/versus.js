@@ -1,6 +1,6 @@
 export default function DebateRoom() {
     return (
-        <div className="w100" >
+        <div className="w100 vsBar" >
     
            <div className="vs white row w100">
              <div className="border-radius-left10px green w60">

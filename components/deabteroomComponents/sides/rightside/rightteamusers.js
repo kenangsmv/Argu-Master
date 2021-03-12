@@ -1,13 +1,13 @@
 import React from 'react'
 
-export default function rightteam() {
+export default function rightteam({username}) {
     return (
         <div className="row space-between">
             <div className="teamUsers">
-                <span>Abdulhey</span>
+                <span>{username}</span>
             </div>
             <div className="teamUsersPoint">
-                <span>44</span>
+                <span>0</span>
             </div>
         </div>
     )

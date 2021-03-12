@@ -18,8 +18,6 @@ MyApp.getInitialProps= async ({ctx})=> {
 
 
  const cookies =  cookieServer.parse(req ? req.headers.cookie || "" : document.cookie);
- console.log("cookieeee",Object.entries(cookies))
-
  if(Object.entries(cookies).length !== 0)
  dispatch({
    type: "ADD_USER",
