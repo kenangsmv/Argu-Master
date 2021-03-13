@@ -17,16 +17,16 @@ export default function DebateRoom({ scores }) {
 if(percent){
 console.log(percent)
   return (
-    <div className="w100 vsBar">
-      <div className="vs white row w100">
-        <div className="border-radius-left10px green " style={{width:`${percent.topic1Score}%`}}>
-          <span className="center">{scores.topic1}</span>
+
+      <div className="vs white row w100 center">
+        <div className=" whiteVS h100 center" style={{width:`${percent.topic1Score}%`}}>
+          <span className="center h100">{scores.topic1}</span>
         </div>
-        <div className="border-radius-right10px red " style={{width:`${percent.topic2Score}%`}}>
-          <span className="center">{scores.topic2}</span>
+        <div className=" blackVS h100 center" style={{width:`${percent.topic2Score}%`}}>
+          <span className="center h100">{scores.topic2}</span>
         </div>
       </div>
-    </div>
+    
   );
 
 

@@ -294,6 +294,26 @@ h1,h2,h3,h4,h5,h6{
 }
 
 /* background color*/
+.blackVS{
+  background-color: #343331;
+  color:#F7F7F7  !important;
+  border-top-right-radius:8px ;
+  border-bottom-right-radius: 8px;
+  position: absolute;
+  right: -1px;
+  border: 1px solid #343331;
+  top: 0.5px;
+  
+}
+.whiteVS{
+  background-color: #F7F7F7;
+  color: #343331 !important;
+  border-top-left-radius:7px ;
+  border: 1px solid #343331;
+  border-bottom-left-radius: 7px;
+  position: absolute;
+  left: 0px;
+}
 .red{
   background-color : red;
 }
@@ -770,12 +790,24 @@ background: linear-gradient(to right, #ffa751, #ffe259); /* W3C, IE 10+/ Edge, F
   width: 60%;
   margin-left: 10px;
   margin-right: 10px;
-  padding-top: 9vh;
+  padding-top: 70px;
   background-color: #F7F7F7;
 
 }
 .vsBar{
   height: 3vh;
+
+}
+.vs{
+  position: relative;
+  text-align: center;
+  display: flex;
+  border-radius: 8px;
+ height: 4vh;
+  
+  box-sizing: border-box ;
+  align-items: center;
+  justify-content: center;
 }
 .debateRoomLeftSidePosition{
 display:flex;
@@ -799,11 +831,15 @@ align-items:space-between;
 
 .vote{
   width:15px;
+  color: #15202b;
+  
+ 
 }
 .vote-icons{
   width: 30px;
   height: 30px;
-  
+  border-radius: 15px;
+  background-color: white;
 }
 .vote-dots{
   position: absolute;
@@ -814,7 +850,8 @@ align-items:space-between;
 }
 .voteButtonAbsolute{
   position: absolute !important;
-  bottom: -8px;
+  bottom: -20px;
+
   
 }
 .wrapped:hover .content{
@@ -832,7 +869,7 @@ align-items:space-between;
 }
 .nobullet{
   list-style: none;
-  margin: 0;
+  margin-top:0px;
   padding: 0;
   font-size: 12px;
 }

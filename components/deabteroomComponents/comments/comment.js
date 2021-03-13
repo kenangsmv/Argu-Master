@@ -2,17 +2,27 @@ import User from "../../../images/user3.jpg";
 
 import Dots from "../../../icons/whitedots.png";
 import Like from "./like";
-
+import {useSelector} from "react-redux"
 import { Button } from "@material-ui/core";
 export default function DebateRoom({ message ,like,angry}) {
+
+  const user = useSelector(state=>state.user.currentUser)
+console.log("user at comment",user)
 
 const calculateScore=()=>{
 return message.likes.length-message.angry.length
 
 }
+const isLikedOrAngry=()=>{
+let isLiked=message.likes.includes(user.token)
+let isAngry=message.angry.includes(user.token)
+
+return {isLiked,isAngry}
+
+}
 
 
-
+const {isLiked,isAngry}=isLikedOrAngry()
   return (
     <div>
       <div className="w100 row pt1"></div>
@@ -31,7 +41,7 @@ return message.likes.length-message.angry.length
           </div>
 
           <div className="voteButtonAbsolute">
-            <Like id={message.id} like={like} angry={angry}></Like>
+            <Like id={message.id} like={like} angry={angry} isLiked={isLiked} isAngry={isAngry} ></Like>
           </div>
          
           <img className="vote-dots" src={Dots} alt="" />
