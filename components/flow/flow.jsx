@@ -7,11 +7,10 @@ import { connect } from "react-redux";
 function flow({debates}) {
   
 
+  const sortTıme=(a,b)=>{return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()}
 
 
 
-let reverse=debates?debates.reverse():[]
-console.log(reverse)
   return (
     <div className={styles.flowContainer}>
       { !debates? (
@@ -22,7 +21,7 @@ console.log(reverse)
 
           {
 
-              reverse?.map(post=>   <PostCard key={post.id}   data={post}   ></PostCard>)
+              debates?.sort(sortTıme).map(post=>   <PostCard key={post.id}   data={post}   ></PostCard>)
           }
 
 
