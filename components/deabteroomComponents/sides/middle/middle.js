@@ -1,6 +1,6 @@
 import Vs from "../../vs/versus";
 import styles from "../../../flow/flow.module.css";
-import Comments from "../../comments/comment";
+import Comments from "../../comments/message";
 import PostContent from "./poscontent";
 import TextComponent from "./TextComponent";
 export default function DebateRoom({

@@ -7,13 +7,15 @@ import { Button } from "@material-ui/core";
 export default function DebateRoom({ message ,like,angry}) {
 
   const user = useSelector(state=>state.user.currentUser)
-console.log("user at comment",user)
+console.log("message",message)
 
 const calculateScore=()=>{
 return message.likes.length-message.angry.length
 
 }
 const isLikedOrAngry=()=>{
+
+
 let isLiked=message.likes.includes(user.token)
 let isAngry=message.angry.includes(user.token)
 
@@ -22,7 +24,10 @@ return {isLiked,isAngry}
 }
 
 
-const {isLiked,isAngry}=isLikedOrAngry()
+
+
+
+ const {isLiked,isAngry}=user?isLikedOrAngry():{isLiked:null,isAngry:null}
   return (
     <div>
       <div className="w100 row pt1"></div>
@@ -41,7 +46,11 @@ const {isLiked,isAngry}=isLikedOrAngry()
           </div>
 
           <div className="voteButtonAbsolute">
-            <Like id={message.id} like={like} angry={angry} isLiked={isLiked} isAngry={isAngry} ></Like>
+           {user&& <Like id={message.id} like={like} angry={angry} isLiked={isLiked} isAngry={isAngry} ></Like>}
+          </div>
+          <div >
+            likes: {message.likes.length}
+            angry: {message.angry.length}
           </div>
          
           <img className="vote-dots" src={Dots} alt="" />

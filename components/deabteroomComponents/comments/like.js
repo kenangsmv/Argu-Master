@@ -34,14 +34,10 @@ export default function like({ id, like, angry, isLiked, isAngry }) {
               </div>
             </div>
           ) : (
-            <img
-              className="vote-icons needHover"
-              onClick={() => {
+            <div  onClick={() => {
                 isLiked ? like(id) : angry(id);
-              }}
-              src={isLiked ? Vote : AngryFace}
-              alt=""
-            />
+              }} className="mr05 underline vote">unvote</div>
+           
           )}
         </ul>
       </div>
