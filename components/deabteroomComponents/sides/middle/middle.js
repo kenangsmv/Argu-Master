@@ -19,8 +19,9 @@ export default function DebateRoom({
 
   return (
     <div className={"liveRoomMiddle relative"}>
+        <Vs scores={scores}></Vs>
       <PostContent debate_info={debate_info}></PostContent>
-      <Vs scores={scores}></Vs>
+    
       <div className="liveMessageBody">
         {messages.map((message) => (
           <Comments

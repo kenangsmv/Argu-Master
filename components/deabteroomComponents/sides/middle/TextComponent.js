@@ -17,6 +17,7 @@ export default function TextComponent({sendMessage}) {
   return (
     <div className="liveTextComponent ">
         <div className="w100 relative">
+          <div className="boxColor">
         <TextField
       fullWidth
     className={"relative"}
@@ -29,7 +30,7 @@ export default function TextComponent({sendMessage}) {
       </TextField>
       <img onClick={sent} className="sentIcon needHover" src={sentIcon}></img>
         </div>
-
+        </div>
     </div>
   );
 }

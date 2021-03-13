@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 import { Button } from "@material-ui/core";
 import styles from "../../styles/Home.module.css";
-import Modal from "../../components/Modal/Modal";
+import TopicModal from "../../components/Modal/TopicSelectionModal";
 import LeftSide from "../../components/deabteroomComponents/sides/leftside/left";
 import MiddleSide from "../../components/deabteroomComponents/sides/middle/middle";
 import RightSide from "../../components/deabteroomComponents/sides/rightside/right";
@@ -171,13 +171,20 @@ return {topic1Score,topic2Score,topic1,topic2}
     <div>
       <div className="debateRoom w100 center column">
         <div className={styles.homeContainer}>
-          <Modal
+          <TopicModal
+            style={{
+            
+              outline: "none",
+               
+                          }}
             Comp={TopicSelection}
             joinDebate={joinDebate}
             room_info={state.room_info}
             open={open}
             cancel={closeModal}
           />
+          
+          
 
           <LeftSide users={filterUser(topic1)} topic={topic1} />
           <MiddleSide

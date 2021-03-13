@@ -17,7 +17,7 @@ console.log(reverse)
       { !debates? (
         <div>yükleniyor</div>
       ) : (
-        <div className="w100 center column">
+        <div className="w100 center column border-left border-right">
           <CreateDebate></CreateDebate>
 
           {

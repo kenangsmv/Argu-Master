@@ -48,7 +48,6 @@ if(ix<10)
 let topics=state.topic1+" vs "+state.topic2
 let trim_topics=topics.replace(/\s+/g, '-').toLowerCase();
 
-stringId=stringId+trim_topics
 let last_id=stringId.toLowerCase()
 let last_=last_id.replace(/\?/g, '-').toLowerCase();
 

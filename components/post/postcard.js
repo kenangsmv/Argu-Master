@@ -2,10 +2,11 @@ import { Divider, Button } from "@material-ui/core";
 import Profile from "../../images/user1.jpg";
 import Like from "../../icons/like.png";
 import Comments from "../../icons/comments.png";
-import Join from "../../icons/join.png";
+import Gots from "../../icons/dots.png";
 import Voting from '../post/voting'
 import moment from "moment"
 import Link from "next/link"
+import Live from '../../icons/live.svg'
 
 const Postcard = ({data}) => {
   console.log(data)
@@ -19,7 +20,7 @@ const Postcard = ({data}) => {
               <h5>{data.post_holder_name} </h5>
 
               <time >{moment(data.createdAt).fromNow()}</time>
-      
+                
             </div>
           </div>
         </div>
@@ -42,6 +43,7 @@ const Postcard = ({data}) => {
               Join
             </Button>
             </Link>
+            <img className={"icons"} src={Live} alt="" />
           </div>
         </div>
       </div>

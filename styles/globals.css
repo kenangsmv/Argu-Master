@@ -40,9 +40,15 @@ h1,h2,h3,h4,h5,h6{
 /*=====Modal-css=====*/
 
 .modal{
-outline: none !important;
+ outline: none !important;
   width: 50%;
 
+}
+.topicSelectionModal{
+  outline: none !important;
+  width: 100%;
+ 
+  
 }
 
 
@@ -95,6 +101,9 @@ outline: none !important;
 
 .text-align-justify{
   text-align: justify !important;
+}
+.text-align-center{
+  text-align: center !important;
 }
 
 /*=====navbar>navbar.js=====*/
@@ -178,6 +187,9 @@ outline: none !important;
 .w20{
   width: 20%;
 }
+.w25{
+  width: 25%;
+}
 .w30{
   width: 30%;
 }
@@ -244,11 +256,12 @@ outline: none !important;
 .border-bottom{
   border-bottom: 1px solid rgba(0,0,0,.2);
 }
-.borderLeft{
+.border-left{
   border-left: 1px solid rgba(0,0,0,.2);
+  
 }
-.borderRight{
-  border-left: 1px solid rgba(0,0,0,.2);
+.border-right{
+  border-right: 1px solid rgba(0,0,0,.2);
 }
 .border-radius5px{
   border-radius: 5px;
@@ -291,9 +304,17 @@ outline: none !important;
   background-color: #FFFFFF;
   
 }
+.background{
+  background-color:#FFFFFF;
+}
 .white{
   color: white;
 }
+.black{
+  color: black;
+}
+
+
 
 /*PADDING*/
 .pt05{
@@ -453,16 +474,39 @@ outline: none !important;
   margin-right: 5rem;
 }
 
-
+.flowContainer{
+  width: 60%;
+  padding:10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+  
+}
 
 
 /* leftside/*/
+.containerLeft{
+  width: 23%;
+  position: sticky;
+  left: 0;
+  top:60px;
+  height: 100vh;
+  
+  background-color: #F0F2F5;
+
+ 
+  
+  }
+  
 .LeftFirstBox{
   display: flex; 
   justify-content: flex-start;
   align-items: center;
   margin-bottom: 45px;
 }
+
 .LeftSubMenu{
   width: 100%;
   display: flex;
@@ -566,7 +610,7 @@ outline: none !important;
   width: 100%;
   height: 100%;
   background-color: #FFFFFF;
-  border-radius: 5px;
+  border-radius: 10px;
   
   
 }
@@ -698,6 +742,7 @@ background: linear-gradient(to right, #ffa751, #ffe259); /* W3C, IE 10+/ Edge, F
 .liveMessageBody{
   height: 71vh;
   overflow: auto;
+ 
 }
 .liveTextComponent{
   position: absolute;
@@ -716,16 +761,28 @@ background: linear-gradient(to right, #ffa751, #ffe259); /* W3C, IE 10+/ Edge, F
   position: relative;
   overflow-y: auto;
   max-height: 13vh;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  
 }
 .liveRoomMiddle{
   height: 100vh;
   width: 60%;
-    padding:10px;
-   padding-top: 9vh
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-top: 9vh;
+  background-color: #F7F7F7;
 
 }
 .vsBar{
   height: 3vh;
+}
+.debateRoomLeftSidePosition{
+display:flex;
+height:80%;
+flex-direction: column;
+justify-content:space-between;
+align-items:space-between;  
 }
 .debateRoomBody{
   padding: 10px;
@@ -739,6 +796,7 @@ background: linear-gradient(to right, #ffa751, #ffe259); /* W3C, IE 10+/ Edge, F
   border-radius:20px;
   
 }
+
 .vote{
   width:15px;
 }
@@ -790,6 +848,11 @@ background: linear-gradient(to right, #ffa751, #ffe259); /* W3C, IE 10+/ Edge, F
   color: white;
   
 }
+.points{
+  background-color:#dddddd;
+  width: 30px;
+ 
+}
 .exitRoom{
   height: 45px;
   border-radius: 10px;
@@ -808,4 +871,51 @@ background: linear-gradient(to right, #ffa751, #ffe259); /* W3C, IE 10+/ Edge, F
    height:50px;
    align-self: center;
 }
+.messageBox{
+  min-width: 200px;
+}
+.messageboxColor{
+background:#343331;
+color: white;  
+}
+.teamUsers{
+  overflow:auto;
+  max-height:200px;
+}
+.liveMessageBody::-webkit-scrollbar {
+  
+  width: 8px;
+}
 
+/* Track */
+::-webkit-scrollbar-track {
+  background: #ffffff00; 
+  
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+.team{
+  width:400px;
+  height:300px;
+  backdrop-filter: saturate(50%) blur(3px);
+  background-color: rgba(255,255,255,0.72);
+  border-radius: 10px;
+}
+.modalteamImages{
+  width:35px;
+}
+.teamusersAbsolute{
+  position: absolute;
+  top:40px;
+  left:10px;
+}

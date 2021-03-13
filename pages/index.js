@@ -14,10 +14,11 @@ export async function getServerSideProps({req}) {
 console.log("redux store ", reduxStore)
 const cookies =  cookieServer.parse(req ? req.headers.cookie || "" : document.cookie);
 console.log("cookieee",cookies)
-  dispatch({
-    type: "ADD_USER",
-    payload: JSON.parse(cookies.currentUser),
-  });
+if(Object.entries(cookies).length !== 0)
+dispatch({
+  type: "ADD_USER",
+  payload: JSON.parse(cookies.currentUser),
+});
 
 
 
@@ -38,7 +39,7 @@ console.log("cookieee",cookies)
 export default function Home(props) {
   return (
     <div className={styles.container}>
-     
+        
 
       <div className={styles.homeContainer}>
         <LeftSide></LeftSide>
