@@ -50,8 +50,10 @@ let trim_topics=topics.replace(/\s+/g, '-').toLowerCase();
 
 stringId=stringId+trim_topics
 let last_id=stringId.toLowerCase()
+let last_=last_id.replace(/\?/g, '-').toLowerCase();
 
-return last_id
+
+return last_
 
 
 }

@@ -22,7 +22,7 @@ const Chat = ({ room_info, available }) => {
   const [totalUser, setTotalUser] = useState(0);
   const [open, setOpen] = useState(true);
   const [messages, setMessages] = useState([]);
-const [mySide,setMySide]=useState("")
+  const [mySide, setMySide] = useState("");
   const router = useRouter();
   const { id } = router.query;
 
@@ -77,7 +77,12 @@ const [mySide,setMySide]=useState("")
   };
 
   const sendMessage = (message) => {
-    let m_ = { message: message, message_holder: user.name,side:mySide,direction:mySide===room_info["topic1"]?true:false };
+    let m_ = {
+      message: message,
+      message_holder: user.name,
+      side: mySide,
+      direction: mySide === room_info["topic1"] ? true : false,
+    };
 
     socket.emit(
       "message",
@@ -88,6 +93,50 @@ const [mySide,setMySide]=useState("")
         }
       }
     );
+  };
+
+  const like = (id) => {
+    socket.emit(
+      "like",
+      { id: id, room: room_info.string_id, token: user.token },
+      (error) => {
+        if (error) {
+          console.log(error);
+        }
+      }
+    );
+  };
+  const angry = (id) => {
+    socket.emit(
+      "angry",
+      { id: id, room: room_info.string_id, token: user.token },
+      (error) => {
+        if (error) {
+          console.log(error);
+        }
+      }
+    );
+  };
+  const calculateScore = () => {
+    const { topic1, topic2 } = state ? state.room_info : {};
+    let topic1Score = 0;
+    let topic2Score = 0;
+
+    state.messages.map((message) => {
+      if (message.side === topic1) {
+        topic1Score =topic1Score+ (message.likes.length - message.angry.length);
+      }
+      if (message.side === topic2) {
+    
+        topic2Score =topic2Score+ (message.likes.length - message.angry.length);
+      }
+    });
+
+    
+    console.log({topic1Score,topic2Score,topic1,topic2})
+
+return {topic1Score,topic2Score,topic1,topic2}
+
   };
 
   const filterUser = (topic) => {
@@ -104,12 +153,11 @@ const [mySide,setMySide]=useState("")
         (error) => {
           if (error) {
             console.log(error);
-          }else{
-            setMySide(side)
+          } else {
+            setMySide(side);
           }
         }
       );
-
     }
 
     closeModal();
@@ -118,7 +166,7 @@ const [mySide,setMySide]=useState("")
   const closeModal = () => {
     setOpen(false);
   };
-const {topic1,topic2} = state?state.room_info:{}
+  const { topic1, topic2 } = state ? state.room_info : {};
   return available && state ? (
     <div>
       <div className="debateRoom w100 center column">
@@ -131,20 +179,17 @@ const {topic1,topic2} = state?state.room_info:{}
             cancel={closeModal}
           />
 
-          <LeftSide
-            users={filterUser(topic1)}
-            topic={topic1}
-          />
+          <LeftSide users={filterUser(topic1)} topic={topic1} />
           <MiddleSide
             debate_info={state.room_info}
             messages={messages}
             mySide={mySide}
             sendMessage={sendMessage}
+            like={like}
+            angry={angry}
+            scores={calculateScore()}
           />
-          <RightSide
-            topic={topic2}
-            users={filterUser(topic2)}
-          />
+          <RightSide topic={topic2} users={filterUser(topic2)} />
         </div>
       </div>
     </div>

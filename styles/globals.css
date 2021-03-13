@@ -152,7 +152,16 @@ outline: none !important;
 .h100{
   height: 100% !important;
 }
+.mh50{
+  min-height: 50px;
+}
+.mw140{
+  min-width: 140px;
+}
 
+.mw50{
+  min-width: 50px;
+}
 .wh-100{
   width: 100%;
   height: 100% !important; 

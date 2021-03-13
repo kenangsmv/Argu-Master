@@ -8,11 +8,12 @@ import { useRouter } from "next/router";
 
 export async function getServerSideProps({ query }) {
   console.log(query, "query");
-  console.log("id", query.id);
+  console.log("idddd", query.id);
 
   const res = await getOneDebate(query.id);
 
   const data = await res.data.data;
+  console.log("res data",res.data)
 
   // Fetch data from external API
   let available = data ? true : false;
