@@ -1,6 +1,6 @@
 import Vs from "../../vs/versus";
 import styles from "../../../flow/flow.module.css";
-import Comments from "../../comments/message";
+import Message from "../../comments/message";
 import PostContent from "./poscontent";
 import TextComponent from "./TextComponent";
 export default function DebateRoom({
@@ -9,6 +9,7 @@ export default function DebateRoom({
   debate_info,
   mySide,
   like,
+ 
   angry,
   scores
 }) {
@@ -24,12 +25,13 @@ export default function DebateRoom({
      
       <div className="liveMessageBody">
         {messages.map((message) => (
-          <Comments
+          <Message
             message={message}
             mySide={mySide}
             like={like}
+           
             angry={angry}
-          ></Comments>
+          ></Message>
         ))}
       </div>
 

@@ -4,7 +4,7 @@ import Dots from "../../../icons/whitedots.png";
 import Like from "./like";
 import {useSelector} from "react-redux"
 import { Button } from "@material-ui/core";
-export default function DebateRoom({ message ,like,angry}) {
+export default function DebateRoom({ message ,like,angry, whatIsMySide}) {
 
   const user = useSelector(state=>state.user.currentUser)
 console.log("message",message)
@@ -46,7 +46,7 @@ return {isLiked,isAngry}
           </div>
 
           <div className="voteButtonAbsolute">
-           {user&& <Like id={message.id} like={like} angry={angry} isLiked={isLiked} isAngry={isAngry} ></Like>}
+           {user&& <Like   id={message.id} side={message.side} like={like} angry={angry} isLiked={isLiked} isAngry={isAngry} ></Like>}
           </div>
           <div >
             likes: {message.likes.length}

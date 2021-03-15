@@ -3,7 +3,7 @@ export default function DebateRoom({ scores }) {
  console.log(scores)
  let percent =false
  
-  if(scores.topic1Score>0||scores.topic2Score>0){
+  if(scores?.topic1Score>0||scores?.topic2Score>0){
    const {topic1Score,topic2Score}=scores
    percent = {
 
@@ -36,11 +36,11 @@ console.log(percent)
   return (
     <div className="w100 vsBar">
       <div className="vs white row w100">
-        <div className="border-radius-left10px green w60">
-          <span className="center">{scores.topic1}</span>
+        <div className="border-radius-left10px redVS w60">
+          <span className="center">iphone</span>
         </div>
-        <div className="border-radius-right10px red w40">
-          <span className="center">{scores.topic2}</span>
+        <div className="border-radius-right10px blackVS w40">
+          <span className="center">samsung</span>
         </div>
       </div>
     </div>

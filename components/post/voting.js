@@ -1,19 +1,21 @@
-import React from 'react'
+import React from "react";
+import Link from "next/link"
+import {Button} from "@material-ui/core"
 
-export default function voting({data}) {
-    return (
-        <div className={"votingContainer column center"}>
-            
-            <div className={"votingSide1 center"}> {data.topic1} </div>
-            <div className="side1">
-            <div className="side1Graph"></div>
-            </div>
-            <span>vs</span>
-            <div className={"side2"}>
-            <div className={"side2Graph"}></div>
-            </div>
-            <div className={"votingSide2 center"}> {data.topic2}
-            </div>
-        </div>
-    )
+export default function voting({ data }) {
+  return (
+    <div className={"votingContainer space-between center"}>
+    <div className="row">
+    <div className={"votingBox1 m1 center"}> technology </div>
+
+<div className={"votingBox2 m1 center"}> trend </div>
+
+    </div>
+      <Link href={data.id}>
+            <Button variant="contained"  className="voteButton" >
+              Join
+            </Button>
+            </Link>
+    </div>
+  );
 }

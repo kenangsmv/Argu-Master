@@ -12,8 +12,7 @@ export default function like({ id, like, angry, isLiked, isAngry }) {
         <ul className="nobullet row">
           {!isLiked && !isAngry ? (
             <div>
-              <div className="wrapped column-flex-start">
-              <div className="mr05 underline vote">Vote</div>
+              <div className=" column-flex-start">
               <div className="content popover-body row pl05 pr05">
                   <img
                     className="vote-icons needHover"
@@ -21,6 +20,7 @@ export default function like({ id, like, angry, isLiked, isAngry }) {
                     src={Vote}
                     alt=""
                   />
+                  
 
                   <img
                     className="vote-icons needHover"
@@ -29,18 +29,27 @@ export default function like({ id, like, angry, isLiked, isAngry }) {
                     alt=""
                   />
                 </div>
-               
+                <div className="mr05 underline wrapped">Vote</div>
                
               </div>
             </div>
           ) : (
-            <div  onClick={() => {
+            <img
+              className="vote-icons needHover"
+              onClick={() => {
                 isLiked ? like(id) : angry(id);
-              }} className="mr05 underline vote">unvote</div>
-           
+              }}
+              src={isLiked ? Vote : AngryFace}
+              alt=""
+            />
+            
           )}
         </ul>
       </div>
     </div>
   );
 }
+
+
+
+

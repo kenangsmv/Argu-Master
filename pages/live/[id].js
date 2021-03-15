@@ -106,6 +106,17 @@ const Chat = ({ room_info, available }) => {
       }
     );
   };
+
+
+const whatIsMySide=(side)=>{
+
+console.log(side)
+
+}
+
+
+
+
   const angry = (id) => {
     socket.emit(
       "angry",
@@ -193,6 +204,7 @@ return {topic1Score,topic2Score,topic1,topic2}
             mySide={mySide}
             sendMessage={sendMessage}
             like={like}
+         
             angry={angry}
             scores={calculateScore()}
           />

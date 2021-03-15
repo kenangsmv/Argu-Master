@@ -7,12 +7,17 @@ import Voting from '../post/voting'
 import moment from "moment"
 import Link from "next/link"
 import Live from '../../icons/live.svg'
+import VS from "../deabteroomComponents/vs/versus"
 
 const Postcard = ({data}) => {
   console.log(data)
   return (
     <div className={"postCard boxColor column p1 mb1 box-shadow"}>
-      <div className={"post w100"}>
+      <div className={"post w100 relative"}>
+        <div className="postCardLive row center">
+<div className="redCircle"></div>
+          <span> 1.5k</span>
+        </div>
         <div className={"postTop w100"}>
           <div className={"topConent boxColor row center"}>
             <img className={"image"} src={Profile} alt="" />
@@ -29,22 +34,14 @@ const Postcard = ({data}) => {
           {data.title}
           </span>
         </div>
-        <Voting  data={{topic1:data.topic1,topic2:data.topic2}} ></Voting>
+        <Voting  data={{topic1:data.topic1,topic2:data.topic2,id:data.string_id}} ></Voting>
+       
         <div
           className={
-            "postBottom w100 column-flex-start border-top border-bottom"
+            " w100 mt1"
           }
         >
-          <div className={"w100 space-evenly"}>
-            <img className={"icons"} src={Like} alt="" />
-            <img className={"icons"} src={Comments} alt="" />
-            <Link href={data.string_id}>
-            <Button variant="contained" color="primary">
-              Join
-            </Button>
-            </Link>
-            <img className={"icons"} src={Live} alt="" />
-          </div>
+         <VS></VS>
         </div>
       </div>
     </div>
