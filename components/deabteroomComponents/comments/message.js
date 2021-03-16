@@ -1,6 +1,8 @@
 import User from "../../../images/user3.jpg";
 
 import Dots from "../../../icons/whitedots.png";
+import LikeVote from "../../../icons/vote.png";
+import Angry from "../../../icons/angry.png";
 import Like from "./like";
 import {useSelector} from "react-redux"
 import { Button } from "@material-ui/core";
@@ -35,10 +37,9 @@ return {isLiked,isAngry}
         <div className="pr05">
           <img className="image" src={User} alt="" />
         </div>
-        <div className="messageBox messageboxColor pl1 pr1 pt05 pb05 border-radius15px box-shadow text-align-justify relative">
+        <div className="messageBox messageboxColor pl1 pr1 pt05  border-radius15px box-shadow text-align-justify relative">
           <div>
             <h5>{message.message_holder}</h5>
-            <h5 className="pl1" style={{color:calculateScore()>0?"green":"red"}}>{calculateScore()}</h5>
           </div>
 
           <div>
@@ -48,10 +49,12 @@ return {isLiked,isAngry}
           <div className="voteButtonAbsolute">
            {user&& <Like   id={message.id} side={message.side} like={like} angry={angry} isLiked={isLiked} isAngry={isAngry} ></Like>}
           </div>
-          <div >
-            likes: {message.likes.length}
-            angry: {message.angry.length}
-          </div>
+        
+            <div className="result resultAbsolute row center box-shadow">
+            <img className="result-icons" src={LikeVote} alt=""/>  {message.likes.length}
+            <img className="result-icons" src={Angry} alt=""/> {message.angry.length}
+            </div>
+          
          
           <img className="vote-dots" src={Dots} alt="" />
         </div>
