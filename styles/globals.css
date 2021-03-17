@@ -906,15 +906,17 @@ align-items:space-between;
 
   
 }
+/*result*/
 .result{
 background-color: white;  
 color: black;
 border-radius: 10px;
+
 }
 .resultAbsolute{
   position: absolute !important;
-  bottom: -16px;
-  right: 2px;
+  bottom: -15px;
+  left: 20px;
 
 }
 .result-icons{

@@ -154,6 +154,23 @@ return {topic1Score,topic2Score,topic1,topic2}
     return state.users.filter((user) => user.side === topic);
   };
 
+
+
+    const checkUser =()=>{
+       
+      let myToken = user.token;
+
+      let inDebate = state.users;
+
+      let Var = inDebate.find((user)=>user.token===myToken);
+
+      return Var;
+
+    }
+    
+
+
+
   const joinDebate = (side) => {
     if (side) {
       let joiner = { token: user.token, side: side, username: user.username };
@@ -204,9 +221,10 @@ return {topic1Score,topic2Score,topic1,topic2}
             mySide={mySide}
             sendMessage={sendMessage}
             like={like}
-         
+            checkUser={checkUser()}
             angry={angry}
             scores={calculateScore()}
+            
           />
           <RightSide topic={topic2} users={filterUser(topic2)} />
         </div>

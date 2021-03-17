@@ -9,7 +9,7 @@ export default function DebateRoom({
   debate_info,
   mySide,
   like,
- 
+  checkUser,
   angry,
   scores
 }) {
@@ -35,7 +35,9 @@ export default function DebateRoom({
         ))}
       </div>
 
-      <TextComponent sendMessage={sendMessage}></TextComponent>
+
+       {checkUser? <TextComponent sendMessage={sendMessage}></TextComponent>:null}
+      
     </div>
   );
 }

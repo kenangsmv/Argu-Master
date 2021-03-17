@@ -46,19 +46,18 @@ return {isLiked,isAngry}
             <span>{message.message}</span>
           </div>
 
-          <div className="voteButtonAbsolute">
-           {user&& <Like   id={message.id} side={message.side} like={like} angry={angry} isLiked={isLiked} isAngry={isAngry} ></Like>}
+          <div >
+           {user&& <Like   id={message.id} message={message} side={message.side} like={like} angry={angry} isLiked={isLiked} isAngry={isAngry} />}
           </div>
-        
-            <div className="result resultAbsolute row center box-shadow">
-            <img className="result-icons" src={LikeVote} alt=""/>  {message.likes.length}
-            <img className="result-icons" src={Angry} alt=""/> {message.angry.length}
-            </div>
+          
+           
           
          
           <img className="vote-dots" src={Dots} alt="" />
         </div>
+          
       </div>
+    
     </div>
   );
 }
