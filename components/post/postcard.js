@@ -10,13 +10,36 @@ import Live from '../../icons/live.svg'
 import VS from "../deabteroomComponents/vs/versus"
 
 const Postcard = ({data}) => {
-  console.log(data)
+
+  const calculateScore = () => {
+    const { topic1, topic2 } = data ? data : {};
+    let topic1Score = 0;
+    let topic2Score = 0;
+
+    data.messages.map((message) => {
+      if (message.side === topic1) {
+        topic1Score =
+          topic1Score + (message.likes.length - message.angry.length);
+      }
+      if (message.side === topic2) {
+        topic2Score =
+          topic2Score + (message.likes.length - message.angry.length);
+      }
+    });
+
+    console.log({ topic1Score, topic2Score, topic1, topic2 });
+
+    return { topic1Score, topic2Score, topic1, topic2 };
+  };
+
+
+ 
   return (
     <div className={"postCard boxColor column p1 mb1 box-shadow"}>
       <div className={"post w100 relative"}>
         <div className="postCardLive row center">
 <div className="redCircle"></div>
-          <span> 1.5k</span>
+          <span> {data.user_count>0?data.user_count:0}</span>
         </div>
         <div className={"postTop w100"}>
           <div className={"topConent boxColor row center"}>
@@ -41,7 +64,7 @@ const Postcard = ({data}) => {
             " w100 mt1"
           }
         >
-         <VS></VS>
+         <VS   scores={calculateScore()}></VS>
         </div>
       </div>
     </div>

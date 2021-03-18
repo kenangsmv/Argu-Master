@@ -11,34 +11,30 @@ export default function DebateRoom({
   like,
   checkUser,
   angry,
-  scores
+  scores,
 }) {
-
-
-
-
-
   return (
     <div className={"liveRoomMiddle relative "}>
-       <Vs scores={scores}></Vs>
-       <div>
+      <Vs scores={scores}></Vs>
+
       <PostContent debate_info={debate_info}></PostContent>
-     
+
       <div className="liveMessageBody">
         {messages.map((message) => (
           <Message
             message={message}
             mySide={mySide}
             like={like}
-           
             angry={angry}
           ></Message>
         ))}
+
+        
       </div>
-
-
-       {checkUser? <TextComponent sendMessage={sendMessage}></TextComponent>:null}
-       </div>
+      <TextComponent
+          checkUser={checkUser}
+          sendMessage={sendMessage}
+        ></TextComponent>
     </div>
   );
 }

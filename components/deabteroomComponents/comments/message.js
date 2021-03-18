@@ -4,36 +4,33 @@ import Dots from "../../../icons/whitedots.png";
 import LikeVote from "../../../icons/vote.png";
 import Angry from "../../../icons/angry.png";
 import Like from "./like";
-import {useSelector} from "react-redux"
+import { useSelector } from "react-redux";
 import { Button } from "@material-ui/core";
-export default function DebateRoom({ message ,like,angry, whatIsMySide}) {
+export default function DebateRoom({ message, like, angry, whatIsMySide }) {
+  const user = useSelector((state) => state.user.currentUser);
+  
+  
+  const calculateScore = () => {
+    return message.likes.length - message.angry.length;
+  };
+  const isLikedOrAngry = () => {
+    let isLiked = message.likes.includes(user.token);
+    let isAngry = message.angry.includes(user.token);
 
-  const user = useSelector(state=>state.user.currentUser)
-console.log("message",message)
+    return { isLiked, isAngry };
+  };
 
-const calculateScore=()=>{
-return message.likes.length-message.angry.length
-
-}
-const isLikedOrAngry=()=>{
-
-
-let isLiked=message.likes.includes(user.token)
-let isAngry=message.angry.includes(user.token)
-
-return {isLiked,isAngry}
-
-}
-
-
-
-
-
- const {isLiked,isAngry}=user?isLikedOrAngry():{isLiked:null,isAngry:null}
+  const { isLiked, isAngry } = user
+    ? isLikedOrAngry()
+    : { isLiked: null, isAngry: null };
   return (
     <div>
-      
-      <div className={`user ${message.direction?"row":"row-reverse"} pt1 messageArea`}>
+      <div className="w100 row pt1"></div>
+      <div
+        className={`user ${
+          message.direction ? "row" : "row-reverse"
+        } pt1 messageArea`}
+      >
         <div className="pr05">
           <img className="image" src={User} alt="" />
         </div>
@@ -45,27 +42,20 @@ return {isLiked,isAngry}
           <div>
             <span>{message.message}</span>
           </div>
-          <div>
-           {user&& <Like   id={message.id} message={message} side={message.side} like={like} angry={angry} isLiked={isLiked} isAngry={isAngry} />}
-           <div className="result resultAbsolute row center box-shadow">
-        {message.likes.length !== 0 ? (
-          <div className="row center">
-            <img className="result-icons" src={LikeVote} alt="" />{message.likes.length}
+
+          <div className="voteButtonAbsolute">
+            <Like   id={message.id} side={message.side} like={like} angry={angry} isLiked={isLiked} isAngry={isAngry} ></Like>
           </div>
-        ) : null}
-        {message.angry.length !== 0 && (
-          <div className="row center">
-          <img className="result-icons" src={Angry} alt="" />{message.angry.length}
-        </div>
-        )}
-      </div>
-           </div>
+        
+            <div className="result resultAbsolute row center box-shadow">
+            <img className="result-icons" src={LikeVote} alt=""/>  {message.likes.length}
+            <img className="result-icons" src={Angry} alt=""/> {message.angry.length}
+            </div>
           
+         
           <img className="vote-dots" src={Dots} alt="" />
         </div>
-          
       </div>
-    
     </div>
   );
 }
