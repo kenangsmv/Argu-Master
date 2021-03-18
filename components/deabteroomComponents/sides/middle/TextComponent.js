@@ -15,9 +15,9 @@ export default function TextComponent({sendMessage}) {
         }
     console.log(message)
   return (
-    <div className="liveTextComponent ">
+    <div className="">
         <div className="w100 relative">
-          <div className="boxColor">
+          <div className="boxColor ">
         <TextField
       fullWidth
     className={"relative"}

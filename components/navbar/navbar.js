@@ -10,6 +10,7 @@ import Modal from "../Modal/Modal"
 import AuthLayout from "../auth/layout"
 import { useSelector, useDispatch } from "react-redux";
 const Navbar = () => {
+  
   const user = useSelector((state) => state.user.currentUser);
   const open = useSelector((state) => state.layout.auth_modal);
   const dispatch = useDispatch();
@@ -24,6 +25,7 @@ const Navbar = () => {
     dispatch({ type: "REMOVE_USER", payload: null });
   };
 
+  
 
   console.log(open);
   

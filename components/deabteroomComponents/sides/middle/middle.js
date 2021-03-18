@@ -9,7 +9,7 @@ export default function DebateRoom({
   debate_info,
   mySide,
   like,
- amItaken,
+  checkUser,
   angry,
   scores
 }) {
@@ -19,8 +19,9 @@ export default function DebateRoom({
 
 console.log("am i taken ?",amItaken)
   return (
-    <div className={"liveRoomMiddle relative"}>
+    <div className={"liveRoomMiddle relative "}>
        <Vs scores={scores}></Vs>
+       <div>
       <PostContent debate_info={debate_info}></PostContent>
      
       <div className="liveMessageBody">
@@ -35,7 +36,13 @@ console.log("am i taken ?",amItaken)
         ))}
       </div>
 
+<<<<<<< HEAD
     {amItaken?  <TextComponent sendMessage={sendMessage}></TextComponent>:null}
+=======
+
+       {checkUser? <TextComponent sendMessage={sendMessage}></TextComponent>:null}
+       </div>
+>>>>>>> 87e585d58cec737943ed1dd7db24a72857f6a04a
     </div>
   );
 }

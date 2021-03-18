@@ -147,25 +147,20 @@ const Chat = ({ room_info, available }) => {
     return state.users.filter((user) => user.side === topic);
   };
 
-  const amItaken = () => {
-    let usersInDebate = state.users; // debate katılan userlar hepsi
 
 
-    let myToken = user?.token;
+    const checkUser =()=>{
+       
+      let myToken = user.token;
 
-    let amIinside = usersInDebate.find((user) => user.token === myToken);
+      let inDebate = state.users;
 
+      let Var = inDebate.find((user)=>user.token===myToken);
 
+      return Var;
 
-
-
-    return amIinside;
-  };
-
- 
-
-
-
+    }
+    
 
 
 
@@ -218,16 +213,10 @@ checkUser={checkUser()}
             mySide={mySide}
             sendMessage={sendMessage}
             like={like}
+            checkUser={checkUser()}
             angry={angry}
             scores={calculateScore()}
-        amItaken={amItaken()}
-
-
-          />
-          <RightSide
-            topic={topic2}
-            users={filterUser(topic2)}
-            totalUser={totalUser}
+            
           />
         </div>
       </div>

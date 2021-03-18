@@ -294,30 +294,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 /* background color*/
-.blackVS{
-  background-color: #343331;
-  color:#F7F7F7  !important;
-  border-top-right-radius:8px ;
-  border-bottom-right-radius: 8px;
-  position: absolute;
-  right: -1px;
-  border: 1px solid #343331;
-  top: 0.5px;
-  
-}
 
-.redVS{
-  background-color: rgba(90, 3, 3, 0.05);
-  color:red  !important;
-  border-top-right-radius:8px ;
-  border-bottom-right-radius: 8px;
-  position: absolute;
-  left: -1px;
- 
-  top: 0.5px;
-  
-  
-}
 .white{
   background-color: rgba(90, 3, 3, 0.05);
   color:black  !important;
@@ -811,6 +788,7 @@ background: linear-gradient(to right, #ffa751, #ffe259); /* W3C, IE 10+/ Edge, F
 .liveMessageBody{
   height: 71vh;
   overflow: auto;
+  background-color: #F7F7F7
  
 }
 .liveTextComponent{
@@ -840,8 +818,7 @@ background: linear-gradient(to right, #ffa751, #ffe259); /* W3C, IE 10+/ Edge, F
   margin-left: 10px;
   margin-right: 10px;
   padding-top: 70px;
-  background-color: #F7F7F7;
-
+  
 }
 .vsBar{
   height: 3vh;
@@ -849,14 +826,31 @@ background: linear-gradient(to right, #ffa751, #ffe259); /* W3C, IE 10+/ Edge, F
 }
 .vs{
   position: relative;
-  text-align: center;
+  
   display: flex;
   border-radius: 8px;
- height: 4vh;
-  
+  height: 3vh;
   box-sizing: border-box ;
   align-items: center;
   justify-content: center;
+}
+.blackVS{
+  background-color: #343331;
+  color:#F7F7F7  !important;
+  border-top-right-radius:8px ;
+  border-bottom-right-radius: 8px;
+  position: absolute;
+  right: -1px;  
+  text-align: center;
+  
+}
+
+.redVS{
+  background-color: rgba(90, 3, 3, 0.05);
+  color:red  !important;
+  position: absolute;
+  left: -1px;
+  text-align: center;
 }
 .debateRoomLeftSidePosition{
 display:flex;
@@ -900,21 +894,22 @@ align-items:space-between;
 }
 .voteButtonAbsolute{
   position: absolute !important;
-  bottom: -14px;
-  width: 100%;
-  left: 0px;
+  bottom: -15px;
+  left: 15px;
 
   
 }
+/*result*/
 .result{
 background-color: white;  
 color: black;
 border-radius: 10px;
+
 }
 .resultAbsolute{
   position: absolute !important;
-  bottom: -16px;
-  right: 2px;
+  bottom: -15px;
+  right: 5px;
 
 }
 .result-icons{
@@ -923,27 +918,12 @@ border-radius: 10px;
   border-radius: 15px;
   background-color: white;
 }
-.wrapped:hover .content{
-  visibility: visible !important;
-  display: flex !important;
-  position: absolute;
-  top: -40px;
-  left: -15px;
-  background-color:white;
-  border: 1px solid rgb(148, 148, 148);
-  border-radius: 50px;
- 
-}
-.content{
-  display: none;
-}
 .nobullet{
   list-style: none;
   margin-top:0px;
   padding: 0;
   font-size: 12px;
-  display: flex;
-  justify-content: space-around;
+  color: black;
 }
 .underline:hover{
   text-decoration: underline;
@@ -962,6 +942,34 @@ border-radius: 10px;
   width: 30px;
  
 }
+/*Hover deneme*/
+ul{
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+
+ul .wrapped .content{
+ position: absolute;
+ bottom: 15px;
+ left: 23px;
+ border-radius: 50px; 
+ border: 1px solid rgba(0, 0, 0, 0.535);
+ box-sizing: border-box;
+ visibility: hidden;
+ background-color: white;
+ color: black;
+ opacity: 0;
+transition: 0.5s;
+transform: translateX(-50%) translateY(-50px);
+}
+ul .wrapped:hover .content{
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0px);
+}
+
 .exitRoom{
   height: 45px;
   border-radius: 10px;
@@ -982,7 +990,8 @@ border-radius: 10px;
 }
 .messageBox{
   min-width: 200px;
-  padding-bottom: 9px;
+  padding-bottom: 12px;
+  margin-bottom:6px;
 }
 .messageboxColor{
 background:#343331;

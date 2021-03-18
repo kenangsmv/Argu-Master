@@ -8,7 +8,8 @@ import { useSelector } from "react-redux";
 import { Button } from "@material-ui/core";
 export default function DebateRoom({ message, like, angry, whatIsMySide }) {
   const user = useSelector((state) => state.user.currentUser);
-
+  
+  
   const calculateScore = () => {
     return message.likes.length - message.angry.length;
   };
@@ -33,16 +34,9 @@ export default function DebateRoom({ message, like, angry, whatIsMySide }) {
         <div className="pr05">
           <img className="image" src={User} alt="" />
         </div>
-<<<<<<< HEAD
-        <div className="messageBox messageboxColor pl1 pr1 pt05 pb05 border-radius15px box-shadow text-align-justify relative">
-          <div className={`  w100 space-between   row `}>
-            <h5>{message.message_holder}</h5>
-            <img className="vote-dots" src={Dots} alt="" />
-=======
         <div className="messageBox messageboxColor pl1 pr1 pt05  border-radius15px box-shadow text-align-justify relative">
           <div>
             <h5>{message.message_holder}</h5>
->>>>>>> 63ba6647319e5855cfb44518d14bd72cf3b0d9da
           </div>
 
           <div>
@@ -50,20 +44,6 @@ export default function DebateRoom({ message, like, angry, whatIsMySide }) {
           </div>
 
           <div className="voteButtonAbsolute">
-<<<<<<< HEAD
-            {user && (
-              <Like
-                id={message.id}
-                message={message}
-                side={message.side}
-                like={like}
-                angry={angry}
-                isLiked={isLiked}
-                isAngry={isAngry}
-              />
-            )}
-          </div>
-=======
            {user&& <Like   id={message.id} side={message.side} like={like} angry={angry} isLiked={isLiked} isAngry={isAngry} ></Like>}
           </div>
         
@@ -74,7 +54,6 @@ export default function DebateRoom({ message, like, angry, whatIsMySide }) {
           
          
           <img className="vote-dots" src={Dots} alt="" />
->>>>>>> 63ba6647319e5855cfb44518d14bd72cf3b0d9da
         </div>
       </div>
     </div>
