@@ -9,7 +9,7 @@ export default function DebateRoom({
   debate_info,
   mySide,
   like,
- 
+ amItaken,
   angry,
   scores
 }) {
@@ -17,7 +17,7 @@ export default function DebateRoom({
 
 
 
-
+console.log("am i taken ?",amItaken)
   return (
     <div className={"liveRoomMiddle relative"}>
        <Vs scores={scores}></Vs>
@@ -35,7 +35,7 @@ export default function DebateRoom({
         ))}
       </div>
 
-      <TextComponent sendMessage={sendMessage}></TextComponent>
+    {amItaken?  <TextComponent sendMessage={sendMessage}></TextComponent>:null}
     </div>
   );
 }

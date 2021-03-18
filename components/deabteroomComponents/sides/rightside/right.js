@@ -3,8 +3,10 @@ import TeamMember from './rightteamusers'
 import styles from "../../../leftSide/leftSide.module.css"
 import { Button } from '@material-ui/core'
 import ChooseTeam from '../../chooseteam/chooseteam'
+import Boxes from "../../Boxes"
 
-export default function rightSide({topic,users}) {
+export default function rightSide({topic,users,totalUser}) {
+
     return (
       <div className="containerLeft relative">
       
@@ -22,6 +24,7 @@ export default function rightSide({topic,users}) {
               
                   
               </div>
+              <Boxes title={"Total user"} content={totalUser}/>
               <div className="center w100"> <div  className="exitRoom center  needHover w100"> Exit Room </div> </div>
           </div>
       </div>

@@ -894,20 +894,21 @@ align-items:space-between;
   background-color: white;
 }
 .vote-dots{
-  position: absolute;
-  right: 17px;
-  top: 7px;
+
   width: 20px;
   opacity: 0.7;
 }
 .voteButtonAbsolute{
   position: absolute !important;
-  bottom: -20px;
+  bottom: -14px;
+  width: 100%;
+  left: 0px;
 
   
 }
 .wrapped:hover .content{
-  visibility: visible;
+  visibility: visible !important;
+  display: flex !important;
   position: absolute;
   top: -40px;
   left: -15px;
@@ -917,13 +918,15 @@ align-items:space-between;
  
 }
 .content{
-  visibility: hidden;
+  display: none;
 }
 .nobullet{
   list-style: none;
   margin-top:0px;
   padding: 0;
   font-size: 12px;
+  display: flex;
+  justify-content: space-around;
 }
 .underline:hover{
   text-decoration: underline;
@@ -987,6 +990,26 @@ color: white;
   background: #888; 
   border-radius: 10px;
 }
+
+/* result*/
+.result{
+  background-color: white;  
+  color: black;
+  border-radius: 10px;
+  }
+  .resultAbsolute{
+    position: absolute !important;
+    bottom: -16px;
+    right: 2px;
+  
+  }
+  .result-icons{
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    background-color: white;
+  }
+
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {

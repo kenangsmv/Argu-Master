@@ -2,6 +2,7 @@ import TeamMember from "./leftteamusers";
 
 import styles from "../../../leftSide/leftSide.module.css";
 import ChooseTeam from "../../chooseteam/chooseteam";
+import Boxes from "../../Boxes"
 export default function lefside({topic,users}) {
   return (
     <div className={styles.containerLeft}>
@@ -15,10 +16,7 @@ export default function lefside({topic,users}) {
          {users.map(user=><TeamMember username={user.username}></TeamMember>)}
         </div>
 
-        <div className="center column boxColor pl1   pr1 pb1 border-radius5px box-shadow w100">
-          <h5>Remaining time</h5>
-          <span>13:45</span>
-        </div>
+        <Boxes title={"Remaining time"} content={"13:55"}  />
       </div>
     </div>
   );

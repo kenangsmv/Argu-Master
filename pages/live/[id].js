@@ -10,8 +10,8 @@ import LeftSide from "../../components/deabteroomComponents/sides/leftside/left"
 import MiddleSide from "../../components/deabteroomComponents/sides/middle/middle";
 import RightSide from "../../components/deabteroomComponents/sides/rightside/right";
 import TopicSelection from "../../components/deabteroomComponents/topicSelection";
-//const ENDPOINT = "http://localhost:5000";
-const ENDPOINT = "https://argue-backend.herokuapp.com";
+const ENDPOINT = "http://localhost:5000";
+//const ENDPOINT = "https://argue-backend.herokuapp.com";
 let socket;
 
 const Chat = ({ room_info, available }) => {
@@ -107,15 +107,9 @@ const Chat = ({ room_info, available }) => {
     );
   };
 
-
-const whatIsMySide=(side)=>{
-
-console.log(side)
-
-}
-
-
-
+  const whatIsMySide = (side) => {
+    console.log(side);
+  };
 
   const angry = (id) => {
     socket.emit(
@@ -135,24 +129,45 @@ console.log(side)
 
     state.messages.map((message) => {
       if (message.side === topic1) {
-        topic1Score =topic1Score+ (message.likes.length - message.angry.length);
+        topic1Score =
+          topic1Score + (message.likes.length - message.angry.length);
       }
       if (message.side === topic2) {
-    
-        topic2Score =topic2Score+ (message.likes.length - message.angry.length);
+        topic2Score =
+          topic2Score + (message.likes.length - message.angry.length);
       }
     });
 
-    
-    console.log({topic1Score,topic2Score,topic1,topic2})
+    console.log({ topic1Score, topic2Score, topic1, topic2 });
 
-return {topic1Score,topic2Score,topic1,topic2}
-
+    return { topic1Score, topic2Score, topic1, topic2 };
   };
 
   const filterUser = (topic) => {
     return state.users.filter((user) => user.side === topic);
   };
+
+  const amItaken = () => {
+    let usersInDebate = state.users; // debate katılan userlar hepsi
+
+
+    let myToken = user?.token;
+
+    let amIinside = usersInDebate.find((user) => user.token === myToken);
+
+
+
+
+
+    return amIinside;
+  };
+
+ 
+
+
+
+
+
 
   const joinDebate = (side) => {
     if (side) {
@@ -184,31 +199,36 @@ return {topic1Score,topic2Score,topic1,topic2}
         <div className={styles.homeContainer}>
           <TopicModal
             style={{
-            
               outline: "none",
-               
-                          }}
+            }}
             Comp={TopicSelection}
             joinDebate={joinDebate}
             room_info={state.room_info}
             open={open}
             cancel={closeModal}
           />
-          
-          
 
           <LeftSide users={filterUser(topic1)} topic={topic1} />
           <MiddleSide
             debate_info={state.room_info}
             messages={messages}
+
+checkUser={checkUser()}
+
             mySide={mySide}
             sendMessage={sendMessage}
             like={like}
-         
             angry={angry}
             scores={calculateScore()}
+        amItaken={amItaken()}
+
+
           />
-          <RightSide topic={topic2} users={filterUser(topic2)} />
+          <RightSide
+            topic={topic2}
+            users={filterUser(topic2)}
+            totalUser={totalUser}
+          />
         </div>
       </div>
     </div>
