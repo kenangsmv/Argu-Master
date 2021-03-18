@@ -34,15 +34,15 @@ console.log(percent)
 
 
   return (
-    <div className="w100 vsBar">
-      <div className="vs white row w100">
+   
+      <div className="vs row w100">
         <div className="border-radius-left10px redVS w60">
-          <span className="center">iphone</span>
+          <span>iphone</span>
         </div>
         <div className="border-radius-right10px blackVS w40">
-          <span className="center">samsung</span>
+          <span >samsung</span>
         </div>
-      </div>
+      
     </div>
   );
 

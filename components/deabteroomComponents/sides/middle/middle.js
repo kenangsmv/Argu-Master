@@ -19,8 +19,9 @@ export default function DebateRoom({
 
 
   return (
-    <div className={"liveRoomMiddle relative"}>
+    <div className={"liveRoomMiddle relative "}>
        <Vs scores={scores}></Vs>
+       <div>
       <PostContent debate_info={debate_info}></PostContent>
      
       <div className="liveMessageBody">
@@ -37,7 +38,7 @@ export default function DebateRoom({
 
 
        {checkUser? <TextComponent sendMessage={sendMessage}></TextComponent>:null}
-      
+       </div>
     </div>
   );
 }

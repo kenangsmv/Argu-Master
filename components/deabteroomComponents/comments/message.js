@@ -32,7 +32,7 @@ return {isLiked,isAngry}
  const {isLiked,isAngry}=user?isLikedOrAngry():{isLiked:null,isAngry:null}
   return (
     <div>
-      <div className="w100 row pt1"></div>
+      
       <div className={`user ${message.direction?"row":"row-reverse"} pt1 messageArea`}>
         <div className="pr05">
           <img className="image" src={User} alt="" />
@@ -45,14 +45,22 @@ return {isLiked,isAngry}
           <div>
             <span>{message.message}</span>
           </div>
-
-          <div >
+          <div>
            {user&& <Like   id={message.id} message={message} side={message.side} like={like} angry={angry} isLiked={isLiked} isAngry={isAngry} />}
+           <div className="result resultAbsolute row center box-shadow">
+        {message.likes.length !== 0 ? (
+          <div className="row center">
+            <img className="result-icons" src={LikeVote} alt="" />{message.likes.length}
           </div>
+        ) : null}
+        {message.angry.length !== 0 && (
+          <div className="row center">
+          <img className="result-icons" src={Angry} alt="" />{message.angry.length}
+        </div>
+        )}
+      </div>
+           </div>
           
-           
-          
-         
           <img className="vote-dots" src={Dots} alt="" />
         </div>
           

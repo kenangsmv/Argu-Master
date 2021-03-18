@@ -9,54 +9,53 @@ import Vote from "../../../icons/vote.png";
 
 export default function like({ id, like, angry, isLiked, isAngry, message }) {
   return (
-    <div className="">
-      <div className="voteButtonAbsolute">
-        <ul className="nobullet row">
-          {!isLiked && !isAngry ? (
-            <div>
-              <div className=" column-flex-start">
-                <div className="content popover-body row pl05 pr05">
-                  <img
-                    className="vote-icons needHover"
-                    onClick={() => like(id)}
-                    src={Vote}
-                    alt=""
-                  />
+   
+      
+     
+ <ul>
+           
+             
+ <div className="wrapped nobullet voteButtonAbsolute column">
+{!isLiked && !isAngry ? (
 
-                  <img
-                    className="vote-icons needHover"
-                    onClick={() => angry(id)}
-                    src={AngryFace}
-                    alt=""
-                  />
-                </div>
-                <div className="mr05 underline wrapped">Vote</div>
-              </div>
-            </div>
-          ) : (
-            <img
-              className="vote-icons needHover"
-              onClick={() => {
-                isLiked ? like(id) : angry(id);
-              }}
-              src={isLiked ? Vote : AngryFace}
-              alt=""
-            />
-          )}
-        </ul>
+  <div >
+    <div className=" mr05 underline">Vote</div>
+    <div className="content  row pl05 pr05">
+      <img
+        className="vote-icons needHover"
+        onClick={() => like(id)}
+        src={Vote}
+        alt=""
+      />
+
+      <img
+        className="vote-icons needHover"
+        onClick={() => angry(id)}
+        src={AngryFace}
+        alt=""
+      />
       </div>
-      <div className="result resultAbsolute row center box-shadow">
-        {message.likes.length !== 0 ? (
-          <div className="row center">
-            <img className="result-icons" src={LikeVote} alt="" />{message.likes.length}
-          </div>
-        ) : null}
-        {message.angry.length !== 0 && (
-          <div className="row center">
-          <img className="result-icons" src={Angry} alt="" />{message.angry.length}
-        </div>
-        )}
-      </div>
-    </div>
+   
+    
+  
+</div>
+) : (
+<img
+  className="vote-icons needHover"
+  onClick={() => {
+    isLiked ? like(id) : angry(id);
+  }}
+  src={isLiked ? Vote : AngryFace}
+  alt=""
+/>
+)}
+</div>
+
+
+
+</ul>
+      
+    
+   
   );
 }
