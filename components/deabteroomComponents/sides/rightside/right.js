@@ -18,7 +18,7 @@ export default function rightSide({topic,users,totalUser}) {
                {topic}
                 </div>      
 
-                {users.map(user=><TeamMember username={user.username}></TeamMember>)}  
+                {users.map(user=><TeamMember score={user.score} username={user.username}></TeamMember>)}  
                 
                </div>
               

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { getOneDebate } from "../../actions/requests";
 import io from "socket.io-client";
 import { useRouter } from "next/router";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Button } from "@material-ui/core";
 import styles from "../../styles/Home.module.css";
 import TopicModal from "../../components/Modal/TopicSelectionModal";
@@ -15,6 +15,7 @@ const ENDPOINT = "http://localhost:5000";
 let socket;
 
 const Chat = ({ room_info, available }) => {
+  const dispatch = useDispatch();
   const user = useSelector((state) => state.user.currentUser);
 
   const [state, setState] = useState(null);
@@ -79,14 +80,14 @@ const Chat = ({ room_info, available }) => {
   const sendMessage = (message) => {
     let m_ = {
       message: message,
-      message_holder: user.name,
+      message_holder: user.username,
       side: mySide,
       direction: mySide === room_info["topic1"] ? true : false,
     };
 
     socket.emit(
       "message",
-      { message: m_, room: room_info.string_id },
+      { message: m_, room: room_info.string_id, token: user?.token },
       (error) => {
         if (error) {
           console.log(error);
@@ -98,10 +99,12 @@ const Chat = ({ room_info, available }) => {
   const like = (id) => {
     socket.emit(
       "like",
-      { id: id, room: room_info.string_id, token: user.token },
+      { id: id, room: room_info.string_id, token: user?.token },
       (error) => {
         if (error) {
-          console.log(error);
+          if (error.error === "authError") {
+            dispatch({ type: "SET_MODAL", payload: true });
+          }
         }
       }
     );
@@ -114,10 +117,12 @@ const Chat = ({ room_info, available }) => {
   const angry = (id) => {
     socket.emit(
       "angry",
-      { id: id, room: room_info.string_id, token: user.token },
+      { id: id, room: room_info.string_id, token: user?.token },
       (error) => {
         if (error) {
-          console.log(error);
+          if (error.error === "authError") {
+            dispatch({ type: "SET_MODAL", payload: true });
+          }
         }
       }
     );
@@ -144,36 +149,43 @@ const Chat = ({ room_info, available }) => {
   };
 
   const filterUser = (topic) => {
-    return state.users.filter((user) => user.side === topic);
+    let filtered = state?.users?.filter((user) => user.side === topic);
+
+    filtered.map((user) => {
+      let score = 0;
+      messages.map((m) => {
+        if (m.message_holder === user.username) {
+          score = score + m.likes.length - m.angry.length;
+        }
+      });
+      user.score = score;
+    });
+
+    return filtered;
   };
 
+  const checkUser = () => {
+    let myToken = user?.token;
 
+    let inDebate = state.users;
 
-    const checkUser =()=>{
-       
-      let myToken = user.token;
+    let Var = inDebate.find((user) => user?.token === myToken);
 
-      let inDebate = state.users;
-
-      let Var = inDebate.find((user)=>user.token===myToken);
-
-      return Var;
-
-    }
-    
-
-
+    return Var;
+  };
 
   const joinDebate = (side) => {
     if (side) {
-      let joiner = { token: user.token, side: side, username: user.username };
+      let joiner = { token: user?.token, side: side, username: user?.username };
 
       socket.emit(
         "joinDebate",
         { data: joiner, room: room_info.string_id },
         (error) => {
           if (error) {
-            console.log(error);
+            if (error.error === "authError") {
+              dispatch({ type: "SET_MODAL", payload: true });
+            }
           } else {
             setMySide(side);
           }
@@ -199,6 +211,7 @@ const Chat = ({ room_info, available }) => {
             Comp={TopicSelection}
             joinDebate={joinDebate}
             room_info={state.room_info}
+            filteredUser={{topic1:filterUser(topic1),topic2:filterUser(topic2)}}
             open={open}
             cancel={closeModal}
           />
@@ -207,17 +220,19 @@ const Chat = ({ room_info, available }) => {
           <MiddleSide
             debate_info={state.room_info}
             messages={messages}
-
-checkUser={checkUser()}
-
+            checkUser={checkUser()}
             mySide={mySide}
             sendMessage={sendMessage}
             like={like}
             checkUser={checkUser()}
             angry={angry}
             scores={calculateScore()}
-            
           />
+          <RightSide
+            users={filterUser(topic2)}
+            topic={topic2}
+            totalUser={totalUser}
+          ></RightSide>
         </div>
       </div>
     </div>

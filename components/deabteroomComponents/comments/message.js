@@ -44,7 +44,7 @@ export default function DebateRoom({ message, like, angry, whatIsMySide }) {
           </div>
 
           <div className="voteButtonAbsolute">
-           {user&& <Like   id={message.id} side={message.side} like={like} angry={angry} isLiked={isLiked} isAngry={isAngry} ></Like>}
+            <Like   id={message.id} side={message.side} like={like} angry={angry} isLiked={isLiked} isAngry={isAngry} ></Like>
           </div>
         
             <div className="result resultAbsolute row center box-shadow">

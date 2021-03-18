@@ -13,7 +13,7 @@ export default function lefside({topic,users}) {
         {topic}
           </div>
 
-         {users.map(user=><TeamMember username={user.username}></TeamMember>)}
+         {users.map(user=><TeamMember score={user.score} username={user.username}></TeamMember>)}
         </div>
 
         <Boxes title={"Remaining time"} content={"13:55"}  />
