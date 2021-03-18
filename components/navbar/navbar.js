@@ -37,8 +37,8 @@ const Navbar = () => {
   return (
     <div className={"navbarContainer row between "}>
        <Modal open={open} Comp={AuthLayout} cancel={closeAuthModal}></Modal>
-      <div className={"logo"}>
-        <img src={Logo} alt="" />
+      <div className={"logo needHover"}>
+        <img  src={Logo} alt="" />
       </div>
       <div className={"searchBox"}>
         <Input></Input>

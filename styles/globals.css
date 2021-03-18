@@ -119,12 +119,14 @@ h1,h2,h3,h4,h5,h6{
   padding: 10px 20px;
 }
 .logo{
-  padding-left: 10px;
-  width: 20%;
+  padding-left: 40px;
+  width: 30%;
   height: 100%;
 }
+
 .logo img{
-  height: 100%;
+  width: 240px;
+  
 }
 
 
