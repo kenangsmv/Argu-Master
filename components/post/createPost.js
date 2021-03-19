@@ -25,7 +25,7 @@ export default function createPost({cancel}) {
     topic1_color: "green",
     topic2_color: "blue",
     limit_time: false,
-    categories:[],
+    categories:[]
   });
   const [stage, setStage] = useState(1);
 

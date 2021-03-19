@@ -1,50 +1,44 @@
 import React from "react";
-import TextField from "@material-ui/core/TextField";
-import { Button } from "@material-ui/core";
-import InputLabel from "@material-ui/core/InputLabel";
-import MenuItem from "@material-ui/core/MenuItem";
-import FormHelperText from "@material-ui/core/FormHelperText";
-import FormControl from "@material-ui/core/FormControl";
-import Select from "@material-ui/core/Select";
 
-let categoriesArray = [
+let categories_Array = [
   {
-    name: "Technology",
-    backgroundColor: "orange",
+    name: "teknology",
+    backgroundColor: "red",
+   
   },
   {
-    name: "Sports",
+    name: "spor",
     backgroundColor: "blue",
   },
   {
-    name: "Science",
-    backgroundColor: "red",
+    name: "siyasi",
+    backgroundColor: "green",
   },
 ];
 
-export default function stage2({ changeValue, data, categories }) {
-    
-  const toggle=(kategori)=>{
-       console.log(categories)
-      let geciciArr=[...categories];
+export default function stage2({ changeValue, categories }) {
+  // statei read edebilirsin ama update edemessin
 
-     let checkCategori = geciciArr.includes(kategori);
+  const toggle = (categorie) => {
+    // stateteki arrayi boş arraye ata
+    let arr = [...categories];
 
-     if (checkCategori){
-      
-         // cikar
-        geciciArr = geciciArr.filter(item => item!==kategori)
+    let isInside = categories.includes(categorie);
 
-     } 
-     else{
-       //ekle
-       geciciArr.push(kategori)
-     }
+    if (isInside) {
+      //çıkar
 
+      arr = arr.filter((item) => item !== categorie);
+      //arrayi gez array elemanlarından teknolojiye eşit olmayanları tut gerisini filtrelere
+    } else {
+      //pushla
+      arr.push(categorie);
+    }
 
-       changeValue("categories", geciciArr);
+    changeValue("categories", arr);
+  };
 
-
+  console.log(categories);
 
   }
     console.log("kategroiler",categories)
@@ -60,24 +54,23 @@ export default function stage2({ changeValue, data, categories }) {
       <div className="center w100 border-bottom">
         <h2 className="mb1">Stage 2</h2>
       </div>
-      <div>
-        <h4>Select Category</h4>
+      <div className="mt2 flex-start column mb1">
+        <span className="mb05">Select Categories</span>
         <div className="categoryContainer">
-     {  
-         categoriesArray.map(element=> 
-         
-         <div style={{backgroundColor:element.backgroundColor}} className="category" onClick={()=>{toggle(element.name)}}>
-     {element.name}
-     {
-         checkTick(element.name)&&<div className="categoryTick"></div>
-       } 
-         </div>)
-        
-          
-       }
-          
+          {categories_Array.map((categorie) => (
+            <div
+              className="category "
+              style={{ color: "white" ,backgroundColor:categorie.backgroundColor,
+            }}
+              onClick={() => toggle(categorie.name)}
+            >
+           {categorie.name}
+            </div>
+          ))}
         </div>
       </div>
     </div>
   );
 }
+
+//<div className="categoryTick"></div>
