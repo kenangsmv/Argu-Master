@@ -1,12 +1,13 @@
 import TeamMember from './rightteamusers'
-
+import Link from "next/link"
 import styles from "../../../leftSide/leftSide.module.css"
 import { Button } from '@material-ui/core'
 import ChooseTeam from '../../chooseteam/chooseteam'
 import Boxes from "../../Boxes"
+import { useRouter } from 'next/router'
 
 export default function rightSide({topic,users,totalUser}) {
-
+const router=useRouter()
     return (
       <div className="containerLeft relative">
       
@@ -25,7 +26,7 @@ export default function rightSide({topic,users,totalUser}) {
                   
               </div>
               <Boxes title={"Total user"} content={totalUser}/>
-              <div className="center w100"> <div  className="exitRoom center  needHover w100"> Exit Room </div> </div>
+                 <div onClick={()=>router.push("/")} className="center w100"> <div  className="exitRoom center  needHover w100"> Exit Room </div> </div>
           </div>
       </div>
     );

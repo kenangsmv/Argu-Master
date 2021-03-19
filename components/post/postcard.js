@@ -57,7 +57,7 @@ const Postcard = ({data}) => {
           {data.title}
           </span>
         </div>
-        <Voting  data={{topic1:data.topic1,topic2:data.topic2,id:data.string_id}} ></Voting>
+        <Voting  data={{topic1:data.topic1,topic2:data.topic2,id:data.string_id,categories:data.categories}} ></Voting>
        
         <div
           className={

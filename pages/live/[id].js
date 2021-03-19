@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect ,useRef} from "react";
 import { getOneDebate } from "../../actions/requests";
 import io from "socket.io-client";
 import { useRouter } from "next/router";
@@ -10,12 +10,15 @@ import LeftSide from "../../components/deabteroomComponents/sides/leftside/left"
 import MiddleSide from "../../components/deabteroomComponents/sides/middle/middle";
 import RightSide from "../../components/deabteroomComponents/sides/rightside/right";
 import TopicSelection from "../../components/deabteroomComponents/topicSelection";
-const ENDPOINT = "http://localhost:5000";
-//const ENDPOINT = "https://argue-backend.herokuapp.com";
+//const ENDPOINT = "http://localhost:5000";
+const ENDPOINT = "https://argue-backend.herokuapp.com";
 let socket;
 
 const Chat = ({ room_info, available }) => {
   const dispatch = useDispatch();
+
+  const messagesEndRef = useRef(null)
+
   const user = useSelector((state) => state.user.currentUser);
 
   const [state, setState] = useState(null);
@@ -69,13 +72,22 @@ const Chat = ({ room_info, available }) => {
         console.log("newUpdate", all_data);
         setState(all_data);
         setMessages(all_data.messages);
+        
       });
       socket.on("message", ({ all_data }) => {
         console.log("message", all_data);
         setMessages(all_data);
+        
       });
     }
   };
+
+
+
+
+
+
+
 
   const sendMessage = (message) => {
     let m_ = {
@@ -174,6 +186,7 @@ const Chat = ({ room_info, available }) => {
     return Var;
   };
 
+  
   const joinDebate = (side) => {
     if (side) {
       let joiner = { token: user?.token, side: side, username: user?.username };
@@ -226,6 +239,7 @@ const Chat = ({ room_info, available }) => {
             like={like}
             checkUser={checkUser()}
             angry={angry}
+            ref={messagesEndRef}
             scores={calculateScore()}
           />
           <RightSide

@@ -6,9 +6,11 @@ export default function voting({ data }) {
   return (
     <div className={"votingContainer space-between center"}>
     <div className="row">
-    <div className={"votingBox1 m1 center"}> technology </div>
+   {data.categories?.map(categorie=>
+     <div className={ `${categorie} m1 center`}> {categorie}</div>
 
-<div className={"votingBox2 m1 center"}> trend </div>
+    
+    )}
 
     </div>
       <Link href={data.id}>
