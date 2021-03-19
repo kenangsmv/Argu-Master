@@ -25,6 +25,7 @@ export default function createPost({cancel}) {
     topic1_color: "green",
     topic2_color: "blue",
     limit_time: false,
+    categories:[],
   });
   const [stage, setStage] = useState(1);
 
@@ -94,7 +95,7 @@ return last_
 
       <div className="modalTop w100 center">
         {stage == 1 && <Stage1 data={state} changeValue={changeValue}></Stage1>}
-        {stage == 2 && <Stage2 data={state} changeValue={changeValue}></Stage2>}
+        {stage == 2 && <Stage2 categories={state.categories} changeValue={changeValue}></Stage2>}
       </div>
       {stage == 1 && (
         <Button
