@@ -65,3 +65,12 @@ export const getOneDebate = async (data) => {
     data: data,
   });
 };
+
+export const getTrends = async (data) => {
+  console.log("data",data)
+  return await axios({
+    method: "get",
+    url: serverless + "/getTrends",
+    data: data,
+  });
+};

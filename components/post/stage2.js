@@ -38,7 +38,13 @@ export default function stage2({ changeValue, categories }) {
     changeValue("categories", arr);
   };
 
-  console.log(categories);
+// kategorinin seçili olup olmadığını dödnrücek
+
+const check=(categorie)=>{
+return categories.includes(categorie)
+}
+
+
 
   return (
     <div className="w100 column">
@@ -56,6 +62,8 @@ export default function stage2({ changeValue, categories }) {
               onClick={() => toggle(categorie.name)}
             >
            {categorie.name}
+
+           {check(categorie.name)&&<div className="categoryTick"></div>}
             </div>
           ))}
         </div>
@@ -64,4 +72,4 @@ export default function stage2({ changeValue, categories }) {
   );
 }
 
-//<div className="categoryTick"></div>
+//
