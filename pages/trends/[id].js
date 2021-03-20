@@ -8,6 +8,7 @@ import RightSide from "../../components/rightSide/rightSide";
 
 import { getTrends} from "../../actions/requests";
 import { useRouter } from "next/router";
+import Slider from "../../components/Slider/slider"
 
 
 export async function getServerSideProps({ query }) {

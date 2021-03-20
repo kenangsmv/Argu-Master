@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./flow.module.css";
 import PostCard from "../post/postcard.js";
 import CreateDebate from "../post/createdebate";
+import Slider from "../Slider/slider"
 
 function flow({debates}) {
   
@@ -16,6 +17,7 @@ function flow({debates}) {
         <div>yükleniyor</div>
       ) : (
         <div className="w100 center column border-left border-right">
+            <Slider></Slider>
           <CreateDebate></CreateDebate>
 
           {
