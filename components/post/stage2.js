@@ -1,18 +1,51 @@
 import React from "react";
+import Technology from '../../icons/technology.png'
+import Sport from '../../icons/sport.png'
+import Science from '../../icons/science.png'
+import Music from '../../icons/music.png'
+import Films from '../../icons/films.png'
+import Games from '../../icons/game.png'
+import TechBackground from '../../images/technologybackground.jpg'
+import SportBackground from '../../images/sportbackground.jpg'
+import ScienceBackground from '../../images/sciencebackground.jpg'
+import MusicBackground from '../../images/musicbackground.jpg'
+import FilmBackground from '../../images/filmbackground.jpg'
+import GameBackground from '../../images/gamebackground.jpg'
+
+
+
 
 let categories_Array = [
   {
-    name: "teknology",
-    backgroundColor: "red",
-   
+    name: "Technology",
+    photo: TechBackground,
+    icon: Technology,
+    
   },
   {
-    name: "spor",
-    backgroundColor: "blue",
+    name: "Sports",
+    photo: SportBackground,
+    icon: Sport,
   },
   {
-    name: "siyasi",
-    backgroundColor: "green",
+    name: "Science",
+    photo: ScienceBackground,
+    icon: Science,
+  },
+  {
+    name: "Music",
+    photo: MusicBackground,
+    icon: Music,
+  },
+  {
+    name: "Film",
+    photo: FilmBackground,
+    icon: Films,
+  },
+  {
+    name: "Game",
+    photo: GameBackground,
+    icon: Games,
   },
 ];
 
@@ -50,24 +83,48 @@ return categories.includes(categorie)
 
 
 
+  
+    console.log("kategroiler",categories)
+  const checkTick=(kategori)=>{
+
+  let check = categories.includes(kategori)
+ return  check;
+
+  }
+
   return (
     <div className="w100 column">
       <div className="center w100 border-bottom">
-        <h2 className="mb1">Stage 2</h2>
+        <h2 className="mb1">Select Category</h2>
       </div>
       <div className="mt2 flex-start column mb1">
-        <span className="mb05">Select Categories</span>
-        <div className="categoryContainer">
+       
+        <div className="categoryContainer ">
           {categories_Array.map((categorie) => (
             <div
-              className="category "
-              style={{ color: "white" ,backgroundColor:categorie.backgroundColor,
+              className=" maskcontainer category center needHover box-shadow  "
+              style={{ color: "white"
             }}
               onClick={() => toggle(categorie.name)}
             >
-           {categorie.name}
-
-           {check(categorie.name)&&<div className="categoryTick"></div>}
+             
+            <div className=" maskcontainerBox  needHover center">
+              <img className="backgroundImage" src={categorie.photo} alt=""/>
+              
+              <div className="center column w100">
+                
+            <img className="categorieIcons" src={categorie.icon} alt=""/>
+           
+            <div className="categoriesHover ">
+             <span >{categorie.name}</span>
+             
+             </div>
+             </div>
+            </div>
+          
+           
+           
+           {checkTick(categorie.name) && <div className="categoryTick"></div>}
             </div>
           ))}
         </div>
