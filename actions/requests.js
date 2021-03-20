@@ -74,3 +74,11 @@ export const getTrends = async (data) => {
     data: data,
   });
 };
+export const myDebates = async (data) => {
+  console.log("data",data)
+  return await axios({
+    method: "get",
+    url: serverless + "/myDebates",
+    data: data,
+  });
+};

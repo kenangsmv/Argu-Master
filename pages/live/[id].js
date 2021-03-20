@@ -10,8 +10,8 @@ import LeftSide from "../../components/deabteroomComponents/sides/leftside/left"
 import MiddleSide from "../../components/deabteroomComponents/sides/middle/middle";
 import RightSide from "../../components/deabteroomComponents/sides/rightside/right";
 import TopicSelection from "../../components/deabteroomComponents/topicSelection";
-//const ENDPOINT = "http://localhost:5000";
-const ENDPOINT = "https://argue-backend.herokuapp.com";
+const ENDPOINT = "http://localhost:5000";
+//const ENDPOINT = "https://argue-backend.herokuapp.com";
 let socket;
 
 const Chat = ({ room_info, available }) => {
@@ -40,6 +40,7 @@ const Chat = ({ room_info, available }) => {
       }
     }
   }, [room_info]);
+  console.log("satateee",state)
 
   const connectSocket = () => {
     if (id) {
@@ -99,7 +100,7 @@ const Chat = ({ room_info, available }) => {
 
     socket.emit(
       "message",
-      { message: m_, room: room_info.string_id, token: user?.token },
+      { message: m_, room: room_info.string_id, token: user?.token, username:user?.username },
       (error) => {
         if (error) {
           console.log(error);
@@ -111,7 +112,7 @@ const Chat = ({ room_info, available }) => {
   const like = (id) => {
     socket.emit(
       "like",
-      { id: id, room: room_info.string_id, token: user?.token },
+      { id: id, room: room_info.string_id, token: user?.token, username:user?.username },
       (error) => {
         if (error) {
           if (error.error === "authError") {
@@ -129,7 +130,7 @@ const Chat = ({ room_info, available }) => {
   const angry = (id) => {
     socket.emit(
       "angry",
-      { id: id, room: room_info.string_id, token: user?.token },
+      { id: id, room: room_info.string_id, token: user?.token, username:user?.username },
       (error) => {
         if (error) {
           if (error.error === "authError") {
@@ -163,7 +164,7 @@ const Chat = ({ room_info, available }) => {
   const filterUser = (topic) => {
     let filtered = state?.users?.filter((user) => user.side === topic);
 
-    filtered.map((user) => {
+    filtered?.map((user) => {
       let score = 0;
       messages.map((m) => {
         if (m.message_holder === user.username) {
@@ -177,11 +178,11 @@ const Chat = ({ room_info, available }) => {
   };
 
   const checkUser = () => {
-    let myToken = user?.token;
+    let myToken = user?.username;
 
     let inDebate = state.users;
 
-    let Var = inDebate.find((user) => user?.token === myToken);
+    let Var = inDebate?.find((user) => user?.username === myToken);
 
     return Var;
   };
@@ -189,7 +190,7 @@ const Chat = ({ room_info, available }) => {
   
   const joinDebate = (side) => {
     if (side) {
-      let joiner = { token: user?.token, side: side, username: user?.username };
+      let joiner = { token: user?.token, username:user?.username, side: side, username: user?.token, username:user?.username };
 
       socket.emit(
         "joinDebate",
