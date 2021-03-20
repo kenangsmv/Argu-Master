@@ -42,7 +42,11 @@ export default function stage2({ changeValue, categories }) {
 
 const check=(categorie)=>{
 return categories.includes(categorie)
+
 }
+
+
+
 
 
 
