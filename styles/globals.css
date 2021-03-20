@@ -741,22 +741,7 @@ background: linear-gradient(to right, #753a88, #cc2b5e); /* W3C, IE 10+/ Edge, F
   
 }
 
-.teknology{
-  min-width: 30px;
-  height: 30px;
-  background-color: rgba(3, 90, 32, 0.05);
-  color: green;
-  padding:6px;
-  border-radius: 3px;
-}
-.spor{
-  min-width: 30px;
-  height: 30px;
-  background-color: rgba(201, 25, 201, 0.05);
-  color: rgb(120, 19, 179);
-  padding:6px;
-  border-radius: 3px;
-}
+
 
 .votingSide2{
   width: 80%;
@@ -795,13 +780,40 @@ background: linear-gradient(to right, #ffa751, #ffe259); /* W3C, IE 10+/ Edge, F
   border-radius: 5px;  
 }
 /* Category */
+.maskcontainer{
+display: flex;
+justify-content: center;
+align-items: center;  
+flex-wrap: wrap;
+
+}
+
+.maskcontainer .maskcontainerBox{
+  position: relative;
+  width: 400px;
+  height: 70px;
+  
+}
+
+.maskcontainer .maskcontainerBox .backgroundImage{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  mix-blend-mode: screen;
+  
+
+}
 .category{
   position: relative !important;
 width: 45%;
 height: 70px;
-background-color: hsl(210, 34%, 13%);
+
 border-radius: 10px;
-margin: 10px;
+margin:10px;
+
 }
 .categoryContainer{
   width: 100%;
@@ -823,6 +835,67 @@ flex-wrap: wrap;
   right: 10px;
   z-index: 3;
 }
+.categoriesHover:hover{
+cursor: pointer;
+border-bottom: 1px solid black;
+
+}
+
+.categorieIcons{
+  width: 30px;  
+  height: 30px;
+  z-index: 3;
+
+}
+
+.Technology{
+ min-width: 30px;
+ height: 30px;
+ background-color: rgba(3, 90, 32, 0.05);
+ color: green;
+ padding:6px;
+ border-radius: 3px;
+}
+.Sport{
+ min-width: 30px;
+ height: 30px;
+ background-color: rgba(201, 25, 201, 0.05);
+ color: rgb(120, 19, 179);
+ padding:6px;
+ border-radius: 3px;
+}
+.Science{
+  min-width: 30px;
+  height: 30px;
+  background-color: rgba(3, 90, 32, 0.05);
+  color: green;
+  padding:6px;
+  border-radius: 3px;
+ }
+ .Music{
+  min-width: 30px;
+  height: 30px;
+  background-color: rgba(201, 25, 201, 0.05);
+  color: rgb(120, 19, 179);
+  padding:6px;
+  border-radius: 3px;
+ }
+ .Film{
+  min-width: 30px;
+  height: 30px;
+  background-color: rgba(3, 90, 32, 0.05);
+  color: green;
+  padding:6px;
+  border-radius: 3px;
+ }
+ .Game{
+  min-width: 30px;
+  height: 30px;
+  background-color: rgba(201, 25, 201, 0.05);
+  color: rgb(120, 19, 179);
+  padding:6px;
+  border-radius: 3px;
+ }
 /* createdebate*/
 
 
