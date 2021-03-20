@@ -101,7 +101,7 @@ export default function stage2({ changeValue, categories }) {
             <div className=" maskcontainerBox  needHover center">
               <img className="backgroundImage" src={categorie.photo} alt=""/>
               
-              <div className="center column w100">
+              <div className="center column w100 categoryOverlay">
                 
             <img className="categorieIcons" src={categorie.icon} alt=""/>
            
