@@ -16,7 +16,8 @@ MyApp.getInitialProps= async ({ctx})=> {
  const reduxStore = initializeStore();
  const { dispatch } = reduxStore;
 
-
+try {
+  
  const cookies =  cookieServer.parse(req ? req.headers.cookie || "" : document.cookie);
  if(Object.entries(cookies).length !== 0)
  dispatch({
@@ -24,6 +25,9 @@ MyApp.getInitialProps= async ({ctx})=> {
    payload: JSON.parse(cookies.currentUser),
  });
 
+} catch (error) {
+  
+}
 
  console.log("alooooooooooooooooooooooooooooooooo")
 

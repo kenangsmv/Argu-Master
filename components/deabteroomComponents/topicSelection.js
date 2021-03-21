@@ -7,8 +7,8 @@ export default function topicSelection({joinDebate,room_info,filteredUser}) {
     console.log(room_info)
     return (
         <div className="center column">
-            <div className="w100 row space-around mb2 mt2">
-                <div className="column column-flex-start">
+            <div className="w100 row center mb2 mt2">
+                <div className="column column-flex-start mr1">
           
             <div className="w100 team white column relative" onClick={()=>joinDebate(topic1)} >
          
@@ -31,7 +31,7 @@ export default function topicSelection({joinDebate,room_info,filteredUser}) {
             </div>
             </div>
              </div>
-            <Button  onClick={()=>joinDebate()} variant="contained" color="primary" className="w20"> Watch As Guest </Button>
+            <div  onClick={()=>joinDebate()} variant="contained" color="primary" className="exitRoom center w20"> Watch As Guest </div>
          
         </div>
     )
