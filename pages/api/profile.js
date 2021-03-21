@@ -7,8 +7,16 @@ console.log("id bak bu",req.body)
    const debate = await db
     .collection("debates")
     .find({debaters:id}).toArray();
+   
+    const user = await db
+    .collection("users")
+    .findOne({username:id})
+
+    console.log(debate,"debate")
+    console.log(user,"user")
+
     res.json({
-      data:debate,
+      data:{debate:debate,user:user},
      status: true,
     });
     

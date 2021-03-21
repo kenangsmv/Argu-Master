@@ -24,9 +24,7 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     
     position:"absolute",
-    
    
-    
     
     border: "none",
   },
@@ -43,6 +41,7 @@ export default function SimpleModal({ open, cancel,Comp ,joinDebate,room_info,fi
         style={{
           overflowY: "auto",
           alignSelf: "center",
+       
           
         }}
         open={open}

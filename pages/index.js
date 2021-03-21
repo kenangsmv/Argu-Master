@@ -14,12 +14,16 @@ export async function getServerSideProps({req}) {
 console.log("redux store ", reduxStore)
 const cookies =  cookieServer.parse(req ? req.headers.cookie || "" : document.cookie);
 console.log("cookieee",cookies)
-if(Object.entries(cookies).length !== 0)
+
+try {
+  if(Object.entries(cookies).length !== 0)
 dispatch({
   type: "ADD_USER",
   payload: JSON.parse(cookies.currentUser),
 });
-
+} catch (error) {
+  
+}
 
 
   const res = await getDebate();

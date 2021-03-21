@@ -24,7 +24,7 @@ export async function getServerSideProps({ query }) {
   let available = data ? true : false;
 
   // Pass data to the page via props
-  return { props: { debates: data } };
+  return { props: { debates: data.debate,user:data.user } };
 }
 
 export default function Home({ debates}) {

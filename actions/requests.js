@@ -78,7 +78,8 @@ export const myDebates = async (data) => {
   console.log("data",data)
   return await axios({
     method: "get",
-    url: serverless + "/myDebates",
+    url: serverless + "/profile",
     data: data,
   });
 };
+
