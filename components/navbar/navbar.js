@@ -7,10 +7,12 @@ import Cookie from "js-cookie";
 import Vs from "../deabteroomComponents/vs/versus"
 import { Button } from "@material-ui/core";
 import Modal from "../Modal/Modal"
+import Link from "next/link"
 import AuthLayout from "../auth/layout"
 import { useSelector, useDispatch } from "react-redux";
+import { useRouter } from 'next/router'
 const Navbar = () => {
-  
+  const router=useRouter()
   const user = useSelector((state) => state.user.currentUser);
   const open = useSelector((state) => state.layout.auth_modal);
   const dispatch = useDispatch();
@@ -37,7 +39,7 @@ const Navbar = () => {
   return (
     <div className={"navbarContainer row between "}>
        <Modal open={open} Comp={AuthLayout} cancel={closeAuthModal}></Modal>
-      <div className={"logo needHover "}>
+      <div onClick={()=>router.push("/trends/Music")} className={"logo needHover "}>
         <img className=""  src={Logo} alt="" />
       </div>
       <div className={"searchBox"}>
@@ -45,8 +47,8 @@ const Navbar = () => {
       </div>
       {user ? (
         <div className={"menus row center"}>
-          <h5 className="p1 h100 center">Orkun Mert Yigit </h5>
-          <h5 className="p1 h100 borderLeft center">Create</h5>
+          <Link  href={`/user/${user.username}`} className="p1 h100 center needHover">{user.username}</Link>
+          <h5 className="p1 h100 borderLeft center needHover">Create</h5>
           <h5 onClick={logout} className="p1 h100 borderLeft center needHover">Logout</h5>
         </div>
       ) : (

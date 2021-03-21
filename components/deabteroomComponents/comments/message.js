@@ -14,8 +14,8 @@ export default function DebateRoom({ message, like, angry, whatIsMySide }) {
     return message.likes.length - message.angry.length;
   };
   const isLikedOrAngry = () => {
-    let isLiked = message.likes.includes(user.token);
-    let isAngry = message.angry.includes(user.token);
+    let isLiked = message.likes.includes(user.username);
+    let isAngry = message.angry.includes(user.username);
 
     return { isLiked, isAngry };
   };

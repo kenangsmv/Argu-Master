@@ -3,6 +3,7 @@ import Link from "next/link"
 import {Button} from "@material-ui/core"
 
 export default function voting({ data }) {
+  console.log(data)
   return (
     <div className={"votingContainer space-between center"}>
     <div className="row">
@@ -13,7 +14,7 @@ export default function voting({ data }) {
     )}
 
     </div>
-      <Link href={data.id}>
+      <Link href={`/live/${data.id}`}>
             <Button variant="contained"  className="voteButton" >
               Join
             </Button>
