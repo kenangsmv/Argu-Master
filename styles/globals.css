@@ -878,6 +878,15 @@ border-bottom: 1px solid black;
 
 }
 
+.Blackk{
+  min-width: 30px;
+  height: 30px;
+  background-color: rgba(1, 10, 4, 0.05);
+  color: rgb(12, 12, 12);
+  padding:6px;
+  border-radius: 3px;
+ }
+
 .Technology{
  min-width: 30px;
  height: 30px;
