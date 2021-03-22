@@ -48,7 +48,7 @@ const Navbar = () => {
       {user ? (
         <div className={"menus row center"}>
           <Link  href={`/user/${user.username}`} className="p1 h100 center needHover">{user.username}</Link>
-          <h5 className="p1 h100 borderLeft center needHover">Create</h5>
+          <h5 className="p1 h100 borderLeft center needHover followButton ml1">Create</h5>
           <h5 onClick={logout} className="p1 h100 borderLeft center needHover">Logout</h5>
         </div>
       ) : (
