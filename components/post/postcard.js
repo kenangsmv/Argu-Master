@@ -38,7 +38,7 @@ const Postcard = ({ data }) => {
         <div className={"postTop w100"}>
           <div className={"topConent boxColor row center"}>
             <img className={"image"} src={Profile} alt="" />
-            <div className="topTextContent w100 space-between column pl05">
+            <div className="topTextContent w100 column pl05">
               <h5>{data.post_holder_name} </h5>
 
               <time>{moment(data.createdAt).fromNow()}</time>

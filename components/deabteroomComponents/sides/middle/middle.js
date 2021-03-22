@@ -24,8 +24,14 @@ export default function DebateRoom({
   }
   useEffect(() => {
   scrollToBottom()
-  console.log("scroll to bottom")
+
   }, [messages])
+
+
+
+
+
+
   return (
     <div className={"liveRoomMiddle relative "}>
       <Vs scores={scores}></Vs>

@@ -10,8 +10,8 @@ import LeftSide from "../../components/deabteroomComponents/sides/leftside/left"
 import MiddleSide from "../../components/deabteroomComponents/sides/middle/middle";
 import RightSide from "../../components/deabteroomComponents/sides/rightside/right";
 import TopicSelection from "../../components/deabteroomComponents/topicSelection";
-//const ENDPOINT = "http://localhost:5000";
-const ENDPOINT = "https://argue-backend.herokuapp.com";
+const ENDPOINT = "http://localhost:5000";
+//const ENDPOINT = "https://argue-backend.herokuapp.com";
 let socket;
 
 const Chat = ({ room_info, available }) => {

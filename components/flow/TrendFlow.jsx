@@ -4,11 +4,7 @@ import PostCard from "../post/postcard.js";
 import CreateDebate from "../post/createdebate";
 import Slider from "../Slider/slider"
 
-function flow({debates,isProfile}) {
-  
 
-  const sortTıme=(a,b)=>{return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()}
-  console.log("debates",debates)
 
 function flow({ debates, isProfile }) {
   const sortTıme = (a, b) => {
@@ -37,5 +33,4 @@ function flow({ debates, isProfile }) {
     </div>
   );
 }
-
 export default flow;

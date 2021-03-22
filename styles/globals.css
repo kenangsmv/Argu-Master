@@ -372,6 +372,7 @@ flex-wrap: wrap;
 .red{
   background-color : red;
 }
+
 .green{
   background-color : green;
 }
@@ -1302,11 +1303,19 @@ color: white;
 }
 .followButton{
     width:150px;
-    height:25px;
+    height:30px;
     background-color: #15202B; 
-    border-radius: 10px;
+    border-radius: 5px;
     color: white;
     
+}
+.followedButton{
+  width:150px;
+  height:30px;
+  background-color: #7c1b30; 
+  border-radius: 5px;
+  color: white;
+  
 }
 .profileMenu ul{
  

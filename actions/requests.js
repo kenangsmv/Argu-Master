@@ -1,7 +1,7 @@
 import axios from "axios";
 import Cookie from "js-cookie";
-const url = "https://argue-backend.herokuapp.com";
-// const url = "http://localhost:5000";
+//const url = "https://argue-backend.herokuapp.com";
+ const url = "http://localhost:5000";
 const serverless= "http://localhost:3000/api"
 export const newDebate = async (data, callback) => {
   try {
@@ -47,6 +47,23 @@ export const login = async (data, callback) => {
     console.log(error);
   }
 };
+
+
+export const follow = async (data, callback) => {
+  try {
+    const res = await axios({
+      method: "post",
+      url: url + "/follow/follow-toggle",
+      data: data,
+    });
+    console.log("response",res)
+   
+  callback(res.data.data.my,res.data.data.to);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 
 
 export const getDebate = async (data) => {
