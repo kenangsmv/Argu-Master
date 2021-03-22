@@ -4,7 +4,7 @@ import PostCard from "../post/postcard.js";
 import CreateDebate from "../post/createdebate";
 import {getDebate} from "../../actions/requests"
 import { connect } from "react-redux";
-function flow({debates}) {
+function flow({debates }) {
   
 
   const sortTıme=(a,b)=>{return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()}
@@ -16,7 +16,7 @@ function flow({debates}) {
       { !debates? (
         <div>yükleniyor</div>
       ) : (
-        <div className="w100 center column border-left border-right">
+        <div className="w100 center column  border-left border-right" >
           <CreateDebate></CreateDebate>
 
           {

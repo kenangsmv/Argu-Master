@@ -96,11 +96,11 @@ export default function stage2({ changeValue, categories }) {
               <div className=" maskcontainerBox  needHover center">
                 <img style={{opacity:checkTick(categorie.name)?"0.5":"2"}} className="backgroundImage" src={categorie.photo} alt="" />
 
-                <div className="center column w100 iconText hoverToScale">
+                <div className="center column w100 iconText hoverToScale categoryOverlay">
                   <img className="categorieIcons" src={categorie.icon} alt="" />
 
                   <div className="categoriesHover ">
-                    <span>{categorie.name}</span>
+                    <span >{categorie.name}</span>
                   </div>
                 </div>
               </div>
