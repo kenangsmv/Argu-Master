@@ -1,10 +1,10 @@
 import React from "react"
 import Head from "next/head";
 import styles from "../../styles/Home.module.css";
-import profilestyles from '../user/userprofile.module.css'
+
 
 import LeftSide from "../../components/leftSide/leftSide";
-import ProfileFlow from "../user/userprofileflow";
+import ProfileFlow from "../../components/flow/userprofileflow";
 import RightSide from "../../components/rightSide/rightSide";
 
 import { myDebates} from "../../actions/requests";
@@ -35,8 +35,8 @@ console.log("debates",debates)
 
     <div className={styles.container}>
 <div className={styles.homeContainer}>
-      <LeftSide></LeftSide>
-      <div className={profilestyles.profileMiddle}>
+    
+      <div className="profileMiddle">
 
 <div className="topContainer center" >
 

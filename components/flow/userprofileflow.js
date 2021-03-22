@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import styles from "./userprofile.module.css";
-import PostCard from "../../components/post/postcard.js";
-import CreateDebate from "../../components/post/createdebate";
-import Slider from "../../components/Slider/slider"
+
+import PostCard from "../post/postcard.js";
+import CreateDebate from "../post/createdebate";
+import Slider from "../Slider/slider"
 
 function flow({debates,isProfile}) {
   
