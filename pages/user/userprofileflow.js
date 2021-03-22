@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import styles from "./flow.module.css";
-import PostCard from "../post/postcard.js";
-import CreateDebate from "../post/createdebate";
-import Slider from "../Slider/slider"
+import styles from "./userprofile.module.css";
+import PostCard from "../../components/post/postcard.js";
+import CreateDebate from "../../components/post/createdebate";
+import Slider from "../../components/Slider/slider"
 
 function flow({debates,isProfile}) {
   
@@ -10,14 +10,10 @@ function flow({debates,isProfile}) {
   const sortTıme=(a,b)=>{return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()}
   console.log("debates",debates)
 
-function flow({ debates, isProfile }) {
-  const sortTıme = (a, b) => {
-    return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
-  };
 
   return (
-    <div className={styles.flowContainer}>
-      {!debates ? (
+    <div className="w90">
+      { !debates? (
         <div>yükleniyor</div>
       ) : (
         <div className={`w100 center column  ${isProfile?"": "border-left border-right "}`}>
@@ -38,4 +34,6 @@ function flow({ debates, isProfile }) {
   );
 }
 
-export default flow;
+
+
+export default flow
