@@ -1,9 +1,10 @@
 import React from "react"
 import Head from "next/head";
-import styles from "../user/userprofile.module.css";
+import styles from "../../styles/Home.module.css";
+import profilestyles from '../user/userprofile.module.css'
 
 import LeftSide from "../../components/leftSide/leftSide";
-import Flow from "../../components/flow/TrendFlow";
+import ProfileFlow from "../user/userprofileflow";
 import RightSide from "../../components/rightSide/rightSide";
 
 import { myDebates} from "../../actions/requests";
@@ -27,29 +28,34 @@ export async function getServerSideProps({ query }) {
   return { props: { debates: data.debate,user:data.user } };
 }
 
-export default function Home({ debates ,isProfile}) {
+export default function Home({debates ,isProfile}) {
 console.log("debates",debates)
 
   return (
 
     <div className={styles.container}>
-    
-    <div className={styles.profileMiddle}>
+<div className={styles.homeContainer}>
+      <LeftSide></LeftSide>
+      <div className={profilestyles.profileMiddle}>
 
 <div className="topContainer center" >
 
-<div className="profileImageContainer  ">
+<div className="profileImageContainer center ">
   <img src={Profile} alt=""/>
 </div>
  
 
 </div>
-<div className="bottomContainer ">
+<div className="bottomContainer relative">
   
+  <div className="column center">
     <h3>Kanan Gasimov</h3>
-  
+     <div className="followButton center needHover mt05">
+       folow
+     </div>
+     </div>
 
-  <div className="informationDesk w100 center mt05"> 
+  <div className="informationDesk w100 center mt05 "> 
     <ul >
       <li className=" border-right">
       <span>Debate 21</span>
@@ -64,17 +70,32 @@ console.log("debates",debates)
         
         </li>
     </ul>   
-
+  
   </div>
-  <div className="center">
-        <Flow isProfile={true} debates={debates}></Flow>
+  <hr/>
+
+
+
+  <div className="center column mt2 ">
+  <div className="profileMenu">
+       <ul className="space-between">
+         <li>Debates</li>
+         <li>Joined</li>
+         <li>Saved</li>
+       </ul>
+       
+   </div>
+   
+        <ProfileFlow isProfile={true} debates={debates}></ProfileFlow>
         </div>
+        
 </div>
 
 </div>
 
+      
     </div>
 
-
+    </div>
   );
 }
