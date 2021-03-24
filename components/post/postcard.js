@@ -1,8 +1,10 @@
 import React from "react"
 import Profile from "../../images/user1.jpg";
-
+import ChatBubbleIcon from '@material-ui/icons/ChatBubble';
 import Voting from "../post/voting";
 import moment from "moment";
+
+import FavoriteIcon from '@material-ui/icons/Favorite';
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 
 import VS from "../deabteroomComponents/vs/versus";
@@ -91,9 +93,16 @@ React.useEffect(() => {
       <div className={"post w100 relative"}>
         <div className="row w100 center"></div>
 
-        <div className={" w100 row space-between"}>
+        <div className={" w100 row space-between pl1 "}>
+        <div className="center">
+   
+            <FavoriteIcon></FavoriteIcon>
+            <span className="ml1">132</span>
+       </div>
           <div className="purpleBox center whiteText">Join</div>
-          <div className="whiteBox center">Like</div>
+        
+     
+         
         </div>
       </div>
     </div>
