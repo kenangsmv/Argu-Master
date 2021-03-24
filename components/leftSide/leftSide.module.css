@@ -1,11 +1,18 @@
 .containerLeft{
-width: 23%;
+width: 6%;
 position: sticky;
 left: 0;
-top:60px;
-height: 100vh;
+top:0;
+height: 100%;
+display: flex;
+align-items: center;
+flex-direction: column;
+padding: 15% 0;
+justify-content: space-evenly;
+border-right: 1px solid gainsboro;
+background-color: white;
+z-index: 200;
 
-background-color: #F0F2F5;
-
-
+border-top-left-radius: 40px;
+border-bottom-left-radius: 40px;
 }

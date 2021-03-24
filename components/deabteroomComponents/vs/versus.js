@@ -13,7 +13,7 @@ export default function DebateRoom({ scores }) {
       topic2Score:
         topic2Score <= 0
           ? 0
-          : (topic2Score / (topic1Score + topic2Score)) * 100,
+          : (topic2Score / (1)) * 100,
     };
   }
   console.log(percent);

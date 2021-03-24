@@ -16,17 +16,17 @@ function flow({ debates, isProfile }) {
       {!debates ? (
         <div>yükleniyor</div>
       ) : (
-        <div className={`w100 center column  ${isProfile?"": "border-left border-right "}`}>
-          {isProfile?null:<Slider></Slider>}
-          <CreateDebate></CreateDebate>
-
+        <div className={`w100  h100  center column  `}>
+          {<Slider></Slider>}
+         
+<div className="row w100 ">
           {
                 
               debates?.sort(sortTıme).map(post=><PostCard  key={post.id}   data={post}   ></PostCard>)
           }
 
 
-       
+</div>
        
         </div>
       )}

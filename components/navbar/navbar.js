@@ -2,6 +2,8 @@ import React from "react"
 import styles from "./navbar.module.css";
 import Logo from "../../icons/logo.svg";
 import Input from "../elements/input";
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import Profil from "../../icons/arsenal.png";
 import Cookie from "js-cookie";
 import Vs from "../deabteroomComponents/vs/versus"
@@ -39,17 +41,16 @@ const Navbar = () => {
   return (
     <div className={"navbarContainer row between "}>
        <Modal open={open} Comp={AuthLayout} cancel={closeAuthModal}></Modal>
-      <div onClick={()=>router.push("/trends/Music")} className={"logo needHover "}>
-        <img className=""  src={Logo} alt="" />
-      </div>
+    
       <div className={"searchBox"}>
         <Input></Input>
       </div>
       {user ? (
         <div className={"menus row center"}>
-          <Link  href={`/user/${user.username}`} className="p1 h100 center needHover">{user.username}</Link>
+          <AccountCircleIcon></AccountCircleIcon>
           <h5 className="p1 h100 borderLeft center needHover followButton ml1">Create</h5>
-          <h5 onClick={logout} className="p1 h100 borderLeft center needHover">Logout</h5>
+
+     
         </div>
       ) : (
         <div className={"menus row center"}>

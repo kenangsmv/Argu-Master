@@ -1,31 +1,30 @@
-.rightContainer{
-    width: 25%;
-   display: flex;
-    
-   flex-direction: column;
-   
-   margin-top: 60px;
-    
-    
-    
-    
-    
+.rightContainer {
+  width: 20%;
+  display: flex;
+
+  flex-direction: column;
+
+ 
+  background-color: white;
+  position: sticky;
+  right: 0;
+  height: 100%;
+  padding-top: 100px;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
 }
 
-.top{
-    
-    width: 100%;
-    
-    padding:10px 20px;
+.top {
+
+  width: 100%;
+
+  padding: 10px 20px;
 }
 
-.bottom{
-    
-    width: 100%;
-    
-    position: sticky;
-    top:0;
-    padding:20px
+.bottom {
+  width: 100%;
 
-
+  position: sticky;
+  top: 0;
+  padding: 20px;
 }

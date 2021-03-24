@@ -24,11 +24,17 @@ a {
 
 * {
   box-sizing: border-box;
+  margin: 0;
 }
 h1,h2,h3,h4,h5,h6{
   margin: 0 !important;
   
 }
+p{
+  font-size: 12px;
+}
+
+
 .needHover:hover{
    cursor: pointer;
 }
@@ -156,21 +162,296 @@ flex-wrap: wrap;
 .text-align-center{
   text-align: center !important;
 }
+/*=====home=====*/
+.box{
+  width: 300px;
+  height: 200px;
+  background-color: white;
+  border-radius: 40px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.borderLayout{
+  border: 1.5px solid gainsboro;
+}
+.homeLayout{
 
+}
+.rightTop{
+  width: 100%;
+  height: 16%;
+padding: 40px 40px;
+border-bottom:1.5px solid gainsboro
+
+
+}
+
+.percent1> svg , .percent1 >circle {
+  width: 158px;
+  height: 158px;
+}
+.percent2>svg , .percent2>circle{
+  width: 220px;
+  transition: all 3s;
+  height: 220px;
+}
+.percent3>svg , .percent3>circle{
+  width: 110px;
+  transition: all 3s;
+  height: 110px;
+}
+.percent3, .percent4{
+  transition: all 3s;
+}
+
+.percent4>svg , .percent>circle{
+  width: 110px;
+  height: 110px;
+  transition: all 3s;
+}
+circle {
+  position: absolute;
+  fill: none;
+  stroke-width: 5;
+  transform: translate(10px, 10px); /* This is to position it in the center */
+  stroke-dasharray: 440;
+  stroke-linecap: round;
+  transition: all 2s;
+}
+.percentContainer{
+  width: 180px;
+  height: 180px;
+  border-radius: 150px;
+  background-color: #f6f6fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.percentContainer2{
+  width: 180px;
+  height: 150px;
+  margin: 40px 0px;
+  border-radius: 150px;
+  background-color: #f6f6fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 3s;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+#button{
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 110px;
+  margin: 30px 0px; 
+  background-color: #F6F6FA;
+  border-radius: 350px;
+  cursor: pointer;
+ 
+ 
+}
+
+#knob {
+  width: 110px;
+  height: 110px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:white;
+  background-size: 700px;
+  position: relative;
+  top: 0px;
+  left: 30px;
+  border-radius: 290px;
+  transition: 0.4s ease left, 0.4s ease background-position;
+  z-index: 2;
+}
+
+#subscribe,
+#alright {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color:black;
+  font-size: 23px;
+  font-weight: bold;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-left: 350px;
+  z-index: 1;
+}
+
+#alright {
+  margin-left: 30px;
+}
+
+#lol-checkbox:checked + #button #knob {
+  left: 340px;
+  background-position: -350px 0;
+}
+.purpleSide{
+  background-color: rgb(230, 59, 124);
+width: 50%;
+height: 100%;
+border-top-left-radius: 30px;
+border-bottom-left-radius: 30px;
+}
+.purpleBox{
+  background-color: rgb(230, 59, 124);
+width: 45%;
+height: 50px;
+border-radius: 10px;
+box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+
+}
+.whiteBox{
+  background-color: white;
+width: 45%;
+height: 50px;
+border-radius: 10px;
+box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+ 
+}
+.whiteText{
+  color: white;
+}
+.whiteSide{
+  width: 45%;
+  background-color: white;
+  height: 100%;
+  
+  
+border-top-right-radius: 30px;
+border-bottom-right-radius: 30px;
+}
+.purpleContainer{
+  width: 600px;
+  height: 200px;
+
+}
 /*=====navbar>navbar.js=====*/
 .navbarContainer{
   
   width: 100%;
-  height: 60px;
+  height: 65px;
   z-index: 200;
   backdrop-filter: saturate(180%) blur(20px);
   background-color: rgba(255,255,255,0.72);
-  position: fixed;
+  position: absolute;
   top:0;
-  padding: 10px 20px;
+  padding: 10px 0px;
+
+  padding-right: 2%;
+
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid gainsboro;
 }
+.percent1 circle:nth-child(2) {
+  stroke: gold;
+  animation: percent 1.5s linear;
+  animation-delay: 1s;
+}
+
+/* Animation definition */
+@keyframes percent {
+  0% {
+      stroke-dashoffset: 0;
+      stroke-width: 0;
+     }
+}
+.percent1 circle:nth-child(2) {
+  stroke-dashoffset: calc(440 - (440 * 75) / 100); /* Here's what's changed */
+  stroke: rgb(230, 59, 124);
+  animation: percent 1.5s linear;
+  animation-delay: 1s;
+}
+
+.percent2 circle:nth-child(2) {
+  stroke-dashoffset: calc(440 - (440 * 75) / 100); /* Here's what's changed */
+  stroke: rgb(230, 59, 124);
+  animation: percent 1.5s linear;
+  animation-delay: 1s;
+}
+.percent3 circle:nth-child(2) {
+  stroke-dashoffset: calc(440 - (440 * 125) / 100); /* Here's what's changed */
+  stroke: rgb(230, 59, 124);
+  animation: percent 1.5s linear;
+  animation-delay: 1s;
+}
+.percent4 circle:nth-child(2) {
+  stroke-dashoffset: calc(440 - (440 * 205) / 100); /* Here's what's changed */
+  stroke: rgb(47, 15, 83);
+  animation: percent 1.5s linear;
+  animation-delay: 1s;
+}
+
+
+.innerCircle{
+  width: 100px;
+  height: 100px;
+  border-radius: 150px;
+  display: flex;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+   align-items: center;
+  z-index: 200;
+  position: absolute;
+background-color: white;
+  color: #fff;
+}
+.innerCircle2{
+  width: 200px;
+  height: 200px;
+  border-radius: 150px;
+  display: flex;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+   align-items: center;
+  z-index: 200;
+  position: absolute;
+background-color: white;
+  color: #fff;
+}
+.innerCircle3{
+  width: 85px;
+  height: 85px;
+  border-radius: 150px;
+  display: flex;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+   align-items: center;
+  z-index: 200;
+  position: absolute;
+background-color: white;
+  color: #fff;
+}
+.percent1{
+  position: relative;
+}
+
+.percent1 span ,h2{
+  color: black;
+}
+
+
+.percent2 span ,h2{
+  color: black;
+}
+
+
+
+
+
+
 .logo{
-  padding-left: 40px;
+
+  position: absolute;
+  left: 20px;
+  top: 20px;
   width: 30%;
   height: 100%;
 }
@@ -193,7 +474,7 @@ flex-wrap: wrap;
 
 .MuiOutlinedInput-root {
     position: relative;
-    border-radius: 20px !important;
+    border-radius: 10px !important;
 }
 
 .menus{
@@ -729,7 +1010,8 @@ flex-wrap: wrap;
 
 /* postcard*/
 .postCard{
-  width: 80%;
+  width: 500px;
+margin: 30px;
  
   border-radius: 10px;
  
@@ -737,7 +1019,7 @@ flex-wrap: wrap;
 .redCircle{
   width: 10px;
   height: 10px;
-  background-color: red;
+  background-color: rgb(230, 59, 124);
   border-radius: 5px;
   margin-right: 10px;
 }
@@ -967,7 +1249,7 @@ cursor: pointer;
 
 
   .createDebate{
-   
+   width: 500px;
     height: 70px;
     border-radius: 10px;
     background-color: #15202B;

@@ -9,7 +9,8 @@ import Pages from "../../icons/pages.png";
 import Groups from "../../icons/groups.png";
 import Events from "../../icons/events.png";
 import Saved from "../../icons/bookmark.png";
-import FollowBox from "../FollowBoxes/followBox";
+import Logo from "../../icons/logo.svg";
+
 import { follow } from "../../actions/requests";
 import { useSelector, useDispatch } from "react-redux";
 
@@ -35,45 +36,24 @@ export default function leftSide() {
 
   return (
     <div className={styles.containerLeft}>
-      <div className="leftsideSticky">
-        <div className={"LeftFirstBox column"}>
-          <div className={"LeftSubMenu row test"}>
-            <img className="icons" src={News} alt="" />
-            <span>News Feed</span>
-            <span className="Music">soon</span>
-          </div>
-          <div className={"LeftSubMenu row"}>
-            <img className="icons" src={Messages} alt="" />
-            <span>Messages</span>
-            <span className="Music">soon</span>
-          </div>
-          <div className={"LeftSubMenu row"}>
-            <img className="icons" src={Saved} alt="" />
-            <span>Saved</span>
-            <span className="Music">soon</span>
-          </div>
-          <div className={"LeftSubMenu row"}>
-            <img className="icons" src={Events} alt="" />
-            <span>Trends</span> 
-           
-          </div>
-        </div>
-
-        {user && (
-          <div className={"LeftSecondBox center column"}>
-            <FollowBox
-              followed={checkFollow("skrite15")}
-              user="skrite15"
-              follow={()=>followToggle("skrite15")}
-            ></FollowBox>
-            <FollowBox
-              followed={checkFollow("skrite15")}
-              user="skrite15"
-              follow={()=>followToggle("skrite15")}
-            ></FollowBox>
-          </div>
-        )}
+     
+     <div  className={"logo needHover "}>
+      
       </div>
+          <div className={"LeftSubMenu center"}>
+            <img className="icons" src={News} alt="" />
+          </div>
+          <div className={"LeftSubMenu center"}>
+            <img className="icons" src={Messages} alt="" />
+          </div>
+          <div className={"LeftSubMenu center"}>
+            <img className="icons" src={Saved} alt="" />
+          </div>
+          <div className={"LeftSubMenu center"}>
+            <img className="icons" src={Events} alt="" />
+          </div>
+ 
+      
     </div>
   );
 }

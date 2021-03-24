@@ -9,6 +9,7 @@ import RightSide from "../../components/rightSide/rightSide";
 import { getTrends} from "../../actions/requests";
 import { useRouter } from "next/router";
 import Slider from "../../components/Slider/slider"
+import Navbar from "../../components/navbar/navbar"
 
 
 export async function getServerSideProps({ query }) {
@@ -36,10 +37,16 @@ export default function Home({ debates}) {
         
 
     <div className={styles.homeContainer}>
-      <LeftSide></LeftSide>
+    <Navbar></Navbar>
+     <div className="w100 row">
 
-      <Flow debates={debates}></Flow>
-      <RightSide></RightSide>
+     <LeftSide></LeftSide>
+
+<Flow debates={debates}></Flow>
+<RightSide></RightSide>
+     </div>
+      
+     
     </div>
   </div>
 

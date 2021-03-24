@@ -16,7 +16,7 @@ function flow({debates }) {
       { !debates? (
         <div>yükleniyor</div>
       ) : (
-        <div className="w100 center column  border-left border-right" >
+        <div className="w100 h100 center column  border-left border-right" >
           <CreateDebate></CreateDebate>
 
           {
