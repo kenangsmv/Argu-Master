@@ -1,7 +1,7 @@
 .homeContainer{
 width: 100%;
 height: 100%;
-border-radius: 100px;
+
 background-color: white;
 max-width: 100vw;
 
@@ -19,7 +19,8 @@ position: relative;
     height: 100vh;
     padding: 2% 2%;
     position: relative;
-    background-color: #F6F6FA !important;
+    background: rgb(104,205,252);
+    background: linear-gradient(90deg, rgba(104,205,252,1) 0%, rgba(239,157,220,1) 48%, rgba(255,191,124,1) 100%);
 }
 
 

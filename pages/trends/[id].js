@@ -37,7 +37,8 @@ export default function Home({ debates}) {
         
 
     <div className={styles.homeContainer}>
-    <Navbar></Navbar>
+  
+  
      <div className="w100 row">
 
      <LeftSide></LeftSide>

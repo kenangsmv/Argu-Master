@@ -18,7 +18,15 @@ function flow({ debates, isProfile }) {
       ) : (
         <div className={`w100  h100  center column  `}>
           {<Slider></Slider>}
-         
+          <div className="trendTextBox">
+            <div className="trendTextContent">
+               <h1>
+               Healthy cream is the key
+               to your good mood 
+               </h1>
+               </div>
+         </div>
+
 <div className="row w100 ">
           {
                 
@@ -27,6 +35,23 @@ function flow({ debates, isProfile }) {
 
 
 </div>
+<div className="row w100 ">
+          {
+                
+              debates?.sort(sortTıme).map(post=><PostCard  key={post.id}   data={post}   ></PostCard>)
+          }
+
+
+</div>
+<div className="row w100 ">
+          {
+                
+              debates?.sort(sortTıme).map(post=><PostCard  key={post.id}   data={post}   ></PostCard>)
+          }
+
+
+</div>
+       
        
         </div>
       )}

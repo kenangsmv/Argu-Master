@@ -18,6 +18,8 @@ function flow({debates }) {
       ) : (
         <div className="w100 h100 center column  border-left border-right" >
           <CreateDebate></CreateDebate>
+            
+           
 
           {
 

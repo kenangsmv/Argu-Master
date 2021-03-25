@@ -45,13 +45,13 @@ React.useEffect(() => {
   };
 
   return (
-    <div className={"postCard boxColor column p1 mb1 box-shadow relative"}>
+    <div className={"postCard boxColor column p05  box-shadow relative space-between"}>
       <div className="postCardLive row center">
         <div className="redCircle"></div>
         <span> {data.user_count > 0 ? data.user_count : 0}</span>
       </div>
-      <div className={"postTop w100 mb1"}>
-        <div className={"topConent boxColor row center"}>
+      <div className={"postTop w100 "}>
+        <div className={"topConent row center"}>
           <AccountCircleIcon style={{ width: 30 }}></AccountCircleIcon>
           <div className="topTextContent w100 column pl05">
             <h5>{data.post_holder_name} </h5>
@@ -60,7 +60,7 @@ React.useEffect(() => {
           </div>
         </div>
       </div>
-      <div>
+      <div className="postContent">
         Grow a more sustainable business. Sell ads in more places. Get access to
         demand from Google Ads and authorized buyers. Get started today. Manage
         revenue. Monetize video. Get actionable insights.
