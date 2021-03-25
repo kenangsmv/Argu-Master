@@ -1623,3 +1623,286 @@ flex-grow: 1;
 
 
 }
+
+
+
+/* NEW DEBATE ROOM STYLES*/
+.newdebateroomLayout{
+  background-color:#DCDFE6;
+  width:100%;
+  height:100%;
+}
+
+.newdebateroomBody{
+width:98%;
+height: 97%;
+background-color: white;
+
+border-radius: 20px;
+display: flex;
+justify-content: flex-end;
+align-items: flex-end;
+box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+.newNavbar{
+  width:4%;
+  height:100%;
+}
+.newnavbarlogo{
+ width: 50px;
+ height: 50px;
+
+
+}
+.newNavbarMenu{
+
+ 
+ 
+}
+
+.newicons{
+ width: 30px;
+ height: 30px;
+ margin-bottom: .5rem;
+}
+.newNavbarButtom{
+
+}
+.newNavbarButtom img{
+ height:50px;
+ width:50px;
+
+ border-radius: 50%;
+ 
+}
+.bigRight{
+  width:96%;
+  height:100%;
+  box-shadow: rgba(0, 0, 0, 0.1) -1px 0px 0px;
+  border-radius: 20px;
+  padding: 1rem 0;
+}
+.mainLeft{
+ width:25%;
+ height:100%;
+
+ border-top-left-radius: 20px;
+ border-bottom-left-radius: 20px;
+
+}
+.mainSidesTop{
+ width:100%;
+ height:10%;
+ box-shadow:rgb(0 0 0 / 10%) 0px 1px;
+ display:flex;
+ justify-content:flex-start;
+ padding-left: .5rem;
+
+}
+.mainSidesTop h3{
+ font-size: 16px;
+ font-weight: 700px;
+
+}
+.mainSideMiddle img{
+ width:115px;
+ height:115px;
+}
+.leftsideArrow{
+  width:15px;
+  height:15px;
+  transform: rotate(90deg);
+  
+}
+.rightsideArrow{
+ width:15px;
+ height:15px;
+ transform: rotate(-90deg);
+ 
+}
+
+
+.teamName{
+ background-color: #DCDFE6;
+
+ border-radius: 10px;
+ width:30px;
+  height:35px;
+}
+
+.mainMiddle{
+ width:50%;
+ height:100%;
+ padding:0 .5rem
+ 
+}
+.topicNameBody{
+
+ height:30px;
+  position:absolute;
+  top:18px;
+  right:16px;
+ 
+  
+}
+
+
+
+.topicName{
+ font-size: 14px;
+ color: #00A389;
+ background-color:#d1eeea;
+ padding:0 1rem;
+ border-radius: 10px;
+}
+.newMessageBody{
+ width:100%;
+ height:100%;
+ background-color: #EDF0F5;
+ border-radius: 10px;
+ box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;  
+}
+.mainMiddleTop{
+ width:100%;
+ height:10%;
+ backdrop-filter: saturate(180%) blur(20px);
+ background-color: #EDF0F5;
+ border-top-right-radius: 10px;
+ border-top-left-radius: 10px;
+ box-shadow:  rgb(0 0 0 / 10%) 0px 1px;
+ 
+}
+.mainMiddleMessage{
+ width:100%; 
+ height:100%; 
+ padding: 1rem .5rem;
+}
+.newMessage img{
+ width:30px;
+ height:30px;
+ border-radius: 50%;
+ justify-self: flex-end;
+ align-self: flex-end;
+ margin-right: .5rem;
+}
+.newMessageBox{
+ background-color: #00A389;
+ padding:8px 12px;
+ border-top-left-radius: 20px;
+ border-top-right-radius: 20px;
+ border-bottom-right-radius: 20px;
+ color: white;
+}
+.newMessageBox h3{
+ font-size: 12px;
+}
+.newMessageBox span{
+ font-size: 14px;
+}
+
+
+.middleBottom{
+ width:97%;
+ height:8%;
+ background-color: white;
+ border-radius: 10px;
+ padding-right: .8rem;
+ padding-left: .8rem;
+ margin: 10px 5px;
+ box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.middleBottom input{
+ width:100%;
+ height:100%;
+ border-radius: 10px;
+ border:none;
+ outline:none;
+
+ 
+}
+.sentButton{
+ background-color: #00A389;
+ border-radius: 5px;
+ width: 40px;
+ height: 35px;
+}
+.middleBottom img{ 
+ width: 20px;
+ height: 20px;
+}
+
+.mainRight{
+ width:25%;
+ height:100%;
+ 
+ 
+}
+.rightteamName{
+ background-color: #DBCFEA;
+ color: #71578d; 
+ border-radius: 10px;
+}
+.rightBottom{
+ width:95%;
+ height:7%;
+ position: absolute;
+ bottom: 0;
+ left: 5px;
+ border:none;
+ outline:none;
+
+ background-color:#00A389;
+ color: white;
+ border-radius: 10px;
+ 
+}
+
+.leftBottom{
+position: absolute;
+bottom: 10px;  
+left: 0;
+
+}
+.members{
+ width:100%;
+
+ padding: 5px;
+}
+.members:hover{
+ width:100%;
+ 
+ background-color:#DCDFE6;
+ border-radius: 20px;
+ 
+}
+
+.userphoto img{
+ height:40px;
+ width:40px;
+
+ border-radius: 50%;
+}
+.bilgi {
+padding-left: .5rem;
+}
+
+.bilgi h4{
+ font-size: 13px;
+ width: 100%;
+ 
+}
+
+.bilgi p{
+ font-size:11px;
+margin:0px;
+ opacity: 0.7;
+}
+.bilgi span{
+ font-size: 11px;
+ opacity: 0.5;
+}
+.timePosition{
+ position: absolute;
+ right: 5px;
+ top: 5px;  
+}
