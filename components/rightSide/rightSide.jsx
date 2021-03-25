@@ -9,18 +9,18 @@ import Slider from "../Slider/DynamicSlider";
 export default function rightSide() {
   return (
     <div className={styles.rightContainer}>
-      <div className="rightTop">
+      <div className="rightTop p1">
         <p>SELECTED</p>
         <h2>Trend Debates</h2>
       </div>
       <div className="w100 center p1">
       <div className="percentContainer ">
         <div class="percent2 center">
-          <svg>
-            <circle cx="100" cy="100" r="100">
+          <svg className="center">
+            <circle cx="50" cy="50" r="50">
               <div className="innerCircle"></div>
             </circle>
-            <circle cx="100" cy="100" r="100"></circle>
+            <circle cx="50" cy="50" r="50"></circle>
           </svg>
           <div class="innerCircle2">
             <h2>

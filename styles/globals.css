@@ -190,9 +190,9 @@ border-bottom:1.5px solid gainsboro
   height: 158px;
 }
 .percent2>svg , .percent2>circle{
-  width: 220px;
+  width: 120px;
   transition: all 3s;
-  height: 220px;
+  height: 120px;
 }
 .percent3>svg , .percent3>circle{
   width: 110px;
