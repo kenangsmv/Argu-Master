@@ -195,9 +195,9 @@ border-bottom:1.5px solid gainsboro
   height: 120px;
 }
 .percent3>svg , .percent3>circle{
-  width: 110px;
+  width: 80px;
   transition: all 3s;
-  height: 110px;
+  height: 80px;
 }
 .percent3, .percent4{
   transition: all 3s;
@@ -417,8 +417,8 @@ background-color: white;
   color: #fff;
 }
 .innerCircle3{
-  width: 85px;
-  height: 85px;
+  width: 50px;
+  height: 50px;
   border-radius: 150px;
   display: flex;
   justify-content: center;
@@ -1584,11 +1584,15 @@ color: white;
   padding: 10px 30px;
 }
 .followButton{
-    width:150px;
-    height:30px;
+    width:200px;
+    height:40px;
     background-color: #15202B; 
     border-radius: 5px;
     color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     
 }
 .followedButton{
@@ -1856,7 +1860,21 @@ box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1p
  border-radius: 10px;
  
 }
-
+.rightBox{
+  width: 45%;
+  height: 100px;
+  background-color: #F6F6FA;
+  border-radius: 10px;
+  
+}
+.rightBoxBorder{
+border-bottom: 2px solid red;
+padding-bottom: 10px;
+}
+.rightBoxBorder2{
+  border-bottom: 2px solid rgb(20, 7, 51);
+  padding-bottom: 10px;
+  }
 .leftBottom{
 position: absolute;
 bottom: 10px;  

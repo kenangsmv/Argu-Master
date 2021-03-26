@@ -73,10 +73,10 @@ React.useEffect(() => {
           <div id="knob">
           <div className={`${state?"percent3":"percent4"} center h100`}>
             <svg>
-              <circle cx="45" cy="45" r="45">
+              <circle cx="30" cy="30" r="30">
                 <div className="innerCircle3"></div>
               </circle>
-              <circle cx="45" cy="45" r="45"></circle>
+              <circle cx="30" cy="30" r="30"></circle>
             </svg>
             <div class="innerCircle3">
               <h2>
