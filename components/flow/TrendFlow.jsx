@@ -11,17 +11,27 @@ function flow({ debates, isProfile }) {
 
   return (
     <div className={styles.flowContainer}>
+   
       {!debates ? (
         <div>yükleniyor</div>
       ) : (
-        <div className={`w100  h100  center column  `}>
+        <div className={`w100 column flowContent `}>
+           <div className="trendTextBox">
+            <div className="trendTextContent">
+              <h1>Healthy cream is the key to your good mood</h1>
+            </div>
+          </div>
           {<Slider></Slider>}
+         
 
           <div className="row w100 ">
             {debates?.sort(sortTıme).map((post) => (
-            <div className="p2">
-                <PostCard key={post.id} data={post}></PostCard>
-            </div>
+              <PostCard key={post.id} data={post}></PostCard>
+            ))}
+          </div>
+          <div className="row w100 ">
+            {debates?.sort(sortTıme).map((post) => (
+              <PostCard key={post.id} data={post}></PostCard>
             ))}
           </div>
         </div>
