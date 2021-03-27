@@ -4,7 +4,8 @@ import LeftDude from '../../../icons/leftdude.jpg'
 import ProfilePhoto from '../../../images/profilephoto.jpg'
 export default function left() {
     return (
-        <div className="mainLeft column relative">
+        <div className="leftLayout pb2 pt1 pr05 pl05">
+        <div className="mainLeft column relative space-between">
                     <div className="mainSidesTop center">
                         <div className="teamName center">
                         <img className="leftsideArrow " src={Arrow} alt=""/>
@@ -14,7 +15,7 @@ export default function left() {
                           
                     </div>
                     <div className="mainSideMiddle center p1">
-                           <img src={LeftDude} alt=""/>
+                         
                             <div className="middleUsers">
 
                             </div>
@@ -78,6 +79,7 @@ export default function left() {
                         </div>
 
                     </div>
+                </div>
                 </div>
     )
 }

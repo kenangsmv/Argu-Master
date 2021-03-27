@@ -1650,25 +1650,32 @@ flex-grow: 1;
 
 /* NEW DEBATE ROOM STYLES*/
 .newdebateroomLayout{
-  background-color:#DCDFE6;
   width:100%;
   height:100%;
+  background: rgb(104,205,252);
+  background: linear-gradient(
+90deg
+, rgba(104,205,252,1) 0%, rgba(239,157,220,1) 48%, rgba(255,191,124,1) 100%);
 }
 
 .newdebateroomBody{
 width:98%;
 height: 97%;
 background-color: white;
-
 border-radius: 20px;
 display: flex;
 justify-content: flex-end;
 align-items: flex-end;
-box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+
 }
 .newNavbar{
-  width:4%;
+  width:6%;
   height:100%;
+  
+  border-bottom-left-radius:20px;
+  border-top-left-radius: 20px;
+  margin-right: 5px;
+
 }
 .newnavbarlogo{
  width: 50px;
@@ -1698,19 +1705,21 @@ box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1p
  
 }
 .bigRight{
-  width:96%;
+  width:94%;
   height:100%;
-  box-shadow: rgba(0, 0, 0, 0.1) -1px 0px 0px;
   border-radius: 20px;
-  padding: 1rem 0;
+  border-left: 1px solid gainsboro;
 }
-.mainLeft{
- width:25%;
- height:100%;
 
+.leftLayout{
+  width:23%;
+ height:100%;
  border-top-left-radius: 20px;
  border-bottom-left-radius: 20px;
-
+}
+.mainLeft{
+ width:100%;
+ height:100%;
 }
 .mainSidesTop{
  width:100%;
@@ -1718,7 +1727,7 @@ box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1p
  box-shadow:rgb(0 0 0 / 10%) 0px 1px;
  display:flex;
  justify-content:flex-start;
- padding-left: .5rem;
+
 
 }
 .mainSidesTop h3{
@@ -1745,19 +1754,13 @@ box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1p
 
 
 .teamName{
- background-color: #DCDFE6;
+ 
 
  border-radius: 10px;
  width:30px;
   height:35px;
 }
 
-.mainMiddle{
- width:50%;
- height:100%;
- padding:0 .5rem
- 
-}
 .topicNameBody{
 
  height:30px;
@@ -1773,22 +1776,27 @@ box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1p
 .topicName{
  font-size: 14px;
  color: #00A389;
- background-color:#d1eeea;
+ background:rgba( 255, 255, 255, 0.5);
  padding:0 1rem;
  border-radius: 10px;
+}
+.newMessageLayout{
+  width:56%;
+  height:100%;
 }
 .newMessageBody{
  width:100%;
  height:100%;
- background-color: #EDF0F5;
+ background-color: #F6F6FA;
  border-radius: 10px;
- box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;  
+ box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+ 
 }
 .mainMiddleTop{
  width:100%;
  height:10%;
  backdrop-filter: saturate(180%) blur(20px);
- background-color: #EDF0F5;
+ background:rgba( 255, 255, 255, 0.1 );
  border-top-right-radius: 10px;
  border-top-left-radius: 10px;
  box-shadow:  rgb(0 0 0 / 10%) 0px 1px;
@@ -1796,7 +1804,7 @@ box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1p
 }
 .mainMiddleMessage{
  width:100%; 
- height:100%; 
+ height:90%; 
  padding: 1rem .5rem;
 }
 .newMessage img{
@@ -1808,55 +1816,63 @@ box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1p
  margin-right: .5rem;
 }
 .newMessageBox{
- background-color: #00A389;
+  background:rgba( 255, 255, 255, 0.5);
+  backdrop-filter: blur(20px);
  padding:8px 12px;
  border-top-left-radius: 20px;
  border-top-right-radius: 20px;
  border-bottom-right-radius: 20px;
- color: white;
+ color: black;
 }
 .newMessageBox h3{
  font-size: 12px;
+ opacity: 0.7;
 }
 .newMessageBox span{
  font-size: 14px;
+ opacity: 0.7;
+
 }
 
 
-.middleBottom{
- width:97%;
- height:8%;
+.messageBottom{
+ width:100%;
+ height:10%;
  background-color: white;
  border-radius: 10px;
- padding-right: .8rem;
- padding-left: .8rem;
- margin: 10px 5px;
  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+ padding: 1rem .5rem;
+ 
 }
-.middleBottom input{
+
+.messageBottom input{
  width:100%;
  height:100%;
- border-radius: 10px;
+
  border:none;
  outline:none;
+
 
  
 }
 .sentButton{
- background-color: #00A389;
+  background: #e63b7c;
  border-radius: 5px;
  width: 40px;
  height: 35px;
 }
-.middleBottom img{ 
+.messageBottom img{ 
  width: 20px;
  height: 20px;
 }
 
+.rightLayout{
+  width:23%;
+  height:100%;
+}
 .mainRight{
- width:25%;
+ width:100%;
  height:100%;
- 
  
 }
 .rightteamName{
@@ -1872,23 +1888,20 @@ box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1p
  left: 5px;
  border:none;
  outline:none;
+ background: #e63b7c;;
 
- background-color:#00A389;
  color: white;
  border-radius: 10px;
  
 }
 
 .leftBottom{
-position: absolute;
-bottom: 10px;  
-left: 0;
+
 
 }
 .members{
  width:100%;
-
- padding: 5px;
+ padding: 5px 5px 5px 0px;
 }
 .members:hover{
  width:100%;
@@ -1925,7 +1938,7 @@ margin:0px;
 }
 .timePosition{
  position: absolute;
- right: 5px;
+ right: 0px;
  top: 5px;  
 }
 

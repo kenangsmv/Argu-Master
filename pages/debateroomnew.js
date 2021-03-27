@@ -11,7 +11,7 @@ export default function debateroomnew() {
               
            <div className="newdebateroomBody">
             <Navbar></Navbar>
-               <div className="bigRight row center  ">
+               <div className="bigRight row center">
                <Left></Left>
                 <NewMessage></NewMessage>
                 <Right></Right>
