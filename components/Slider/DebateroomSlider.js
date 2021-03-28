@@ -4,22 +4,15 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useRouter } from "next/router";
 import PostCard from "../post/postcard.js";
-import TrendBox from "../Trends/trendBox";
-import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
-import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
+import TrendBox from "../Trends/trendBox"
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
     <ArrowForwardIosIcon
       className={"needHover"}
-      style={{
-        ...style,
-        position: "absolute",
-        color: "black",
-        top: "2%",
-        right: "0%",
-        width: 20,
-      }}
+      style={{ ...style,position:"absolute",color:"black",top:"2%",right:"0%",width:20}}
       onClick={onClick}
     />
   );
@@ -30,15 +23,7 @@ function SamplePrevArrow(props) {
   return (
     <ArrowBackIosIcon
       className={"needHover"}
-      style={{
-        ...style,
-        position: "absolute",
-        color: "black",
-        top: "2%",
-        left: "0%",
-        width: 20,
-        zIndex: 200,
-      }}
+      style={{ ...style, position:"absolute",color:"black",top:"2%",left:"0%",width:20,zIndex:200 }}
       onClick={onClick}
     />
   );
@@ -55,24 +40,25 @@ const Slide = ({ slide_array }) => {
     slidesToShow: 1,
     slidesToScroll: 1,
 
-    nextArrow: <SampleNextArrow className={"needHover"} />,
-    prevArrow: <SamplePrevArrow className={"needHover"} />,
+    nextArrow: <SampleNextArrow className={"needHover"}/>,
+    prevArrow: <SamplePrevArrow   className={"needHover"}/>,
   };
 
   const go = (where) => {
     router.push(where);
   };
   return (
-    <div className="w100 p2 ">
+    <div className="w100 p1 ">
       <Slider {...settings} arrows={true}>
-        <TrendBox key={1}></TrendBox>
-        <TrendBox></TrendBox>
+     
+<TrendBox key={1}></TrendBox>
+<TrendBox></TrendBox>
 
-        <TrendBox></TrendBox>
+<TrendBox></TrendBox>
+
+
       </Slider>
-      <div className="w100 center mt1">
-   <h5 className="neeHover center followButton ">Create</h5>
- </div>
+    
     </div>
   );
 };

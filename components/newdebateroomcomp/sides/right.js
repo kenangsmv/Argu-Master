@@ -1,8 +1,10 @@
 import React from 'react'
 import RightDude from '../../../icons/rightdude.jpg'
 import Arrow from '../../../icons/arrow.png'
+import Slider from '../../Slider/DebateroomSlider'
 export default function right() {
     return (
+        <div className="rightLayout pb1 pt1 pr05 pl05">
         <div className="mainRight  column relative">
         <div className="mainSidesTop center">
                 <div className="teamName center">
@@ -12,14 +14,15 @@ export default function right() {
                   
             </div>
             <div className="mainSideMiddle center p1">
-                   <img src={RightDude} alt=""/>
-
+                   
+            <Slider></Slider>
             </div>
             
                  <button className="rightBottom">
                      Exit room
                  </button>
             
+        </div>
         </div>
     )
 }
