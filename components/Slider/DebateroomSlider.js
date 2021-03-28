@@ -48,7 +48,7 @@ const Slide = ({ slide_array }) => {
     router.push(where);
   };
   return (
-    <div className="w100 p2 ">
+    <div className="w100 p1 ">
       <Slider {...settings} arrows={true}>
      
 <TrendBox key={1}></TrendBox>
@@ -56,10 +56,9 @@ const Slide = ({ slide_array }) => {
 
 <TrendBox></TrendBox>
 
+
       </Slider>
-      <div className="w100 center mt1">
-   <h5 className="neeHover center followButton ">Create</h5>
- </div>
+    
     </div>
   );
 };
