@@ -7,6 +7,7 @@ import Tecq from "../../images/Technology-Categories.png";
 import Sport from "../../images/Sports-Categories.png";
 import Science from "../../images/Science-Categories.png";
 function SampleNextArrow(props) {
+  console.log(props)
   const { className, style, onClick } = props;
   return (
     <div

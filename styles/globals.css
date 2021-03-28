@@ -65,12 +65,13 @@ p{
  
 
 }
+
 .slick-prev {
-  left: 3% !important;
-  z-index: 1;
+  
+  z-index: 3;
 }
 .slick-next {
-  right: 3% !important;
+  
   z-index: 3;
   
 }
@@ -195,17 +196,17 @@ border-bottom:1.5px solid gainsboro
   height: 120px;
 }
 .percent3>svg , .percent3>circle{
-  width: 110px;
+  width: 90px;
   transition: all 3s;
-  height: 110px;
+  height: 90px;
 }
 .percent3, .percent4{
   transition: all 3s;
 }
 
 .percent4>svg , .percent>circle{
-  width: 110px;
-  height: 110px;
+  width: 90px;
+  height: 90px;
   transition: all 3s;
 }
 circle {
@@ -421,8 +422,8 @@ background-color: white;
   color: #fff;
 }
 .innerCircle3{
-  width: 85px;
-  height: 85px;
+  width: 60px;
+  height: 60px;
   border-radius: 150px;
   display: flex;
   justify-content: center;
@@ -866,7 +867,9 @@ background-color: white;
   
   
 }
-
+.flowContent{
+  overflow: auto;
+} 
 
 /* leftside/*/
 .containerLeft{
@@ -988,18 +991,55 @@ background-color: white;
  
 }
 
+.leftCircle{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 500px;
+  height: 500px;
+  background: rgb(213,76,28);
+  background: linear-gradient(45deg, rgba(213,76,28,0.737990264465161) 0%, rgba(234,87,52,0.14135160900297616) 51%, rgba(246,246,250,1) 80%, rgba(246,246,250,1) 100%);
+  border-radius: 0 200px 0 0;
+  -moz-border-radius: 0 200px 0 0;
+  -webkit-border-radius: 0 300px 0 0;
+
+}
+.rightCircle{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 400px;
+  height: 400px;
+  
+  background: rgb(213,28,76);
+background: linear-gradient(298deg, rgba(213,28,76,0.6707633737088585) 0%, rgba(226,43,112,0.3430322812718838) 32%, rgba(210,52,234,0.2982143541010154) 51%, rgba(246,246,250,0.41306029247636555) 65%, rgba(246,246,250,0.8220238779105392) 80%, rgba(246,246,250,1) 100%);
+  border-radius: 200px 0 0 0;
+  -moz-border-radius: 200px 0 0 0;
+  -webkit-border-radius: 200px 0 0 0;
+}
+
+.topCircle{
+position: absolute;
+top: 0;
+  height:300px;
+  width:100%;
+  border-radius: 0 0 90px 90px;
+  background: linear-gradient(
+    90deg
+    , rgba(104,205,252,1) 0%, rgba(239,157,220,1) 48%, rgba(255,191,124,1) 100%);
+}
+
 .glass{
-  background: rgba( 255, 255, 255, 0.20 );
-box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-backdrop-filter: blur( 9.5px );
--webkit-backdrop-filter: blur( 9.5px );
-border-radius: 10px;
-border: 1px solid rgba( 255, 255, 255, 0.18 );
+  background: rgba( 255, 255, 255, 0.90 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 20.0px );
+  -webkit-backdrop-filter: blur( 20.0px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 .glassBackground{
-  background: rgb(104,205,252);
-background: linear-gradient(90deg, rgba(104,205,252,1) 0%, rgba(239,157,220,1) 48%, rgba(255,191,124,1) 100%);
-}
+  background: rgb(36,0,24);
+  background: radial-gradient(circle, rgba(36,0,24,0.7828081916360294) 0%, rgba(249,196,236,0.42146365382090334) 53%, rgba(255,0,0,0) 100%);}
 /* trends */
 .trendsBox{
   width: 100%;
@@ -1032,11 +1072,14 @@ margin: 15px;
  
   border-radius: 10px;
   background: rgba( 255, 255, 255, 0.25 );
-  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+
   backdrop-filter: blur( 4px );
   -webkit-backdrop-filter: blur( 4px );
   border-radius: 10px;
   border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+.postCard:hover{
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
 }
 .redCircle{
   width: 10px;
@@ -1518,6 +1561,10 @@ color: white;
   overflow:auto;
   max-height:200px;
 }
+.flowContent::-webkit-scrollbar {
+  
+  width: 8px;
+}
 .liveMessageBody::-webkit-scrollbar {
   
   width: 8px;
@@ -1525,7 +1572,7 @@ color: white;
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #ffffff00; 
+  background: #b16c7d00; 
   
 }
  
@@ -1606,11 +1653,15 @@ color: white;
   padding: 10px 30px;
 }
 .followButton{
-    width:150px;
-    height:30px;
+    width:200px;
+    height:40px;
     background-color: #15202B; 
     border-radius: 5px;
     color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     
 }
 .followedButton{
@@ -1921,7 +1972,24 @@ align-items: flex-end;
  border-radius: 10px;
  
 }
-
+.rightBox{
+  width: 45%;
+  height: 100px;
+  background-color: #F6F6FA;
+  border-radius: 10px;
+  
+}
+.RightTrendBottom{
+  height: 100%;
+}
+.rightBoxBorder{
+border-bottom: 2px solid red;
+padding-bottom: 10px;
+}
+.rightBoxBorder2{
+  border-bottom: 2px solid rgb(20, 7, 51);
+  padding-bottom: 10px;
+  }
 .leftBottom{
 
 
@@ -1975,9 +2043,11 @@ margin:0px;
   width:440px;
    height:200px; 
    padding:2rem;
-   
+     
  
   }
+
+  
 .trendTextContent{
  
    flex-wrap: wrap;

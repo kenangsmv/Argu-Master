@@ -1,12 +1,12 @@
 .flowContainer{
     width: 75%;
-padding-top: 350px;
+
     display: flex;
-  overflow: auto;
+ 
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    
+    position: relative;
     background-color: #F6F6FA;
     
 }

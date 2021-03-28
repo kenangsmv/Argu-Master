@@ -3,25 +3,45 @@ import Dots from "../../icons/dots.png";
 
 const trendBox = () => {
   return (
-    <div className="trendColum flex-start column w100 relative border-bottom p1">
-      <div className="row w100 space-between">
-        <div className="row">
-        <div className={ `Blackk mr1 center`}> İphone</div>
-        <div className={ `Music  center`}> Samsung</div>
-        </div>
-        <div className="postCardLive row center">
-          <div className="redCircle"></div>
-          <span>150</span>
-        </div>
-        
-      </div>
-    
-      <div className="row w100 space-between m1">
-      <span className={"op06"}>55 message</span>
-        <div></div>
-      
-      </div>
-    </div>
+    <div className="w100 RightTrendBottom relative">
+<div className="w100 center p1">
+   <div className="percentContainer ">
+     <div class="percent2 center">
+       <svg className="center">
+         <circle cx="50" cy="50" r="50">
+           <div className="innerCircle"></div>
+         </circle>
+         <circle cx="50" cy="50" r="50"></circle>
+       </svg>
+       <div class="innerCircle2">
+         <h2>
+           75<span>%</span>
+         </h2>
+       </div>
+     </div>
+   </div>
+ </div>
+ <div className="w100 row p1 center space-between">
+   <div className="rightBox center">
+     <h2 className="rightBoxBorder">345</h2>
+   </div>
+   <div className="rightBox center">
+     <h2 className="rightBoxBorder2">213</h2>
+   </div>
+ </div>
+ <div className="w100 row p1 center space-between">
+   <div className="rightBox center">
+     <h2 className="rightBoxBorder">345</h2>
+   </div>
+   <div className="rightBox center">
+     <h2 className="rightBoxBorder2">213</h2>
+   </div>
+ </div>
+
+ <div className="w100 center mt1">
+   <h5 className="neeHover center followButton ">Create</h5>
+ </div>
+</div>
   );
 };
 export default trendBox;

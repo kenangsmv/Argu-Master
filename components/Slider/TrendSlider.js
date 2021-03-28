@@ -4,12 +4,15 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useRouter } from "next/router";
 import PostCard from "../post/postcard.js";
+import TrendBox from "../Trends/trendBox"
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
-    <div
-      className={className}
-      style={{ ...style, display: "block", background: "red" }}
+    <ArrowForwardIosIcon
+      className={"needHover"}
+      style={{ ...style,position:"absolute",color:"black",top:"2%",right:"0%",width:20}}
       onClick={onClick}
     />
   );
@@ -18,9 +21,9 @@ function SampleNextArrow(props) {
 function SamplePrevArrow(props) {
   const { className, style, onClick } = props;
   return (
-    <div
-      className={className}
-      style={{ ...style, display: "block", background: "green" }}
+    <ArrowBackIosIcon
+      className={"needHover"}
+      style={{ ...style, position:"absolute",color:"black",top:"2%",left:"0%",width:20,zIndex:200 }}
       onClick={onClick}
     />
   );
@@ -32,13 +35,13 @@ const Slide = ({ slide_array }) => {
     return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
   };
   const settings = {
-    infinite: false,
+    infinite: true,
     speed: 500,
-    slidesToShow: 2,
-    slidesToScroll: 3,
+    slidesToShow: 1,
+    slidesToScroll: 1,
 
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
+    nextArrow: <SampleNextArrow className={"needHover"}/>,
+    prevArrow: <SamplePrevArrow   className={"needHover"}/>,
   };
 
   const go = (where) => {
@@ -47,9 +50,12 @@ const Slide = ({ slide_array }) => {
   return (
     <div className="w100 p2 ">
       <Slider {...settings} arrows={true}>
-        {slide_array?.map((post) => (
-        post
-        ))}
+     
+<TrendBox key={1}></TrendBox>
+<TrendBox></TrendBox>
+
+<TrendBox></TrendBox>
+
       </Slider>
     </div>
   );
