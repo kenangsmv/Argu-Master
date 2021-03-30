@@ -4,7 +4,7 @@ import LeftDude from '../../../icons/leftdude.jpg'
 import ProfilePhoto from '../../../images/profilephoto.jpg'
 export default function left() {
     return (
-        <div className="leftLayout pb2 pt1 pr05 pl05">
+        <div className="leftLayout pb2 pt1 pr05 pl05 mobileUnvisible">
         <div className="mainLeft column relative space-between">
                     <div className="mainSidesTop center">
                         <div className="teamName center">

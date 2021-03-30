@@ -112,7 +112,9 @@ flex-wrap: wrap;
 }
 
 /*=====Position-css=====*/
-
+.wrap{
+  flex-wrap: wrap;
+}
 
 .row{
   display: flex;
@@ -1067,7 +1069,7 @@ top: 0;
 
 /* postcard*/
 .postCard{
-  width: 500px;
+  width: 480px;
 margin: 15px;
  
   border-radius: 10px;
@@ -1701,6 +1703,7 @@ flex-grow: 1;
 
 /* NEW DEBATE ROOM STYLES*/
 .newdebateroomLayout{
+  padding: 2% 2%;
   width:100%;
   height:100%;
   background: rgb(104,205,252);
@@ -1710,8 +1713,8 @@ flex-grow: 1;
 }
 
 .newdebateroomBody{
-width:98%;
-height: 97%;
+width:100%;
+height: 100%;
 background-color: white;
 border-radius: 20px;
 display: flex;
@@ -1867,7 +1870,7 @@ align-items: flex-end;
  height:100%;
  background-color: #F6F6FA;
  border-radius: 10px;
- box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+ 
  
 }
 .mainMiddleTop{
@@ -2040,7 +2043,7 @@ margin:0px;
 
 /* trend Title*/
 .trendTextBox{
-  width:440px;
+  width:100%;
    height:200px; 
    padding:2rem;
      
@@ -2053,3 +2056,53 @@ margin:0px;
    flex-wrap: wrap;
    
 }
+
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+.mobileUnvisible{
+  display: none;
+}
+.newMessageLayout{
+  width: 100%;
+}
+.bigRight{
+  width: 100%;
+}
+.newdebateroomLayout{
+  padding: 0 0;
+}
+.newdebateroomBody{
+  border-radius: 0;
+}
+.postCard{
+  width: 100%;
+}
+
+#subscribe{
+  margin-left: 200px;
+}
+#lol-checkbox:checked + #button #knob{
+  left: 200px !important;
+}
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+ 
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+ 
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}

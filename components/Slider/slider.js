@@ -6,13 +6,21 @@ import { useRouter } from "next/router";
 import Tecq from "../../images/Technology-Categories.png";
 import Sport from "../../images/Sports-Categories.png";
 import Science from "../../images/Science-Categories.png";
+import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
+import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 function SampleNextArrow(props) {
-  console.log(props)
   const { className, style, onClick } = props;
   return (
-    <div
-      className={className}
-      style={{ ...style, display: "block", background: "red" }}
+    <ArrowForwardIosIcon
+      className={"needHover"}
+      style={{
+        ...style,
+        position: "absolute",
+        color: "black",
+        top: "40%",
+        right: "-2%",
+        width: 20,
+      }}
       onClick={onClick}
     />
   );
@@ -21,9 +29,17 @@ function SampleNextArrow(props) {
 function SamplePrevArrow(props) {
   const { className, style, onClick } = props;
   return (
-    <div
-      className={className}
-      style={{ ...style, display: "block", background: "green" }}
+    <ArrowBackIosIcon
+      className={"needHover"}
+      style={{
+        ...style,
+        position: "absolute",
+        color: "black",
+        top: "40%",
+        left: "-2%",
+        width: 20,
+        zIndex: 200,
+      }}
       onClick={onClick}
     />
   );
@@ -46,7 +62,7 @@ const Slide = () => {
     router.push(where);
   };
   return (
-    <div className="w100 p2 ">
+    <div className="w100 xl-p2">
       <Slider {...settings} arrows={true}>
         <div
           className="slideItem needHover"

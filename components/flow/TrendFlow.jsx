@@ -24,16 +24,15 @@ function flow({ debates, isProfile }) {
           {<Slider></Slider>}
          
 
-          <div className="row w100 ">
+          <div className="center w100 wrap  ">
             {debates?.sort(sortTıme).map((post) => (
               <PostCard key={post.id} data={post}></PostCard>
             ))}
-          </div>
-          <div className="row w100 ">
-            {debates?.sort(sortTıme).map((post) => (
+              {debates?.sort(sortTıme).map((post) => (
               <PostCard key={post.id} data={post}></PostCard>
             ))}
           </div>
+      
         </div>
       )}
     </div>

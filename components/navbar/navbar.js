@@ -39,7 +39,7 @@ const Navbar = () => {
   
 
   return (
-    <div className={"navbarContainer row between "}>
+    <div className={"navbarContainer row between  mobileUnvisible"}>
        <Modal open={open} Comp={AuthLayout} cancel={closeAuthModal}></Modal>
     
       <div className={"searchBox"}>

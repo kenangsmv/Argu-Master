@@ -12,7 +12,7 @@ import { makeStyles } from '@material-ui/core/styles'
 export default function navbar() {
   
     return (
-        <div className="newNavbar column space-between">
+        <div className="newNavbar column space-between mobileUnvisible">
                    <div className="newnavbarlogo center">
         <img  src={Logo} alt=""/>
         </div>
