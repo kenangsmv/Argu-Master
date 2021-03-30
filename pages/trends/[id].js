@@ -9,7 +9,11 @@ import RightSide from "../../components/rightSide/rightSide";
 import { getTrends} from "../../actions/requests";
 import { useRouter } from "next/router";
 import Slider from "../../components/Slider/slider"
-import Navbar from "../../components/navbar/navbar"
+import Navbar from "../../components/newdebateroomcomp/newnavbar/navbar"
+
+import Profile from '@material-ui/icons/PersonOutlined';
+import HomeIcon from '@material-ui/icons/HomeOutlined'
+import Search from '@material-ui/icons/Search'
 
 
 export async function getServerSideProps({ query }) {
@@ -29,19 +33,32 @@ export async function getServerSideProps({ query }) {
 }
 
 export default function Home({ debates}) {
-
+ 
 
   return (
 
     <div className={styles.container}>
-        
-
+         
+         
+         <div className="respMenu space-around">
+           <div className="respIcons column center">
+           <HomeIcon></HomeIcon>
+           <span>Home</span>
+           </div>
+           <div className="respIcons column center">
+           <Search></Search>
+           <span>Search</span>
+           </div>
+           <div className="respIcons column center">
+           <Profile></Profile>
+           <span>Profile</span>
+           </div>
+         </div>
     <div className={styles.homeContainer}>
+   
   
-  
-     <div className="w100 row">
-
-     <LeftSide></LeftSide>
+     <div className="w100 row ">
+     <Navbar></Navbar>
 
 <Flow debates={debates}></Flow>
 <RightSide></RightSide>

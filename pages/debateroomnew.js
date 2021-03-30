@@ -6,6 +6,12 @@ import Navbar from '../components/newdebateroomcomp/newnavbar/navbar'
 import Left from '../components/newdebateroomcomp/sides/left'
 import Right from '../components/newdebateroomcomp/sides/right'
 
+import Profile from '@material-ui/icons/PersonOutlined';
+import HomeIcon from '@material-ui/icons/HomeOutlined'
+import Search from '@material-ui/icons/Search'
+import Stats from '@material-ui/icons/TrendingUpOutlined'
+
+
 export default function debateroomnew() {
     return (
         <div className="newdebateroomLayout center" >
@@ -16,7 +22,6 @@ export default function debateroomnew() {
                <Left></Left>
                 <NewMessage></NewMessage>
                 <Right>
-                
                 </Right>
                
                </div>

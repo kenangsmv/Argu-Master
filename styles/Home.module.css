@@ -23,4 +23,11 @@ position: relative;
     background: linear-gradient(90deg, rgba(104,205,252,1) 0%, rgba(239,157,220,1) 48%, rgba(255,191,124,1) 100%);
 }
 
+@media only screen and (max-width: 600px) {
+    .container{
+  
+      padding: 0;
+    }
+  
+  }
 
