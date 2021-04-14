@@ -47,6 +47,8 @@ export default function Home(props) {
         
 
       <div className={styles.homeContainer}>
+      <div className="respMenu">
+        </div>   
         <LeftSide></LeftSide>
 
         <Flow></Flow>

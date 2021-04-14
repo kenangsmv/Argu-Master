@@ -1,6 +1,8 @@
 import React from 'react'
 import Sent from '../../../icons/sent.png'
 import ProfilePhoto from '../../../images/profilephoto.jpg'
+
+
 export default function messagenew() {
     return (
     <div className="newMessageLayout pb1 pt1 pr05 pl05">
@@ -12,13 +14,18 @@ export default function messagenew() {
                 </div>
          </div>
          <div className="mainMiddleMessage column space-between flex-start">
-              <div className="newMessage row">
-                  
+              <div className="newMessage column">
+                  <div className="pl3 mesageHolder row ">
+                      <span className="pr1"> Kanan Gasimov</span>
+                      <span> 11:43</span>
+                      </div>
+                      <div className="row">
                   <img  src={ProfilePhoto} alt=""/>
                   
-                     <div className="newMessageBox">
-                            <h3>Kenan Gasimov</h3>
+                     <div className="newMessageBox center">
+                            
                             <span>bu tartisma cok komik bence</span>
+                     </div>
                      </div>
               </div>
 
@@ -29,8 +36,10 @@ export default function messagenew() {
               <img  src={Sent} alt=""/>
               </div>
           </div>
+        
 
          </div>
+      
          
         
         

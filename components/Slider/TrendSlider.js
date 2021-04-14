@@ -70,9 +70,7 @@ const Slide = ({ slide_array }) => {
 
         <TrendBox></TrendBox>
       </Slider>
-      <div className="w100 center mt1">
-   <h5 className="neeHover center followButton ">Create</h5>
- </div>
+    
     </div>
   );
 };

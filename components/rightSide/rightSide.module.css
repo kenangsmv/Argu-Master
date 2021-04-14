@@ -31,9 +31,18 @@
 }
 
 @media only screen and (max-width: 600px) {
+<<<<<<< HEAD
 
   .rightContainer{
       display: none;
   }
   
 }
+=======
+  .rightContainer{
+
+    display: none;
+  }
+
+}
+>>>>>>> 7d5757ffa42fcd05aed2c7093812028acd130a62
