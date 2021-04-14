@@ -3,13 +3,15 @@ import Profile from "../../images/user1.jpg";
 import ChatBubbleIcon from '@material-ui/icons/ChatBubble';
 import Voting from "../post/voting";
 import moment from "moment";
-
+import Link from "next/link"
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 
 import VS from "../deabteroomComponents/vs/versus";
 
 const Postcard = ({ data }) => {
+ 
+console.log("id",data)
 
 const [state,setState]=React.useState(false)
 
@@ -99,8 +101,9 @@ React.useEffect(() => {
             <FavoriteIcon></FavoriteIcon>
             <span className="ml1">132</span>
        </div>
+          <Link href={`/live/${data.string_id}`} >
           <div className="purpleBox center whiteText">Join</div>
-        
+          </Link>
      
          
         </div>

@@ -5,6 +5,8 @@ import "slick-carousel/slick/slick-theme.css";
 import { useRouter } from "next/router";
 import PostCard from "../post/postcard.js";
 import TrendBox from "../Trends/trendBox"
+import DebateRoomTrendBox from "../Trends/DebateRoomTrendBox"
+
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 function SampleNextArrow(props) {
@@ -48,14 +50,13 @@ const Slide = ({ slide_array }) => {
     router.push(where);
   };
   return (
-    <div className="w100 p1 ">
+    <div className="w100">
       <Slider {...settings} arrows={true}>
      
-<TrendBox key={1}></TrendBox>
-<TrendBox></TrendBox>
+<DebateRoomTrendBox key={1}></DebateRoomTrendBox>
+<DebateRoomTrendBox></DebateRoomTrendBox>
 
-<TrendBox></TrendBox>
-
+<DebateRoomTrendBox></DebateRoomTrendBox>
 
       </Slider>
     

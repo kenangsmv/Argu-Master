@@ -30,7 +30,7 @@ export default function left() {
                                         Kanan Gasimov
                                     </h4>
                                     <p>
-                                        Buura aminakoya bilirmiyim?
+                                        Ben cok iyiyimm ya
                                     </p>
                                     <span className="timePosition">07:42</span>
                              </div>
@@ -72,7 +72,7 @@ export default function left() {
                                         Melih Gunay
                                     </h4>
                                     <p>
-                                        Bu ne aq
+                                        Ilhamla ileri
                                     </p>
                                     <span className="timePosition">07:42</span>
                              </div>

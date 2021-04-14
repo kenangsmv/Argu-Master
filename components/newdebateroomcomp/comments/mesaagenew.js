@@ -1,22 +1,18 @@
 import React from 'react'
-import Sent from '../../../icons/sent.png'
-import ProfilePhoto from '../../../images/profilephoto.jpg'
 
+import ProfilePhoto from '../../../images/profilephoto.jpg'
+import Like from '../../deabteroomComponents/comments/like'
+import LikeVote from "../../../icons/vote.png";
+import Angry from "../../../icons/angry.png";
+import { useSelector } from "react-redux";
 
 export default function messagenew() {
+  
+    
     return (
-    <div className="newMessageLayout pb1 pt1 pr05 pl05">
-            <div className="newMessageBody  space-between column">
-        <div className="mainMiddleTop relative">
-                <div className="topicNameBody row">
-                <h3 className="topicName mr05 center">Iphone</h3>
-                <h3 className="topicName center">Samsung</h3>
-                </div>
-         </div>
-         <div className="mainMiddleMessage column space-between flex-start">
-              <div className="newMessage column">
-                  <div className="pl3 mesageHolder row ">
-                      <span className="pr1"> Kanan Gasimov</span>
+         <div className="newMessage column relative">
+                  <div className=" mesageHolder row space-between center">
+                      <span className="pr1">Kanan Gasimov</span>
                       <span> 11:43</span>
                       </div>
                       <div className="row">
@@ -24,26 +20,30 @@ export default function messagenew() {
                   
                      <div className="newMessageBox center">
                             
-                            <span>bu tartisma cok komik bence</span>
+                            <span>Bu debate cok guzel</span>
                      </div>
                      </div>
-              </div>
+                     <Like ></Like>
 
-              <div className="messageBottom row  center">
+                     <div className="result resultAbsolute row center box-shadow">
               
-              <input type="text" placeholder="Write your message.."/>
-              <div className="sentButton center">
-              <img  src={Sent} alt=""/>
+              
+                
+              <img className="result-icons" src={LikeVote} alt=""/> 
+              
+                      
+                          
+                             
+              <img className="result-icons" src={Angry} alt=""/> 
+              
+                       </div> 
               </div>
-          </div>
-        
-
-         </div>
-      
-         
+           
+              
+            
+                  
         
         
-        </div>
-        </div>
+       
     )
 }

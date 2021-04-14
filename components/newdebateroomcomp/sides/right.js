@@ -1,7 +1,7 @@
 import React from 'react'
 import RightDude from '../../../icons/rightdude.jpg'
 import Arrow from '../../../icons/arrow.png'
-import Slider from '../../Slider/DebateroomSlider'
+import DebateRoomSlider from '../../Slider/DebateroomSlider'
 export default function right() {
     return (
         <div className="rightLayout pb1 pt1 pr05 pl05">
@@ -13,9 +13,9 @@ export default function right() {
                        
                   
             </div>
-            <div className="mainSideMiddle center p1">
+            <div className="rightSideMiddle center pt1 pb1 pl05 pr05">
                    
-            <Slider></Slider>
+          <DebateRoomSlider ></DebateRoomSlider>
             </div>
             
                  <button className="rightBottom">
