@@ -1,49 +1,72 @@
-import React from 'react'
-import Sent from '../../../icons/sent.png'
-import ProfilePhoto from '../../../images/profilephoto.jpg'
+import React from "react";
+
+import ProfilePhoto from "../../../images/profilephoto.jpg";
+import Like from "../../deabteroomComponents/comments/like";
+import LikeVote from "../../../icons/vote.png";
+import Angry from "../../../icons/angry.png";
+import { useSelector } from "react-redux";
+
+export default function messagenew({
+  message,
+  like,
+  angry,
+  whatIsMySide,
+  first,
+}) {
+  const user = useSelector((state) => state.user.currentUser);
+  const isLikedOrAngry = () => {
+    let isLiked = message.likes.includes(user.username);
+    let isAngry = message.angry.includes(user.username);
+
+    return { isLiked, isAngry };
+  };
+
+  const { isLiked, isAngry } = user
+    ? isLikedOrAngry()
+    : { isLiked: null, isAngry: null };
+   
+  return (
+    <div className="newMessage w100 column relative mt3" style={{flexDirection:message.direction?"row":"row-reverse"}}>
+   
+      <div className="row newMessageContainer " style={{flexDirection:message.direction?"row":"row-reverse"}}>
+     
+        <div className="h100 center">
+        <img src={ProfilePhoto} alt="" />
+        </div>
+        <div className="newMessageBox center">
+          <span>{message.message}</span>
+        </div>
+
+        <Like
+        id={message.id}
+        side={message.side}
+        like={like}
+        angry={angry}
+        isLiked={isLiked}
+        isAngry={isAngry}
+        direction={message.direction}
+      />
+
+      <div className="result resultAbsolute row center box-shadow" style={{left:message.direction&&60,right:!message.direction&&60}}>
+        <img className="result-icons" src={LikeVote} alt="" />
+        {message.likes.length}
+        <img className="result-icons" src={Angry} alt="" />{" "}
+        {message.angry.length}
+      </div>
 
 
-export default function messagenew() {
-    return (
-    <div className="newMessageLayout pb1 pt1 pr05 pl05">
-            <div className="newMessageBody  space-between column">
-        <div className="mainMiddleTop relative">
-                <div className="topicNameBody row">
-                <h3 className="topicName mr05 center">Iphone</h3>
-                <h3 className="topicName center">Samsung</h3>
-                </div>
-         </div>
-         <div className="mainMiddleMessage column space-between flex-start">
-              <div className="newMessage column">
-                  <div className="pl3 mesageHolder row ">
-                      <span className="pr1"> Kanan Gasimov</span>
-                      <span> 11:43</span>
-                      </div>
-                      <div className="row">
-                  <img  src={ProfilePhoto} alt=""/>
-                  
-                     <div className="newMessageBox center">
-                            
-                            <span>bu tartisma cok komik bence</span>
-                     </div>
-                     </div>
-              </div>
 
-              <div className="messageBottom row  center">
-              
-              <input type="text" placeholder="Write your message.."/>
-              <div className="sentButton center">
-              <img  src={Sent} alt=""/>
-              </div>
-          </div>
-        
-
-         </div>
+      </div>
       
-         
-        
-        
-        </div>
-        </div>
-    )
+    </div>
+  );
 }
+
+
+/**
+ * 
+ *    <div className=" mesageHolder row space-between center">
+        <span className="pr1">{message.message_holder}</span>
+        <span> 11:43</span>
+      </div>
+ */

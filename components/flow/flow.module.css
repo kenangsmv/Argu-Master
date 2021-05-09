@@ -10,16 +10,8 @@
     background-color: #F6F6FA;
     
 }
-<<<<<<< HEAD
-@media only screen and (max-width: 600px) {
 
-    .flowContainer{
-        width: 100%;
-    }
-    
-  }
-  
-=======
+
 
 @media only screen and (max-width: 600px) {
     .flowContainer{
@@ -28,4 +20,3 @@
     }
   
   }
->>>>>>> 7d5757ffa42fcd05aed2c7093812028acd130a62

@@ -1,7 +1,7 @@
 import axios from "axios";
 import Cookie from "js-cookie";
-const url = "https://argue-backend.herokuapp.com";
-//const url = "http://localhost:5000";
+//const url = "https://argue-backend.herokuapp.com";
+const url = "http://localhost:5000";
 const serverless= "http://localhost:3000/api"
 export const newDebate = async (data, callback) => {
   try {

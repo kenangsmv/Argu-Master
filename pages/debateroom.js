@@ -1,4 +1,5 @@
 import Head from "next/head";
+import React from 'react'
 import Navbar from "../components/navbar/navbar"
 import styles from "../styles/Home.module.css";
 import LeftSide from '../components/deabteroomComponents/sides/leftside/left'

@@ -28,6 +28,9 @@ position: relative;
   
       padding: 0;
     }
+    .homeContainer{
+     border-radius: 0;  
+    }
   
   }
 

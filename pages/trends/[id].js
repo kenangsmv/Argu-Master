@@ -38,7 +38,7 @@ export default function Home({ debates}) {
   return (
 
     <div className={styles.container}>
-         
+       
          
          <div className="respMenu space-around">
            <div className="respIcons column center">

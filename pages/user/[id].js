@@ -46,7 +46,7 @@ setUser(to)
 
 
 
-const checkFollowed=myUser?.followed.includes(user.username)
+const checkFollowed=myUser?.followed.includes(user?.username)
 
   return (
     <div className={styles.container}>
@@ -59,7 +59,7 @@ const checkFollowed=myUser?.followed.includes(user.username)
           </div>
           <div className="bottomContainer relative">
             <div className="column center">
-              <h3>{user.username}</h3>
+              <h3>{user?.username}</h3>
              {
                myUser&&(
                  checkFollowed?( <div className="followedButton center needHover mt05" onClick={followToggle}>followed</div>):( <div onClick={followToggle} className="followButton center needHover mt05">follow</div>)
@@ -71,13 +71,13 @@ const checkFollowed=myUser?.followed.includes(user.username)
             <div className="informationDesk w100 center mt05 ">
               <ul>
                 <li className=" border-right center">
-                  <span>{user.debates?.length} Debate </span>
+                  <span>{user?.debates?.length} Debate </span>
                 </li>
                 <li className=" border-right center">
-                  <span>{to_user.followers?.length} Followers </span>
+                  <span>{to_user?.followers?.length} Followers </span>
                 </li>
                 <li className=" center">
-                  <span>{to_user.followed?.length}  Following </span>
+                  <span>{to_user?.followed?.length}  Following </span>
                 </li>
               </ul>
             </div>

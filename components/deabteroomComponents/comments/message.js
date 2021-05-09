@@ -8,8 +8,7 @@ import { useSelector } from "react-redux";
 import { Button } from "@material-ui/core";
 export default function DebateRoom({ message, like, angry, whatIsMySide }) {
   const user = useSelector((state) => state.user.currentUser);
-  
-  
+
   const calculateScore = () => {
     return message.likes.length - message.angry.length;
   };
@@ -44,24 +43,23 @@ export default function DebateRoom({ message, like, angry, whatIsMySide }) {
           </div>
 
           <div className="voteButtonAbsolute">
-            <Like   id={message.id} side={message.side} like={like} angry={angry} isLiked={isLiked} isAngry={isAngry} ></Like>
+            <Like
+              id={message.id}
+              side={message.side}
+              like={like}
+              angry={angry}
+              isLiked={isLiked}
+              isAngry={isAngry}
+            ></Like>
           </div>
-        
-         
-            <div className="result resultAbsolute row center box-shadow">
-              
-              
-                
-   <img className="result-icons" src={LikeVote} alt=""/> 
-    {message.likes.length}
-           
-               
-                  
-   <img className="result-icons" src={Angry} alt=""/> {message.angry.length}
-    
-            </div> 
 
-         
+          <div className="result resultAbsolute row center box-shadow">
+            <img className="result-icons" src={LikeVote} alt="" />
+            {message.likes.length}
+            <img className="result-icons" src={Angry} alt="" />{" "}
+            {message.angry.length}
+          </div>
+
           <img className="vote-dots" src={Dots} alt="" />
         </div>
       </div>

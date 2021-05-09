@@ -7,7 +7,7 @@ import AngryFace from "../../../icons/angry.png";
 import HandShake from "../../../icons/handshake.png";
 import Vote from "../../../icons/vote.png";
 
-export default function like({ id, like, angry, isLiked, isAngry, message }) {
+export default function like({ id, like, angry, isLiked, isAngry, message,direction }) {
   return (
    
       
@@ -15,7 +15,7 @@ export default function like({ id, like, angry, isLiked, isAngry, message }) {
  <ul>
            
              
- <div className="wrapped nobullet voteButtonAbsolute column">
+ <div className="wrapped nobullet voteButtonAbsolute column" style={{left:direction&&0,right:!direction&&0}}>
 {!isLiked && !isAngry ? (
 
   <div >

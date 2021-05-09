@@ -193,6 +193,16 @@ border-bottom:1.5px solid gainsboro
 
 }
 
+.topicHeader{
+  padding: 20px 10px;
+  text-align: center;
+height: 7vh;
+}
+
+
+.rightSideMiddle{
+  height: 80vh;
+} 
 .percent1> svg , .percent1 >circle {
   width: 158px;
   height: 158px;
@@ -597,6 +607,9 @@ background-color: white;
 .op09{
   opacity: 0.9;
 }
+.op1{
+  opacity: 1 !important;
+}
 /*shadow*/
 .box-shadow{
   box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;}
@@ -876,7 +889,11 @@ background-color: white;
 }
 .flowContent{
   overflow: auto;
+  overflow-x: hidden;
 } 
+.wrap{
+  flex-wrap: wrap;
+}
 
 /* leftside/*/
 .containerLeft{
@@ -1071,11 +1088,14 @@ top: 0;
   width: 20px;
 
 }
-
+.posts{
+ display:flex;
+ flex-direction: row;  
+}
 /* postcard*/
 .postCard{
-  width: 480px;
-margin: 15px;
+  width: 500px;
+  margin: 15px;
  
   border-radius: 10px;
   background: rgba( 255, 255, 255, 0.25 );
@@ -1461,8 +1481,8 @@ align-items:space-between;
 }
 .voteButtonAbsolute{
   position: absolute !important;
-  bottom: -15px;
-  left: 15px;
+  bottom: -20px;
+  
 
   
 }
@@ -1475,13 +1495,14 @@ border-radius: 10px;
 }
 .resultAbsolute{
   position: absolute !important;
-  bottom: -15px;
-  right: 5px;
+  bottom: -20px;
+
 
 }
 .result-icons{
-  width: 15px;
-  height: 15px;
+  width: 20px !important;
+  height: 20px !important;
+  margin: 0  !important;
   border-radius: 15px;
   background-color: white;
 }
@@ -1522,11 +1543,11 @@ ul .wrapped .content{
  bottom: 15px;
  left: 23px;
  border-radius: 50px; 
- border: 1px solid rgba(0, 0, 0, 0.535);
+ border: 1px solid rgba(0, 0, 0, 0.248);
  box-sizing: border-box;
  visibility: hidden;
  background-color: white;
- color: black;
+
  opacity: 0;
 transition: 0.5s;
 transform: translateX(-50%) translateY(-50px);
@@ -1690,7 +1711,7 @@ color: white;
 }
 .profileMiddle{
   
-    width: 90%;
+    width: 100%;
     display: flex;
     margin-top: 60px;
     justify-content: center;
@@ -1851,9 +1872,7 @@ align-items: flex-end;
 .topicNameBody{
 
  height:30px;
-  position:absolute;
-  top:18px;
-  right:16px;
+ 
  
   
 }
@@ -1867,7 +1886,7 @@ align-items: flex-end;
  padding:0 1rem;
  border-radius: 10px;
 }
-.newMessageLayout{
+.middleLayout{
   width:56%;
   height:100%;
 }
@@ -1876,7 +1895,8 @@ align-items: flex-end;
  height:100%;
  background-color: #F6F6FA;
  border-radius: 10px;
- 
+ display: flex;
+ align-items: center;
  
 }
 .mainMiddleTop{
@@ -1891,20 +1911,28 @@ align-items: flex-end;
 }
 .mainMiddleMessage{
  width:100%; 
- height:90%; 
- padding: 1rem .5rem;
+ height:70vh;
+ overflow-y: scroll; 
+ padding: 2rem 1rem;
+ overflow-x: hidden;
+ padding-bottom: 55px;
+}
+.newMessageContainer{
+  position: relative;
+  min-width: 150px;
+  
 }
 .newMessage img{
  width:30px;
  height:30px;
  border-radius: 50%;
- justify-self: flex-end;
- align-self: flex-end;
+
  margin-right: .5rem;
 }
 .mesageHolder{
   font-size: 10px;
-  padding-bottom: .2rem
+  padding: 0 .7rem .2rem 3rem;
+  
 }
 .newMessageBox{
   background:white;
@@ -1928,12 +1956,15 @@ align-items: flex-end;
 
 
 .messageBottom{
- width:100%;
+ width:97%;
  height:10%;
  background-color: white;
  border-radius: 10px;
  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
  padding: 1rem .5rem;
+ position: absolute;
+ bottom: 13px;
+ 
  
 }
 
@@ -1980,19 +2011,20 @@ align-items: flex-end;
  left: 5px;
  border:none;
  outline:none;
- background: black;
+ background: rgb(36, 34, 34);
 
  color: white;
  border-radius: 10px;
  
 }
 .rightBox{
-  width: 45%;
+  width: 133px;
   height: 100px;
   background-color: #F6F6FA;
   border-radius: 10px;
   
 }
+
 .RightTrendBottom{
   height: 100%;
 }
@@ -2038,7 +2070,7 @@ padding-left: .5rem;
 
 .bilgi p{
  font-size:11px;
-margin:0px;
+margin-top:4px;
  opacity: 0.7;
 }
 .bilgi span{
@@ -2068,12 +2100,114 @@ margin:0px;
    
 }
 
+.statsName span{
+ font-size: 11px;
+
+}
+.statsContent{
+  color: black;
+  opacity: 0.6;
+}
+.statsContentAlt{
+  color: #11685a;
+}
+.statsContentAlt h2{
+  color: #11685a;
+}
+.statsContentAlt1{
+  color: rgb(220 45 136);
+}
+.statsContentAlt1 h2{
+  color: rgb(220 45 136);
+}
+.statsContentAlt3{
+  color: rgb(13 137 175);
+}
+.statsContentAlt3 h2{
+  color: rgb(13 137 175);
+}
+.statsContentAlt2{
+  color: rgb(169 183 28);
+}
+.statsContentAlt2 h2{
+  color: rgb(169 183 28);
+}
+.whiteCircleAlt2{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color:white;
+  position: absolute;
+  top: 10px; 
+  right: 10px; 
+ 
+}
+.whiteCircleAlt{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color:white;
+  position: absolute;
+  top: 10px; 
+  right: 10px; 
+  
+}
+
+.statsContent h2{
+  
+}
+.rightBoxDeneme3{
+  width: 45%;
+  height: 100px;
+  background-color: rgb(13 137 175 / 20%);
+  border-radius: 10px;
+}
+
+.rightBoxDeneme1{
+  width: 45%;
+  height: 100px;
+  background-color: rgb(220 45 136 / 16%);
+  
+  border-radius: 10px;
+  
+}
+.rightBoxDeneme{
+  width: 45%;
+  height: 100px;
+  background-color: #e0f4f1;
+  border-radius: 10px;
+ 
+}
+.rightBoxDeneme2{
+  width: 45%;
+  height: 100px;
+  background-color: rgb(169 183 28 / 20%);
+  
+  border-radius: 10px;
+  
+}
+.whiteCircle{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color:white;
+  position: absolute;
+  top: 10px; 
+  right: 10px; 
+  
+}
+
+.respMenu{
+   display: none;
+}
+
 
 /* Responsive */
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
 .respMenu{
+  display:flex;
  width:100%;
  height:70px;
  background-color: white;
@@ -2111,6 +2245,11 @@ margin:0px;
 .rightLayout{
   display: none;
 }
+.middleLayout{
+  width:100%;
+  height:100%;
+  padding: 0;
+}
 .newMessageLayout{
   width:100%;
   padding:0;
@@ -2131,6 +2270,28 @@ margin:0px;
 }
 .sentButton{
   display: none;
+}
+
+.posts{
+  display: flex;
+  flex-direction: column;
+}
+.postCard{
+  width:340px;
+  margin: 15px;
+ 
+  border-radius: 10px;
+  background: rgba( 255, 255, 255, 0.25 );
+
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 4px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+.profileMiddle{
+   margin: 0;
+   justify-content: flex-start;  
+
 }
 
 }

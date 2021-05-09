@@ -1,27 +1,27 @@
-import React from "react"
+import React from "react";
 import Profile from "../../images/user1.jpg";
-import ChatBubbleIcon from '@material-ui/icons/ChatBubble';
+import ChatBubbleIcon from "@material-ui/icons/ChatBubble";
 import Voting from "../post/voting";
 import moment from "moment";
-
-import FavoriteIcon from '@material-ui/icons/Favorite';
+import Link from "next/link";
+import FavoriteIcon from "@material-ui/icons/Favorite";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 
 import VS from "../deabteroomComponents/vs/versus";
 
 const Postcard = ({ data }) => {
+  console.log("id", data);
 
-const [state,setState]=React.useState(false)
+  const [state, setState] = React.useState(false);
 
-const recursive=()=>{
-  setState(!state)
-  
-}
-React.useEffect(() => {
-  setTimeout(() => {
- setState(!state)
-  }, 5000);
-}, [state])
+  const recursive = () => {
+    setState(!state);
+  };
+  React.useEffect(() => {
+    setTimeout(() => {
+      setState(!state);
+    }, 5000);
+  }, [state]);
 
   const calculateScore = () => {
     const { topic1, topic2 } = data ? data : {};
@@ -45,7 +45,11 @@ React.useEffect(() => {
   };
 
   return (
-    <div className={"postCard boxColor column p05  box-shadow relative space-between"}>
+    <div
+      className={
+        "postCard boxColor column p05  box-shadow relative space-between"
+      }
+    >
       <div className="postCardLive row center">
         <div className="redCircle"></div>
         <span> {data.user_count > 0 ? data.user_count : 0}</span>
@@ -69,23 +73,23 @@ React.useEffect(() => {
       <input type="checkbox" id="lol-checkbox" checked={state} />
 
       <label className="center" id="button" for="lol-checkbox">
-     
-          <div id="knob">
-          <div className={`${state?"percent3":"percent4"} center h100`}>
+        <div id="knob">
+          <div className={`${state ? "percent3" : "percent4"} center h100`}>
             <svg>
               <circle cx="35" cy="35" r="35">
                 <div className="innerCircle3"></div>
               </circle>
-              <circle cx="35" cy="35" r="35"></circle>
+              <circle cx="35" cy="35" r="35" style={{strokeDashoffset:220+(210*(1-(25/100)))}}></circle>
             </svg>
             <div class="innerCircle3">
               <h2>
-               {state?"75":"25"}<span>%</span>
+                {state ? "75" : "25"}
+                <span>%</span>
               </h2>
             </div>
           </div>
         </div>
-    
+
         <div id="subscribe">İphone</div>
         <div id="alright">Samsung</div>
       </label>
@@ -94,15 +98,13 @@ React.useEffect(() => {
         <div className="row w100 center"></div>
 
         <div className={" w100 row space-between pl1 "}>
-        <div className="center">
-   
+          <div className="center">
             <FavoriteIcon></FavoriteIcon>
             <span className="ml1">132</span>
-       </div>
-          <div className="purpleBox center whiteText">Join</div>
-        
-     
-         
+          </div>
+          <Link href={`/live/${data.string_id}`}>
+            <div className="purpleBox center whiteText needHover">Join</div>
+          </Link>
         </div>
       </div>
     </div>

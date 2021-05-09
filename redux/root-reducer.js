@@ -5,6 +5,7 @@ import storage from 'redux-persist/lib/storage';
 import userReducer from './user.reducer';
 import debateReducer from './debate-reducer';
 import LayoutReducer from "./layout-reducer"
+import roomReducer from "./room-reducer"
 
 
 const persistConfig = {
@@ -19,7 +20,8 @@ const persistConfig = {
 const rootReducer = combineReducers({
   user: userReducer,
   debates:debateReducer,
-  layout:LayoutReducer
+  layout:LayoutReducer,
+  room:roomReducer
   
 });
 
